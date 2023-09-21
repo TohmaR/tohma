@@ -1,0 +1,33 @@
+.social{
+    display: none;
+    visibility: hidden;
+    position: fixed;
+    left: 30px;
+    bottom: 30px;
+    z-index: 10000;
+}
+.social ul{
+    display: flex;
+    padding: 0;
+    list-style: none;
+}
+
+.social li{
+    padding: 0 15px;
+}
+
+.social svg{
+    fill:#e3e3e3;
+}
+.social li:hover svg{
+    fill: black;
+}
+
+path { transition: fill .2s ease; }
+
+@media screen and (min-width: 1025px){
+    .social{
+        display: block;
+        visibility: visible;
+    }
+}

@@ -1,0 +1,108 @@
+@media screen and (min-width : 1025px){
+    .contact{
+        position: relative;
+        padding-bottom: 20vh;
+    }
+    .contact__map{
+        min-height: 800px;
+        overflow: hidden;
+        align-items: center;
+    }
+    .map{
+        position: relative;
+        top: 180px;
+        width: calc(100% -300px);
+        height: 500px;
+        margin-right:300px;
+        z-index: 0;
+        overflow: hidden;
+    }
+    
+    .map__box{
+        position: absolute;
+        top: 180px;
+        width: 100%;
+        height: 500px;
+        margin-right:300px;
+        z-index: 1;
+        background-color: black;
+      
+    }
+    
+    
+    .letters {
+        display: block;
+        position: absolute;
+        width: 620px;
+        height: 500px;
+        top: 90px;
+        right: 100px;
+        z-index: 1;
+        user-select: none;
+        
+    }
+    
+    .letters i {
+        position: relative;
+        float: left;
+        display: block;
+        width: 80px;
+        height: 80px;
+        font-family: "Goku";
+        font-family: "Helvetica Now Display DW",sans-serif;
+         
+        font-style: normal;
+        font-weight: 900;
+        font-size: 5rem;
+        line-height: 5rem;
+        color: #b6b6b6 ;
+        /* background: linear-gradient(180deg, #e9ea0c 5%, 14e97c# 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; */
+        text-align: center;
+        margin: 45px 30px;
+        opacity: 0;
+        user-select: none;
+    }
+    
+    .letters__top i:nth-child(1),.letters__top i:nth-child(2), .letters__top i:nth-child(3), .letters__top i:nth-child(4){
+        background: linear-gradient(180deg, #e9ea0c 5%, #c2ea20 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .letters__top i:nth-child(5),.letters__top i:nth-child(6), .letters__top i:nth-child(7), .letters__top i:nth-child(8){
+        background: linear-gradient(180deg, #beea23 5%, #9ae935 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .letters__bottom i:nth-child(1),.letters__bottom i:nth-child(2), .letters__bottom i:nth-child(3), .letters__bottom i:nth-child(4){
+        background: linear-gradient(180deg, #94e938 5%, #79ea48 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .letters__bottom i:nth-child(5),.letters__bottom i:nth-child(6), .letters__bottom i:nth-child(7), .letters__bottom i:nth-child(8){
+        background: linear-gradient(180deg, #79ea48 5%, #3ce966 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .contact__text{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 90vw;
+        color: white;
+        font-family: "Sk-Modernist-Bold";
+        font-size: 1.1vw;
+    }
+
+    .contact__arrow{
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        left: 10vw;
+        bottom: 30px;
+    }
+}

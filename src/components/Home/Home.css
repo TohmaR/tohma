@@ -1,0 +1,158 @@
+*{
+  box-sizing: border-box;
+}
+
+.home{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  fill: url(#GradientCircle);
+}
+
+.home__background {
+  position: relative;
+  display: flex;
+  background-image: url("../../assets/image/homeBackground.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(50%);
+}
+
+.home__background--mobile {
+  position: relative;
+  display: flex;
+  background-image: url("../../assets/image/homeBackground--mobile.jpg");
+  width: 100vw;
+  height: 100vh;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(30%);
+}
+
+.home__background:before {
+  content: "";
+  background: black;
+  width: 100%;
+  opacity: 0;
+}
+
+.home__gradient{
+  position: absolute;
+  background: linear-gradient(180deg, transparent 0%, black 100%);
+  width: 100%;
+  height: 200px;
+  bottom: 0;
+}
+
+.home__description{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  bottom: 13vh;
+  color: white;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Sk-Modernist-Bold";
+  font-size: 3vw;
+  color: #757575;
+  overflow-x: hidden;
+}
+
+.home__arrow{
+  position: absolute;
+  top: 40vh;
+  left: 50vw;
+  width:10vw;
+  height:40vh;
+  transform: rotate(25deg);
+}
+.home__circle{
+  position: absolute;
+  width: 55vw;
+}
+
+.home__circle svg{
+  position: absolute;
+  width: 52vw;
+  bottom: -24vh;
+  left: 5.5vw;
+}
+
+
+.home__circle svg path{
+  stroke-width: 6px;
+  fill: transparent;
+  stroke-dashoffset: 350.3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1000;
+}
+
+
+.home__description div{
+  width: 40vw;
+}
+
+.home__description div:nth-child(1){
+  margin-right: 10px;
+}
+
+.home__description div:nth-child(1){
+  margin-left: 10px;
+}
+
+
+.home__description div span{
+ font-size: 3.5vw;
+ text-transform: uppercase;
+ color: white;
+}
+
+
+.scrollIndicator{
+  position: absolute;
+  bottom: -60px;
+  left: 50vw;
+  width: 2px;
+  height: 125px;
+  background: linear-gradient(#e9ea0c, #14e97c);
+}
+
+@media screen and (min-width: 1025px) {
+  .home__description{
+    position: absolute;
+    display: flex;
+    bottom: 17vh;
+    width: fit-content;
+    align-items: start;
+    justify-content: flex-start;
+    color: white;
+    left: 17vw;
+    transform: none;
+    font-family: "Sk-Modernist-Bold";
+    font-size: 0.8vw;
+    color: rgb(117, 117, 117);
+    overflow-x: visible;
+  }
+  
+  .home__description div{
+    max-width: 15vw;
+    margin-right: 80px;
+  }
+  
+  .home__description div span{
+   font-size: 18px;
+  }
+  
+  .scrollIndicator{
+    bottom: -75px;
+    height: 200px;
+  }
+  
+}

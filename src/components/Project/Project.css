@@ -1,0 +1,351 @@
+.project{
+    display: flex;
+    position: relative;
+    align-items: flex-end;
+    flex-direction: column;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.project__logo{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 30vw;
+    height: 20vh;
+    z-index: 90;
+    fill: url(#Gradient);
+}
+
+.project__logo svg{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.project__logo path{
+    opacity: 1;
+}
+
+.project__container{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 50vh;
+    margin-top: 8vh;
+}
+
+.project__container:nth-child(3){
+   visibility: hidden;
+}
+
+.project__wrapper{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.project__photo--enter{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project__photo--enter img{
+    width: 100vw;
+    height: 80vh;
+    padding: 0 30px;
+    transform: scale(2);
+}
+
+.project__photo__box{
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: black;
+    width: 100vw;
+    height: 85vh;
+}
+
+.project__photo__boxExit{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    bottom: -100vh;
+  }
+
+.project__title{
+    width: 100vw;
+    position: absolute; 
+    font-size: 11vw;
+    font-weight: 900;
+    bottom: 5vh;
+    left:5vw;
+    font-family: "MonumentExtended-Regular";
+}
+
+.project__title span{
+    background-image: linear-gradient(to bottom, #e9ea0c 20%, #14e97c);
+    background-clip: text;
+    color: transparent;
+    padding: 5px 0;
+}
+  
+.project__title .char{
+    opacity: 0;
+}
+
+.project__photo__container{
+    position: relative;
+    overflow: hidden;
+    width: 90vw;
+    height: 50vh;
+    margin: 20px 0;
+    background-color: #1a1a1a;
+}
+
+.project__photo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+}
+
+.MobileEffect{
+    width: 100vw;
+}
+
+.MobileEffect .project__photo{
+    transform: scale(1.3);
+    object-fit: contain;
+}
+
+.MobileEffect .project__photo:nth-child(1){
+    transform: scale(1.5) translate(8.5vw, 11vw);
+}
+
+.MobileEffect .project__photo:nth-child(2){
+    transform: scale(1.5) translate(-16vw, -21vw);
+}
+
+.project__scrollIndicator{
+    position: absolute;
+    bottom: -130px;
+    left: 50vw;
+    width: 2px;
+    height: 100px;
+    background: linear-gradient(#e9ea0c, #14e97c);
+}
+
+.project__context{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px 30px;
+}
+
+.project__context:nth-child(1){
+    margin-top: 90px;
+}
+
+.project__context--title{
+    text-transform: capitalize;
+    font-family: "MonumentExtended-Regular";
+    font-size: 4vw;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.project__context--text{
+    font-family: "Sk-Modernist-Bold";
+    font-size: 3vw;
+}
+
+.project__parallax--container{
+    position: relative;
+    overflow: hidden;
+    width: 90vw;
+    height: 30vh;
+    margin: 20px 0;
+    background-color: #1a1a1a;
+}
+
+.project__parallax--img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 160%;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+}
+
+.project__next{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.project__next--container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px 30px;
+    font-family: "MonumentExtended-Regular";
+    margin-bottom: 20px;
+}
+.project__next--container2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project__next--year{
+    text-transform: capitalize;
+    font-size: 4vw;
+    font-weight: 400;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+.project__next--text{
+    text-transform: uppercase;
+    font-size: 3vw;
+}
+
+.project__next--image{
+    position: relative;
+    width: 100vw;
+    height: 40vh;
+    bottom: 0;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
+.project__next--title{
+    position: absolute;
+    text-align: center;
+    font-family: "MonumentExtended-Regular";
+    font-size: 11vw;
+    top: -6vw;
+    background-image: linear-gradient(to bottom, #e9ea0c 20%, #14e97c);
+    background-clip: text;
+    color: transparent;
+}
+
+@media screen and (min-width: 1280px) {
+
+    .project__logo{
+        width: 300px;
+        height: 300px;
+    }
+    
+    .project__logo svg{
+        width: 200px;
+        height: 200px;
+        margin-top: 5px;
+        margin-left: 0;
+    }
+
+    .project__photo--enter{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .project__photo--enter img{
+        width: 80vw;
+        height: 100%;
+        padding: 0;
+    }
+    
+    .project__photo__box{
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+        background-color: black;
+        width: 82vw;
+        height: 85vh;
+    }
+    
+    .project__title{
+        font-size: 8vw;
+    }
+   
+    .project__context, .project__next{
+        flex-direction: row;
+        padding: 0;
+        max-width: 1280px;
+    }
+
+    .project__context{
+        margin: 100px 0;
+    }
+    
+    .project__next{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .project__next--container{
+        flex-direction: row;
+        margin-bottom: 120px;
+    }
+    
+    .project__context--title, .project__next--year{
+        font-size: 18px;
+        margin-right: 200px;
+    }
+    
+    .project__context--text, .project__next--text{
+        font-size: 18px;
+        width: 500px;
+    }
+
+    .project__context--text{
+        font-size: 18px;
+        width: 500px;
+    }
+
+    .project__photo__container{
+        height: 100vh; 
+    }
+
+    .project__parallax--container{
+        width: 90vw;
+        height: 100vh;
+        margin-bottom: 150px;
+    }
+
+    .project__next--image{
+        height: 60vh;
+    }
+}

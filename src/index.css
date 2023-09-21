@@ -1,13 +1,26 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@font-face {
+    font-family: "Goku";
+    src: local("Goku"),
+     url("./assets/fonts/Goku.ttf") format("truetype");
+  }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+  @font-face {
+    font-family: "MonumentExtended-Ultrabold";
+    src: local("MonumentExtended-Ultrabold"),
+     url("./assets/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "MonumentExtended-Regular";
+    src: local("MonumentExtended-Regular"),
+     url("./assets/fonts/MonumentExtended-Regular.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Sk-Modernist-Bold";
+    src: local("Sk-Modernist-Bold"),
+     url("./assets/fonts/Sk-Modernist/Sk-Modernist-Bold.otf") format("opentype");
+  }
+  @font-face {
+    font-family: "Sk-Modernist-Regular";
+    src: local("Sk-Modernist-Regular"),
+     url("./assets/fonts/Sk-Modernist/Sk-Modernist-Regular.otf") format("opentype");
+  }

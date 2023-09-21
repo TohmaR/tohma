@@ -1,0 +1,34 @@
+.loadingPageMobile{
+    position : fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 90;
+    fill: url(#Gradient);
+    overflow: hidden;
+}
+
+.loadingPageMobile__background{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: -2;
+}
+
+.loadingPageMobile svg{
+    width: 70vw;
+    height: 70vh;
+}
+
+.loadingPageMobile path{
+    opacity: 0;
+}

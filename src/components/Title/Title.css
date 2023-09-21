@@ -1,0 +1,27 @@
+.title__container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 90vh;
+    background-color: black;
+    padding-top: 20vh;
+}
+
+.title{
+    font-size: 5.5vw;
+    color:#e3e3e3;
+    font-family: "MonumentExtended-Regular";
+}
+
+.title [data-word] .char:nth-child(1){
+    font-family: goku;
+    font-size: 12vw;
+    background: linear-gradient(to bottom, #e9ea0c, #14e97c );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title [data-word="Works"] .char:nth-child(1){
+    transform: translateX(3vw);
+}
