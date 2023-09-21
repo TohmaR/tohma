@@ -99,7 +99,7 @@ function Hamburger(){
                         <div  onClick={() => scrollToPage('home')}><div className="hamburger__text--container"><li className="hamburger__nav--text" data-replace="Home"><span>Home</span></li></div></div>
                         <div onClick={() => scrollToPage('projects')}><div className="hamburger__text--container"><li className="hamburger__nav--text" data-replace="Projects"><span>Projects</span></li></div></div>
                         <div onClick={() => scrollToPage('contact')}><div className="hamburger__text--container"><li className="hamburger__nav--text" data-replace="Contact"><span>Contact</span></li></div></div>
-                        <a href={PDF} target = "_blank"><div className="hamburger__text--container"><li className="hamburger__nav--text" data-replace="→ CV"><span>CV</span></li></div></a>
+                        <a href={PDF} target = "_blank"><div className="hamburger__text--container"><li className="hamburger__nav--text" data-replace="CV"><span>CV</span></li></div></a>
                     </ul>
                 </div>
                 <div className="hamburger__social">
