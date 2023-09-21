@@ -22,8 +22,8 @@ function Home() {
 		let tlArrow = gsap.timeline();
         tlDescription.delay(5.9);
 		tlIndicator.delay(6);
-		tlCircle.delay(6.8);
-		tlArrow.delay(6.5);
+		tlCircle.delay(6.6);
+		tlArrow.delay(6.2);
 		tlBackground.delay(6);
 
 
