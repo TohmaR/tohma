@@ -179,7 +179,6 @@
     width:10vw;
     height:25vh;
     transform: rotateZ(20deg);
-    z-index: 100000;
     opacity: 0.8;
   }
   
