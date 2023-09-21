@@ -18,7 +18,7 @@ function Home() {
 		let tlDescription = gsap.timeline();
 		let tlIndicator = gsap.timeline();
 		let tlBackground = gsap.timeline();
-		let tlCircle = gsap.timeline({repeat: -1, repeatDelay: 1.5});
+		let tlCircle = gsap.timeline();
         tlDescription.delay(5.9);
 		tlIndicator.delay(6);
 		tlCircle.delay(6.5);
@@ -67,14 +67,10 @@ function Home() {
 
 		tlCircle.fromTo("path", {
 			drawSVG: 0,
-			repeat: 1,
-			yoyo: true,
 			ease: "easeInOut",
 			duration: 2
 		  },{
 			drawSVG: "50%",
-			repeat: 1,
-			yoyo: true,
 			ease: "easeInOut",
 			duration: 3
 		  });
