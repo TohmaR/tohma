@@ -69,12 +69,12 @@ function Home() {
 
 		tlCircle.fromTo("path", {
 			drawSVG: 0,
-			ease: "easeInOut",
-			duration: 2
+			ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})",
+			duration: 1
 		  },{
 			drawSVG: "50%",
-			ease: "easeInOut",
-			duration: 3
+			ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})",
+			duration: 1
 		});
 
 		tlArrow.fromTo(".home__arrow", {duration: 1,rotateY: "90deg"}, { duration: 1, rotateY: "0deg", ease: "easeInOut"})

@@ -77,7 +77,6 @@
   width:25vw;
   height:15vh;
   transform: rotateY(55deg);
-  z-index: 100000;
   opacity: 0.8;
 }
 
