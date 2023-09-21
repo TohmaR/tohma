@@ -71,7 +71,9 @@
   width:10vw;
   height:40vh;
   transform: rotate(25deg);
+  z-index: 100000;
 }
+
 .home__circle{
   position: absolute;
   width: 55vw;

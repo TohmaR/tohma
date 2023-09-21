@@ -19,9 +19,11 @@ function Home() {
 		let tlIndicator = gsap.timeline();
 		let tlBackground = gsap.timeline();
 		let tlCircle = gsap.timeline();
+		let tlArrow = gsap.timeline();
         tlDescription.delay(5.9);
 		tlIndicator.delay(6);
-		tlCircle.delay(6.5);
+		tlCircle.delay(6.8);
+		tlArrow.delay(6.5);
 		tlBackground.delay(6);
 
 
@@ -73,9 +75,13 @@ function Home() {
 			drawSVG: "50%",
 			ease: "easeInOut",
 			duration: 3
-		  });
+		});
+
+		tlArrow.fromTo(".home__arrow", {duration: 1,rotateY: "90deg"}, { duration: 1, rotateY: "0deg", ease: "easeInOut"})
 		
-		})
+	})
+
+		
 
 	return(
 		<div className="home" id="home" data-scroll-section>
