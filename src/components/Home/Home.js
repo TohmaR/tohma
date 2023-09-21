@@ -89,8 +89,8 @@ function Home() {
 			{isTabletOrMobile && <div className="home__background--mobile"></div>}
 			<div className="home__gradient"></div>
 			<img className="home__arrow" src={Arrow} />
-			<div className="home__circle">
-				<svg version="1.1"  
+			<div className="home__description--container">
+				<svg className="home__circle" version="1.1"  
 					x="0px" y="0px"
 					viewBox="0 0 1190.55 841.89" 
 					style={{enableBackground:"new 0 0 1190.55 841.89"}} 
@@ -134,10 +134,10 @@ function Home() {
 						c6.17-1.44,12.38-2.7,18.57-4.08C430.9,250.16,432.22,250.13,432.35,248.54z"/>
 					</g>
 				</svg>
-			</div>
-			<div className="home__description">
-				<div><span>I'm a Junior Front end developer</span> from France living in Paris. I love design in general and bringing my creations to life</div>
-				<div>If you want to know more about me, my work or if you're a Suggar mommy who wants to offer me a lot of money, feel free to contact me</div>
+				<div className="home__description">
+					<div><span>I'm a Junior Front end developer</span> from France living in Paris. I love design in general and bringing my creations to life</div>
+					<div>If you want to know more about me, my work or if you're a Suggar mommy who wants to offer me a lot of money, feel free to contact me</div>
+				</div>
 			</div>
 			<div className="scrollIndicator"></div>
         </div>

@@ -48,19 +48,25 @@
   bottom: 0;
 }
 
-.home__description{
+.home__description--container{
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100vw;
+  height: 16vh;
   bottom: 9svh;
-  color: white;
-  left: 50%;
-  transform: translateX(-50%);
   font-family: "Sk-Modernist-Bold";
   font-size: 3vw;
   color: #757575;
+  overflow: hidden;
+}
+
+.home__description{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
   overflow-x: hidden;
 }
 
@@ -76,18 +82,14 @@
 
 .home__circle{
   position: absolute;
-  width: 55vw;
-}
-
-.home__circle svg{
-  position: absolute;
-  width: 52vw;
-  bottom: -24vh;
-  left: 5.5vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  width: 160vw;
 }
 
 
-.home__circle svg path{
+.home__circle path{
   stroke-width: 6px;
   fill: transparent;
   stroke-dashoffset: 350.3px;
@@ -127,20 +129,27 @@
 }
 
 @media screen and (min-width: 1025px) {
-  .home__description{
+  .home__description--container{
     position: absolute;
     display: flex;
-    bottom: 17vh;
-    width: fit-content;
-    align-items: start;
-    justify-content: flex-start;
+    bottom: 13vh;
+    width: 32vw;
+    align-items: center;
+    justify-content: space-between;
     color: white;
     left: 17vw;
     transform: none;
     font-family: "Sk-Modernist-Bold";
-    font-size: 0.8vw;
+    font-size:0.9vw;
     color: rgb(117, 117, 117);
+    overflow: visible;
+  }
+  .home__description{
+    display: flex;
+    align-items: start;
+    justify-content: flex-start;
     overflow-x: visible;
+    line-height: 1vw;
   }
   
   .home__description div{
@@ -149,9 +158,19 @@
   }
   
   .home__description div span{
-   font-size: 18px;
+   font-size: 1vw;
+  }
+
+  .home__circle{
+    width: 55vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-53%,-40%);
+
   }
   
+  
+ 
   .scrollIndicator{
     bottom: -75px;
     height: 200px;
