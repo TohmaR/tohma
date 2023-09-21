@@ -31,7 +31,8 @@ function Home() {
 		tlDescription.fromTo(".home__description div:nth-child(2)",{ duration: 0.5, opacity: 0, x: 100}, { opacity: 1, x: 0},0)
 		tlIndicator.fromTo(".scrollIndicator",{ duration: 0.5, opacity: 0, y: 100}, { opacity: 1, y: 0})
 		tlBackground.fromTo(".home__background",{ opacity: 0 }, { duration: 1, opacity: 1 })
-        
+        tlArrow.fromTo(".home__arrow", {duration: 1,rotateY: "90deg"}, { duration: 1, rotateY: "0deg", ease: "easeInOut"})
+
 		let tlScrollBackground = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".home",
@@ -61,13 +62,35 @@ function Home() {
 				toggleActions: "restart none none reverse"
 			},
 		});
+
+		let tlScrollArrow = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".home",
+				start: 0,
+				end: "+=600",
+				scrub: true,
+				toggleActions: "restart none none reverse"
+			},
+		});
+
+		let tlScrollCircle = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".home",
+				start: 0,
+				end: "+=600",
+				scrub: true,
+				toggleActions: "restart none none reverse"
+			},
+		});
 		
 		tlScrollBackground.to(".home__background", {opacity: 0});
 		tlScrollDescription.to(".home__description div:nth-child(1)",{ opacity: 0, x: -100}, 0)
 		tlScrollDescription.to(".home__description div:nth-child(2)",{ opacity: 0, x: 100}, 0)
 		tlScrollIndicator.to(".scrollIndicator",{opacity: 0})
+		tlScrollArrow.to(".home__arrow",{opacity: 0, rotateY: "90deg"})
+		tlScrollCircle.to(".home__circle path",{ opacity: 0, drawSVG: 0})
 
-		tlCircle.fromTo("path", {
+		tlCircle.fromTo(".home__circle path", {
 			drawSVG: 0,
 			ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})",
 			duration: 1
@@ -77,7 +100,6 @@ function Home() {
 			duration: 1
 		});
 
-		tlArrow.fromTo(".home__arrow", {duration: 1,rotateY: "90deg"}, { duration: 1, rotateY: "0deg", ease: "easeInOut"})
 		
 	})
 
