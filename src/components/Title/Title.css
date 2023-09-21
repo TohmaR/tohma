@@ -25,3 +25,18 @@
 .title [data-word="Works"] .char:nth-child(1){
     transform: translateX(3vw);
 }
+
+@media screen and (max-width : 1024px){
+    .title{
+        font-size: 12vw;
+    }
+
+    .title [data-word] .char:nth-child(1){
+        font-size: 30vw; 
+    }
+
+    .title__container{
+        height: 70vh;
+        padding-top: 25vh;
+    }
+}
