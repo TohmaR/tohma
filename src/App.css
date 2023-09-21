@@ -7,6 +7,7 @@ html, body{
 body{
   background-color: black;
   overflow: hidden;
+  padding-bottom: env(safe-area-inset-bottom);
   }
 
 /* custom ScrollBar */
