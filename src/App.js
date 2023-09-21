@@ -52,7 +52,7 @@ function App() {
 
   return (
    
-    <div className="App" >
+    <div className="App min-safe-h-screen">
       <AnimatePresence initial={false} mode="wait">
         <ScrollToTop />
         <Social />
