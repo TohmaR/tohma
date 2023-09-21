@@ -9,7 +9,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: 90;
+    z-index: 89;
     fill: url(#Gradient);
     overflow: hidden;
 }
