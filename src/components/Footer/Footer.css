@@ -1,22 +1,36 @@
 footer.footer{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 100vw;
     padding-bottom: 35px;
     color: white;
     font-family: "Sk-Modernist-Bold";
-    font-size: 0.8vw;
+    font-size: 3.5vw;
     fill: url(#GradientFooter);
+    padding-left: 20px;
 }
 
 .footer__date{
     position: absolute;
-    right: 30px;
-    transform: translateY(-40px);
+    right: 5px;
+    transform: translateY(-25px);
 }
 
 .footer__date svg{
     width: 100px;
     height: 100px;
+}
+
+@media screen and (min-width: 1025px){
+    .footer__date{
+        right: 30px;
+        transform: translateY(-40px);
+    }
+
+    footer.footer{
+        justify-content: center;
+        font-size: 0.8vw;
+    }
+    
 }

@@ -2,8 +2,9 @@
     .contact{
         position: relative;
         width: 100vw;
-        height: 100vh;
+        height: 70svh;
         overflow: hidden;
+        margin-bottom: 50px;
     }
     .contact__map{
         margin-top: 50px;
@@ -90,4 +91,29 @@
         color: white;
         font-family: "Sk-Modernist-Bold";
     }
+
+    .contact__social{
+        position: relative;
+        z-index: 10000;
+    }
+    .contact__social ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        list-style: none;
+    }
+    
+    .contact__social li{
+        padding: 0 15px;
+    }
+    
+    .contact__social svg{
+        fill:#e3e3e3;
+    }
+    .contact__social li:hover svg{
+        fill: black;
+    }
+    
+    path { transition: fill .2s ease; }
 }   
