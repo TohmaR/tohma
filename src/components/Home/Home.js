@@ -77,7 +77,7 @@ function Home() {
 			scrollTrigger: {
 				trigger: ".home",
 				start: 0,
-				end: "+=600",
+				end: "+=400",
 				scrub: true,
 				toggleActions: "restart none none reverse"
 			},
