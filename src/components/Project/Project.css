@@ -256,16 +256,16 @@
     color: transparent;
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 1025px) {
 
     .project__logo{
-        width: 300px;
-        height: 300px;
+        width: 15.625vw;
+        height: 32.223415682062296vh;
     }
     
     .project__logo svg{
-        width: 200px;
-        height: 200px;
+        width: 10.416666666666666vw;
+        height: 21.482277121374867vh;
         margin-top: 5px;
         margin-left: 0;
     }
