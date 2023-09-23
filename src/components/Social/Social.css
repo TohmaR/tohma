@@ -2,8 +2,8 @@
     display: none;
     visibility: hidden;
     position: fixed;
-    left: 30px;
-    bottom: 30px;
+    left: 1.5625vw;
+    bottom: 3.2223415682062297vh;
     z-index: 10000;
 }
 .social ul{
