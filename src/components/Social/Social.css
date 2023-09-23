@@ -18,6 +18,8 @@
 
 .social svg{
     fill:#e3e3e3;
+    min-width: 30px;
+    min-height: 30px;
 }
 .social li:hover svg{
     fill: black;

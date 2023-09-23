@@ -161,14 +161,24 @@ export default function ProjectsDesktop (){
     return( 
       <div className="container" ref={panelsContainer} id="projects">
         <section className="panel projects1" ref={(e) => createPanelsRefs(e, 0)} >
-          <motion.div 
-            key="projects__number__sneakmart"
-            transition={{ duration: .2, delay: 0.4 }}
-            exit={{ y: -50, opacity: 0 }}
-            className="projects__number">
-              <span>.</span>001
-          </motion.div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="160px" className="projects__photo">
+          <div className="projects__container">
+            <motion.div 
+              key="projects__number__sneakmart"
+              transition={{ duration: .2, delay: 0.4 }}
+              exit={{ y: -50, opacity: 0 }}
+              className="projects__number">
+                <span>.</span>001
+            </motion.div>
+            <motion.h2 
+              key="projects__title__sneakmart"
+              transition={{ duration: .4, delay: 0.4 }}
+              exit={{ y: 50, opacity: 0 }}
+              className="projects__title" 
+              data-splitting>
+                <span>Sneakmart</span>
+            </motion.h2>
+          </div>
+          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
             <Link className="projects__link" to="/Sneakmart" refresh="true">
               <motion.img 
                 key="projects__photo__sneakmart"
@@ -185,24 +195,26 @@ export default function ProjectsDesktop (){
             exit={{ y: "-90vh"}}
             className="projects__photo__boxExit">
           </motion.div>
-          <motion.h2 
-            key="projects__title__sneakmart"
-            transition={{ duration: .4, delay: 0.4 }}
-            exit={{ y: 50, opacity: 0 }}
-            className="projects__title" 
-            data-splitting>
-              <span>Sneakmart</span>
-          </motion.h2>
         </section>
         <section className="panel projects2" ref={(e) => createPanelsRefs(e, 1)} >
-          <motion.div 
-            key="projects__number__amazon"
-            transition={{ duration: .4, delay: 0.3 }}
-            exit={{ y: -50, opacity: 0 }}
-            className="projects__number">
-              <span>.</span>002
-          </motion.div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="160px" className="projects__photo">
+          <div className="projects__container">
+            <motion.div 
+              key="projects__number__amazon"
+              transition={{ duration: .4, delay: 0.3 }}
+              exit={{ y: -50, opacity: 0 }}
+              className="projects__number">
+                <span>.</span>002
+            </motion.div>
+            <motion.h2 
+              key="projects__title__amazon"
+              transition={{ duration: .2, delay: 0.4 }}
+              exit={{ y: 50, opacity: 0 }}
+              className="projects__title" 
+              data-splitting>
+                <span>amazon</span>
+            </motion.h2>
+          </div>
+          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
             <Link className="projects__link" to="/Amazon" refresh="true">
               <motion.img 
                 key="projects__photo__amazon"
@@ -219,24 +231,25 @@ export default function ProjectsDesktop (){
             exit={{ y: "-90vh"}}
             className="projects__photo__boxExit">
           </motion.div>
-          <motion.h2 
-            key="projects__title__amazon"
-            transition={{ duration: .2, delay: 0.4 }}
-            exit={{ y: 50, opacity: 0 }}
-            className="projects__title" 
-            data-splitting>
-              <span>amazon</span>
-          </motion.h2>
         </section>
         <section className="panel projects3" ref={(e) => createPanelsRefs(e, 2)}>
-          <motion.div 
-            key="projects__number__HDMI"
-            transition={{ duration: .2, delay: 0.4 }}
-            exit={{ y: -50, opacity: 0 }}
-            className="projects__number">
-              <span>.</span>003
-          </motion.div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="160px" className="projects__photo">
+          <div className="projects__container">
+            <motion.div 
+              key="projects__number__HDMI"
+              transition={{ duration: .2, delay: 0.4 }}
+              exit={{ y: -50, opacity: 0 }}
+              className="projects__number">
+                <span>.</span>003
+            </motion.div>
+            <motion.h2 
+              exit={{opacity: 0}} 
+              transition={transition} 
+              className="projects__title" 
+              data-splitting>
+                <span>HDMI Ping</span>
+            </motion.h2>
+          </div>
+          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
             <Link className="projects__link" to="/HDMI" refresh="true">
             <motion.img 
                 key="projects__photo__HDMI"
@@ -247,21 +260,6 @@ export default function ProjectsDesktop (){
             </Link>
           </div>
           <div className="projects__photo__box"></div>
-          <motion.h2 
-            exit={{opacity: 0}} 
-            transition={transition} 
-            className="projects__title" 
-            data-splitting>
-              <span>HDMI Ping</span>
-          </motion.h2>
-        </section>
-        <section className="panel projects4" ref={(e) => createPanelsRefs(e, 3)}>
-          <div className="projects__number"><span>.</span>004</div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="160px" className="projects__photo">
-            <img src="https://images.unsplash.com/photo-1566204773863-cf63e6d4ab88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1345&q=100"/>
-          </div>
-          <div className="projects__photo__box"></div>
-          <h2 className="projects__title" data-splitting><span>Hdmi Ping</span></h2>
         </section>
       </div>
     )

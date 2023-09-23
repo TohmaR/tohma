@@ -96,7 +96,7 @@
     font-family: "MonumentExtended-Regular";
     position: relative;
     display: inline-block;
-    font-size: 5vw;
+    font-size: 4.3vw;
     letter-spacing: 0px;
     margin-bottom: 33px;
     text-transform: uppercase;
@@ -203,16 +203,16 @@ path { transition: fill .2s ease; }
 @media screen and (min-width : 1025px){
     .hamburger{
         padding: 0 45px;
-        height: 100px;
+        height: 90px;
     }
 
     .hamburger span{
-        height: 3px;
+        height: 0.322234156820623vh;
     }
       
     .hamburger__toggleBtn {
-        width: 1.5104166666666667vw;
-        height:  1.7185821697099892vh;
+        width: 45px;
+        height: 25px;
     }
 
     .hamburger__toggleBtn:hover > span {
@@ -230,13 +230,13 @@ path { transition: fill .2s ease; }
     }
 
     .hamburger__logo{
-        width: 300px;
-        height: 300px;
+        width: 15.625vw;
+        height: 32.223415682062296vh;
     }
     
     .hamburger__logo svg{
-        width: 200px;
-        height: 200px;
+        width: 10.416666666666666vw;
+        height: 21.482277121374867vh;
         margin-top: 5px;
         margin-left: 0;
     }

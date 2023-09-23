@@ -96,8 +96,8 @@ function LoadingPageDesktop() {
             });
             
             
-            tlLogoHeader.to(".loadingPage svg",{ duration: 2, height : "200px", width: "200px", marginTop: 30})
-            tlLogoHeader.to(".loadingPage",{ height : "300px", width: "300px"})
+            tlLogoHeader.to(".loadingPage svg",{ duration: 2, height : "21.482277121374867vh", width: "10.416666666666666vw", marginTop: 30})
+            tlLogoHeader.to(".loadingPage",{ height : "32.223415682062296vh", width: "15.625vw"})
             tlLogoHeader.to(".loadingPage__background",{ display: "none"})    
         }
 

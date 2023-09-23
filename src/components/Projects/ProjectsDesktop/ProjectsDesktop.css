@@ -1,7 +1,7 @@
 @media screen and (min-width : 1025px){
   
   .container {
-    width: 400%;
+    width: 300%;
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
@@ -23,9 +23,7 @@
   }
   
   .projects__number{
-    position: absolute;
-    left: 10vw;
-    bottom: 40vh;
+    position: relative;
     font-size: 8vw;
     font-weight: 900;
     font-family: "goku";
@@ -79,18 +77,25 @@
     background-color: black;
     bottom: -80vh;
   }
+
+  .projects__container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 12vw;
+    bottom: 5vh;
+  }
   
   .projects__title {
-    position: absolute;
+    position: relative;
     font-size: 5vw;
+    line-height: 5vw;
     counter-increment: section;
     text-align: center;
     display: grid;
     gap: 2rem;
     z-index: 2;
     font-family: "MonumentExtended-Regular";
-    bottom: 10vh;
-    left: 10vw;
     font-weight: 600;
   }
   
