@@ -23,7 +23,7 @@ function ContactDesktop() {
             start: "60% bottom",
             toggleActions: "restart none none reverse",
             scrub: 1,
-            end: "+=800",
+            end: "+=600",
         },
     })
 
@@ -33,7 +33,7 @@ function ContactDesktop() {
                 start: "60% bottom",
                 toggleActions: "restart none none reverse",
                 scrub: 1,
-                end: "+=600",
+                end: "+=400",
             },
         });
         tlLetter.delay(1.2);
