@@ -45,7 +45,8 @@
   .projects__photo{
     position: absolute;
     width: 55vw;
-    height: 65vh;
+    height: 60vh;
+    aspect-ratio: 9/6 auto;
     filter: grayscale(1);
     transition: all 0.5s;
     transition-timing-function: ease-in-out;
@@ -82,7 +83,7 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    left: 12vw;
+    left: 11vw;
     bottom: 5vh;
   }
   

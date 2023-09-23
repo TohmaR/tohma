@@ -1,6 +1,6 @@
 import React, { useLayoutEffect,useEffect, useState, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Link as NavLink, scroller } from "react-scroll";
+import { scroller } from "react-scroll";
 import {useHistory} from "react-router-dom";
 import PDF from "../../assets/pdf/CV.pdf";
 import "./Hamburger.css";
@@ -12,7 +12,7 @@ function Hamburger(){
     menuTimeline.current = gsap.timeline({ paused: true });
 
     const history = useHistory();
-    const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 700});
+    const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 2000});
 
     const scrollToPage = async (target) => {
         setToggleMenu(!toggleMenu);
