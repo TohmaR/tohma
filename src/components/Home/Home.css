@@ -114,9 +114,9 @@
 
 
 .home__description div span{
- font-size: 3.5vw;
- text-transform: uppercase;
- color: white;
+  font-size: 3.5vw;
+  text-transform: uppercase;
+  color: white;
 }
 
 
@@ -125,7 +125,7 @@
   bottom: -60px;
   left: 50vw;
   width: 2px;
-  height: 125px;
+  height: 11.815252416756175vh;
   background: linear-gradient(#e9ea0c, #14e97c);
 }
 

@@ -211,8 +211,8 @@ path { transition: fill .2s ease; }
     }
       
     .hamburger__toggleBtn {
-        width: 45px;
-        height: 25px;
+        width: 1.5104166666666667vw;
+        height:  1.7185821697099892vh;
     }
 
     .hamburger__toggleBtn:hover > span {
