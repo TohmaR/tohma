@@ -196,7 +196,7 @@ export default function ProjectsDesktop (){
         </section>
         <section className="panel projects2" ref={(e) => createPanelsRefs(e, 1)} >
           <motion.div 
-            key="projects__number__sneakmart"
+            key="projects__number__amazon"
             transition={{ duration: .4, delay: 0.3 }}
             exit={{ y: -50, opacity: 0 }}
             className="projects__number">
@@ -239,7 +239,7 @@ export default function ProjectsDesktop (){
           <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="160px" className="projects__photo">
             <Link className="projects__link" to="/HDMI" refresh="true">
             <motion.img 
-                key="projects__photo__sneakmart"
+                key="projects__photo__HDMI"
                   whileHover={{ scale : 1.2 }} 
                   transition={transition} 
                   src={PresentationHDMI}

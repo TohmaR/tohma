@@ -38,22 +38,22 @@ function ContactDesktop() {
         });
         tlLetter.delay(1.2);
      
-        tlLetter.to("i:nth-child(2)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(11)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(6)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(13)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(16)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(1)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(8)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(3)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(9)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(10)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(5)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(14)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(4)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(15)",0.2,{opacity : 1}, '-=0.2')
-        tlLetter.to("i:nth-child(7)",0.2,{opacity : 1})
-        tlLetter.to("i:nth-child(12)",0.2,{opacity : 1}, '-=0.2')
+        tlLetter.to('i:nth-child(2)',{ duration: 0.2, opacity : 1})
+        tlLetter.to('i:nth-child(11)',{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to('i:nth-child(6)',{ duration: 0.2, opacity : 1})
+        tlLetter.to('i:nth-child(13)',{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(16)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(1)",{ duration: 0.2, opacity : 1})
+        tlLetter.to("i:nth-child(8)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(3)",{ duration: 0.2, opacity : 1})
+        tlLetter.to("i:nth-child(9)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(10)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(5)",{ duration: 0.2, opacity : 1})
+        tlLetter.to("i:nth-child(14)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(4)",{ duration: 0.2, opacity : 1})
+        tlLetter.to("i:nth-child(15)",{ duration: 0.2, opacity : 1}, '-=0.2')
+        tlLetter.to("i:nth-child(7)",{ duration: 0.2, opacity : 1})
+        tlLetter.to("i:nth-child(12)",{ duration: 0.2, opacity : 1}, '-=0.2')
    
 
 	return(

@@ -24,8 +24,6 @@ function Title( props ){
                 for (const word of words) {
                     
                     const chars = word.querySelectorAll('.char');
-
-                    console.log(chars)
                 
                     chars.forEach(char => gsap.set(char.parentNode, { perspective: 2000 })); 
 
@@ -60,7 +58,7 @@ function Title( props ){
         
     return(
         <div className="title__container">
-            <h2 class="title" data-splitting data-effect1>{props.children}</h2>
+            <h2 className="title" data-splitting data-effect1>{props.children}</h2>
         </div>
     )
 }
