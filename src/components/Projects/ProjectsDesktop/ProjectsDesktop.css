@@ -66,8 +66,9 @@
   
   .projects__photo__box{
     position: absolute;
+    top:0;
     width: 57vw;
-    height: 80vh;
+    height: 100vh;
     background-color: black;
   }
   
