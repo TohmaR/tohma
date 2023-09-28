@@ -6,7 +6,7 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion"
-import Photo1 from "../../assets/image/Amazon/end.jpg";
+import Photo1 from "../../assets/image/Amazon/end.webp";
 import PresentationGIF from "../../assets/image/Amazon/PresentationGIF.gif";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
@@ -141,7 +141,7 @@ function Amazon(){
                         transition={{duration: 0.4, ease: [0.740, 0.120, 0.845, 0.210]}}
                         exit={{ y: "-50px", opacity: 0}}
                     >
-                        <img className="project__parallax--img" src={Photo1} />
+                        <img loading="lazy" className="project__parallax--img" src={Photo1} alt="parallax-img"/>
                     </motion.div>
                     <motion.div 
                         className="project__photo__container MobileEffect" 
@@ -150,8 +150,8 @@ function Amazon(){
                         exit={{ y: "-50px", opacity: 0}}
                     >
 
-                        <img className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} />
-                        <img className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} />
+                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} alt="MobileCenterEffect"/>
+                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} alt="MobileSideEffect"/>
                     </motion.div>
                     <motion.div 
                         className="project__context"
@@ -171,7 +171,7 @@ function Amazon(){
                         transition={{ duration: .4 }}
                         exit={{ y: -50, opacity: 0}}
                     >
-                        <img className="project__parallax--img" src={Responsive} />
+                        <img loading="lazy" className="project__parallax--img" src={Responsive} />
                     </motion.div>
                     <Link to="/HDMI">
                         <div className="project__next">
@@ -190,11 +190,13 @@ function Amazon(){
                             </motion.div>
                             <div className="project__next--container2">
                                 <motion.img 
+                                    loading="lazy"
                                     className="project__next--image" 
                                     src={NextProject} 
                                     key="project__next--image"
                                     transition={{ duration: .4, }}
                                     exit={{ y: 100, opacity: 0 }}
+                                    alt="nextProject"
                                 />
                                 <motion.div 
                                     className="project__next--title"

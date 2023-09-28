@@ -144,7 +144,7 @@ function Sneakmart(){
                         transition={{duration: 0.4, ease: [0.740, 0.120, 0.845, 0.210]}}
                         exit={{ y: "-50px", opacity: 0}}
                     >
-                        <img className="project__parallax--img" src={Photo1} />
+                        <img loading="lazy" className="project__parallax--img" src={Photo1} alt="parallax-img" />
                     </motion.div>
                     <motion.div 
                         className="project__photo__container MobileEffect" 
@@ -152,8 +152,8 @@ function Sneakmart(){
                         transition={{duration: 0.4, ease: [0.740, 0.120, 0.845, 0.210]}}
                         exit={{ y: "-50px", opacity: 0}}
                     >
-                        <img className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} />
-                        <img className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} />
+                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} alt="parallax-img"/>
+                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} alt="parallax-img"/>
                     </motion.div>
                     <motion.div 
                         className="project__context"
@@ -173,7 +173,7 @@ function Sneakmart(){
                         transition={{ duration: .4 }}
                         exit={{ y: -50, opacity: 0}}
                     >
-                        <img className="project__parallax--img" src={Responsive} />
+                        <img loading="lazy" className="project__parallax--img" src={Responsive} alt="parallax-img"/>
                     </motion.div>
                     <Link to="/Amazon">
                         <div className="project__next">
@@ -192,8 +192,10 @@ function Sneakmart(){
                             </motion.div>
                             <div className="project__next--container2">
                                 <motion.img 
+                                    loading="lazy"
                                     className="project__next--image" 
                                     src={NextProject} 
+                                    alt="nextProject"
                                     key="project__next--image"
                                     transition={{ duration: .4, delay: 0 }}
                                     exit={{ y: 100, opacity: 0 }}

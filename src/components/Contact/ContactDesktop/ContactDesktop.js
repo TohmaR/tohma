@@ -103,7 +103,7 @@ function ContactDesktop() {
                 </div>
             </div>
             <div className="contact__text">If you want to contact me, you are in the right place. You can also contact me on my social networks</div> 
-            <img className="contact__arrow" src={ArrowLeft} />
+            <img loading="lazy" className="contact__arrow" src={ArrowLeft} alt="ArrowLeft"/>
         </div>
 	);
 }

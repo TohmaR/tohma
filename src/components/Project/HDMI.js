@@ -127,11 +127,11 @@ function HDMI(){
                         </div>
                     </motion.div>
                     <motion.div className="project__parallax--container">
-                        <img className="project__parallax--img" src={Photo1} />
+                        <img loading="lazy" className="project__parallax--img" src={Photo1} alt="parallax-img" />
                     </motion.div>
                     <motion.div className="project__photo__container MobileEffect" ref={MobileEffect}>
-                        <img className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} />
-                        <img className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} />
+                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} alt="MobileCenterEffectImg"/>
+                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} alt="MobileSideEffectImg"/>
                     </motion.div>
                     <motion.div className="project__context">
                         <div className="project__context--title">
@@ -147,7 +147,7 @@ function HDMI(){
                         transition={{ duration: .4, delay: 0 }}
                         exit={{ y: -600}}
                     >
-                        <img className="project__parallax--img" src={Responsive} />
+                        <img loading="lazy" className="project__parallax--img" src={Responsive} alt="parallax-img" />
                     </motion.div>
                     <Link to="/sneakmart">
                         <div className="project__next">
@@ -166,8 +166,10 @@ function HDMI(){
                             </motion.div>
                             <div className="project__next--container2">
                                 <motion.img 
+                                    loading="lazy" 
                                     className="project__next--image" 
                                     src={NextProject} 
+                                    alt="nextProject"
                                     key="project__next--image"
                                     transition={{ duration: .4, delay: 0.2 }}
                                     exit={{ y: 100, opacity: 0 }}

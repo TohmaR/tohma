@@ -12,7 +12,7 @@
 .home__background {
   position: relative;
   display: flex;
-  background-image: url("../../assets/image/homeBackground.jpg");
+  background-image: url("../../assets/image/homeBackground.webp");
   width: 100vw;
   height: 100svh;
   background-position: top;
