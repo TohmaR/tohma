@@ -1,107 +1,40 @@
-import React, { useLayoutEffect, useRef } from "react";
-import gsap from "gsap"
-import "./Home.css"
-import Arrow from "../../assets/image/arrow__left.png"
-import { useMediaQuery } from 'react-responsive'
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import "./Home.css";
+import Arrow from "../../assets/image/arrow__left.png";
+import { useMediaQuery } from 'react-responsive';
 import DrawSVGPlugin from "../../gsap/DrawSVGPlugin.min.js";
 
 gsap.registerPlugin(DrawSVGPlugin);
 
-
 function Home() {
+  const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
-	const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
-	
-	useLayoutEffect(() => {
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.inOut", delay: 6 } });
 
-		let tlDescription = gsap.timeline();
-		let tlIndicator = gsap.timeline();
-		let tlBackground = gsap.timeline();
-		let tlCircle = gsap.timeline();
-		let tlArrow = gsap.timeline();
-        tlDescription.delay(5.9);
-		tlIndicator.delay(6);
-		tlCircle.delay(6.6);
-		tlArrow.delay(6.2);
-		tlBackground.delay(6);
+    tl.fromTo(".home__description div:nth-child(1)", { opacity: 0, x: -100 }, { opacity: 1, x: 0 }, 0)
+      .fromTo(".home__description div:nth-child(2)", { opacity: 0, x: 100 }, { opacity: 1, x: 0, }, 0)
+      .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
+      .fromTo(".home__background", { opacity: 0 }, { opacity: 1, delay: 6}, 0)
+      .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.5 }, 0)
+      .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.5, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
 
+    const scrollTriggerOptions = {
+      trigger: ".home",
+      scrub: true,
+      toggleActions: "restart none none reverse"
+    };
 
-        tlDescription.fromTo(".home__description div:nth-child(1)",{ duration: 0.5, opacity: 0, x: -100}, { opacity: 1, x: 0},0)
-		tlDescription.fromTo(".home__description div:nth-child(2)",{ duration: 0.5, opacity: 0, x: 100}, { opacity: 1, x: 0},0)
-		tlIndicator.fromTo(".scrollIndicator",{ duration: 0.5, opacity: 0, y: 100}, { opacity: 1, y: 0})
-		tlBackground.fromTo(".home__background",{ opacity: 0 }, { duration: 1, opacity: 1 })
-        tlArrow.fromTo(".home__arrow", {duration: 1,rotateY: "90deg"}, { duration: 1, rotateY: "0deg", ease: "easeInOut"})
+    gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 10, end: "+=400" } }).to(".home__background", { opacity: 0 });
+    gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 0, end: "+=600" } }).to(".home__description div:nth-child(1)", { opacity: 0, x: -100 });
+    gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 0, end: "+=600" } }).to(".home__description div:nth-child(2)", { opacity: 0, x: 100 });
+    gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 200, end: "+=500" } }).to(".scrollIndicator", { opacity: 0 });
+    gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 0, end: "+=400" } }).to(".home__circle path", { opacity: 0, drawSVG: 0 });
+	gsap.timeline({ scrollTrigger: { ...scrollTriggerOptions, start: 0, end: "+=600" } }).to(".home__arrow",{opacity: 0, rotateY: "90deg"})
 
-		let tlScrollBackground = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".home",
-				start: 10,
-				end: "+=600",
-				scrub: true,
-				toggleActions: "restart none none reverse"
-			},
-		});
-		
-		let tlScrollDescription = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".home",
-				start: 0,
-				end: "+=600",
-				scrub: true,
-				toggleActions: "restart none none reverse"
-			},
-		});
-
-		let tlScrollIndicator = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".home",
-				start: 200,
-				end: "+=500",
-				scrub: true,
-				toggleActions: "restart none none reverse"
-			},
-		});
-
-		let tlScrollArrow = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".home",
-				start: 0,
-				end: "+=600",
-				scrub: true,
-				toggleActions: "restart none none reverse"
-			},
-		});
-
-		let tlScrollCircle = gsap.timeline({
-			scrollTrigger: {
-				trigger: ".home",
-				start: 0,
-				end: "+=400",
-				scrub: true,
-				toggleActions: "restart none none reverse"
-			},
-		});
-		
-		tlScrollBackground.to(".home__background", {opacity: 0});
-		tlScrollDescription.to(".home__description div:nth-child(1)",{ opacity: 0, x: -100}, 0)
-		tlScrollDescription.to(".home__description div:nth-child(2)",{ opacity: 0, x: 100}, 0)
-		tlScrollIndicator.to(".scrollIndicator",{opacity: 0})
-		tlScrollArrow.to(".home__arrow",{opacity: 0, rotateY: "90deg"})
-		tlScrollCircle.to(".home__circle path",{ opacity: 0, drawSVG: 0})
-
-		tlCircle.fromTo(".home__circle path", {
-			drawSVG: 0,
-			ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})",
-			duration: 1
-		  },{
-			drawSVG: "50%",
-			ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})",
-			duration: 1
-		});
-
-		
-	})
+  }, []);
 
 		
 

@@ -9,8 +9,8 @@ import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
 
 //image
-import PresentationAmazon from "../../../assets/image/Amazon/PresentationGIF.gif";
-import PresentationSneakmart from "../../../assets/image/Sneakmart/PresentationGIF.gif";
+import PresentationAmazon from "../../../assets/image/Amazon/PresentationMobileGIF.gif";
+import PresentationSneakmart from "../../../assets/image/Sneakmart/PresentationMobileGIF.gif";
 import PresentationHDMI from "../../../assets/image/HDMI/PresentationGIF.gif";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -19,7 +19,6 @@ const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
 
 export default function ProjectsDesktop (){
     useEffect(() => {
-
       Splitting({
         /* target: String selector, Element, Array of Elements, or NodeList */
         target: "[data-splitting]",

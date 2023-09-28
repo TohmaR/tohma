@@ -92,6 +92,7 @@
     bottom: 5vh;
     left:5vw;
     font-family: "MonumentExtended-Regular";
+    -webkit-filter: drop-shadow(3px 3px #333);
 }
 
 .project__title span{
@@ -254,6 +255,7 @@
     background-image: linear-gradient(to bottom, #e9ea0c 20%, #14e97c);
     background-clip: text;
     color: transparent;
+    -webkit-filter: drop-shadow(3px 3px #333);
 }
 
 @media screen and (min-width: 1025px) {

@@ -27,6 +27,7 @@
 .loadingPageMobile svg{
     width: 70vw;
     height: 70svh;
+    -webkit-filter: drop-shadow(3px 3px #333);
 }
 
 .loadingPageMobile path{

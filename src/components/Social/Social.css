@@ -21,6 +21,10 @@
     min-width: 30px;
     min-height: 30px;
 }
+
+.social rect{
+    fill:#e3e3e3;
+}
 .social li:hover svg{
     fill: black;
 }

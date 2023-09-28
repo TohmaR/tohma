@@ -26,13 +26,13 @@
     font-size: 20vw;
     font-weight: 900;
     font-family: "goku";
-    background: linear-gradient(to right, #050505 50%, #e9ea0c 2%, #14e97c);
+    background: linear-gradient(to right, #1e1e1e 50%, #e9ea0c 2%, #14e97c);
     background-size: 200%;
     background-clip: text;
     color: transparent;
     transition: 0.5s ease-out;
     z-index: 80;
-    
+    -webkit-filter: drop-shadow(3px 3px #333);
   }
   
   .projects__number span{
@@ -40,12 +40,12 @@
     background-clip: text;
     color: transparent;
     font-size: 20vw;
+    
   }
   
   .projects__photo{
     position: absolute;
     width: 90vw;
-    height: 65vh;
     filter: grayscale(1);
     transition: all 0.5s;
     transition-timing-function: ease-in-out;
@@ -91,7 +91,7 @@
     bottom: 22vh;
     left: 6vw;
     font-weight: 600;
-    
+    -webkit-filter: drop-shadow(3px 3px #333);
   }
   
   .projects__title span{

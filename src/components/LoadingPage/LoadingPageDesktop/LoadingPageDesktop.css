@@ -29,6 +29,7 @@
     margin-top: 10vh;
     width: 55vw;
     height: 80vh;
+    -webkit-filter: drop-shadow(3px 3px #333);
 }
 
 .loadingPage path{

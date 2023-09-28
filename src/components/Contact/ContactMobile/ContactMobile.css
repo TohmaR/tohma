@@ -93,7 +93,6 @@
 
     .contact__social{
         position: relative;
-        z-index: 10000;
     }
     .contact__social ul{
         display: flex;
