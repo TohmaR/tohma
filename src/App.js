@@ -28,7 +28,6 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
   const { pathname } = window.location;
   useEffect(() => {
-    window.scrollTo(0, 0);
     if(pathname === "/"){
       setTimeout(() => {
         document.body.style.overflowY = "scroll";

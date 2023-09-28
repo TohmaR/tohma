@@ -9,82 +9,77 @@ import "./LoadingPageDesktop.css"
 gsap.registerPlugin(MorphSVGPlugin);
 MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
-
-
 function LoadingPageDesktop() {
     const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
-    const history = useHistory()
-
-    useLayoutEffect (() => {
+    useLayoutEffect(() => {
         window.history.scrollRestoration = 'manual';
         document.body.style.overflowY = "hidden";
-    })
-    
+    });
+
+    const animateMorph = (selector, sequence, initialDelay = 0.2) => {
+        const timeline = gsap.timeline({ delay: initialDelay });
+        sequence.forEach(([action, ...args]) => {
+            timeline[action](selector, ...args);
+        });
+        return timeline;
+    };
+
     useEffect(() => {
+        animateMorph('.morph1__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", { delay: 0.8, morphSVG: '.morph1__2' }],
+            ["to", { delay : 0.5, morphSVG : '.morph1__4'}],
+            ["to", { delay : 0.5, morphSVG : '.morph1__8'}],
+            ["to", { delay : 0.5, morphSVG : '.morph1__9'}],
+            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}],
+        ], 0.2);
 
-        var tlMorph1 = gsap.timeline();
-        var tlMorph2 = gsap.timeline();
-        var tlMorph3 = gsap.timeline();
-        var tlMorph4 = gsap.timeline();
-        var tlMorph5 = gsap.timeline();
-        var tlBackground = gsap.timeline();
-        tlBackground.delay(6);
-        tlMorph1.delay(0.2);
-        tlMorph2.delay(0.4);
-        tlMorph3.delay(0.6);
-        tlMorph4.delay(0.8);
-        tlMorph5.delay(1);
-        
-        // T
-        tlMorph1.to('.morph1__initial', 0.7, {opacity : 1})
-                .to('.morph1__initial', {delay: 0.8 , morphSVG : '.morph1__2'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__4'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__8'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__9'})
-                .to('.morph1__initial', { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'})
-                .to('.morph1__initial', { delay : -0.6, duration : 0.5, y : -70});
-        
-        // O
-        tlMorph2.to('.morph2__initial', 0.7, {opacity : 1})
-                .to('.morph2__initial', {delay: 0.6 , morphSVG : '.morph2__°'})
-                .to('.morph2__initial', { delay : 0.5, morphSVG : '.morph2__5'})
-                .to('.morph2__initial', {delay: 0.5 , morphSVG : '.morph2__°'})
-                .to('.morph2__initial', { delay : 0.5, morphSVG : '.morph2__9'})
-                .to('.morph2__initial', { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'})
-                .to('.morph2__initial', { delay : -0.6, duration : 0.5, y : -70});
+        animateMorph('.morph2__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", { delay: 0.6, morphSVG: '.morph2__°' }],
+            ["to", { delay : 0.5, morphSVG : '.morph2__5'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph2__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph2__9'}],
+            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.4);
 
-        // M 
-        tlMorph3.to('.morph3__initial', 0.7, {opacity : 1})
-                .to('.morph3__initial', {delay: 0.4 , morphSVG : '.morph3__separator'})
-                .to('.morph3__initial', { delay : 0.5,morphSVG : '.morph3__initial'})
-                .to('.morph3__initial', {delay: 0.5 , morphSVG : '.morph3__separator'})
-                .to('.morph3__initial', { delay : 0.5,morphSVG : '.morph3__initial'})
-                .to('.morph3__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'})
-                .to('.morph3__initial', { delay : -0.6, duration : 0.5, y : -70});
+        animateMorph('.morph3__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {delay: 0.4 , morphSVG : '.morph3__separator'}],
+            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph3__separator'}],
+            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
+            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.6);
 
-        // H
-        tlMorph4.to('.morph4__initial', 0.7, {opacity : 1})
-                .to('.morph4__initial', {delay: 0.2 , morphSVG : '.morph4__°'})
-                .to('.morph4__initial', { delay : 0.5,morphSVG : '.morph4__initial'})
-                .to('.morph4__initial', {delay: 0.5 , morphSVG : '.morph4__°'})
-                .to('.morph4__initial', { delay : 0.5,morphSVG : '.morph4__initial'})
-                .to('.morph4__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'})
-                .to('.morph4__initial', { delay : -0.6, duration : 0.5, y : -70});
+        animateMorph('.morph4__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph4__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
+            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.8);
 
-        // A
-        tlMorph5.to('.morph5__initial', 0.7, {opacity : 1})
-                .to('.morph5__initial', {morphSVG : '.morph5__3'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__initial'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__5'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__initial'})
-                .to('.morph5__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph5__A'})
-                .to('.morph5__initial', { delay : -0.6, duration : 0.5, y : -70});
+        animateMorph('.morph5__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {morphSVG : '.morph5__3'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__5'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
+            ["to", { duration: 0.6, delay : 0.5, morphSVG : '.morph5__A'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 1);
 
-        tlBackground.to('.loadingPage__background', 0.7, {opacity: 0});
-        tlBackground.to('.loadingPage', {zIndex: 1});
+        const tlBackground = gsap.timeline({ delay: 6 });
+        tlBackground.to('.loadingPage__background', 0.7, { opacity: 0 });
+        tlBackground.to('.loadingPage', { zIndex: 1 });
 
-        if(isDesktop){
+        if (isDesktop) {
             let tlLogoHeader = gsap.timeline({
                 scrollTrigger: {
                     trigger: ".loadingPage",
@@ -94,20 +89,18 @@ function LoadingPageDesktop() {
                     toggleActions: "restart none none reverse"
                 },
             });
-            
-            
-            tlLogoHeader.to(".loadingPage svg",{ duration: 2, height : "21.482277121374867vh", width: "10.416666666666666vw", marginTop: 30})
-            tlLogoHeader.to(".loadingPage",{ height : "32.223415682062296vh", width: "15.625vw"})
-            tlLogoHeader.to(".loadingPage__background",{ display: "none"})    
+
+            tlLogoHeader.to(".loadingPage svg", { duration: 2, height: "21.482277121374867vh", width: "10.416666666666666vw", marginTop: 30 });
+            tlLogoHeader.to(".loadingPage", { height: "32.223415682062296vh", width: "15.625vw" });
+            tlLogoHeader.to(".loadingPage__background", { display: "none" });
         }
 
-      }, [history]);
+    }, []);
 
-	return(
-
+    return (
         <div className="loadingPage" data-scroll-section>
             <div className="loadingPage__background"></div>
-            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -100 400 600" style={{enableBackground: `new 0 0 1000 400`}}>
+            <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -100 400 600" style={{ enableBackground: `new 0 0 1000 400` }}>
                 <linearGradient id="Gradient" x1="0%" x2="0%" y1="0%" y2="80%" gradientUnits="userSpaceOnUse">
                     <stop offset="5%" stopColor="#e9ea0c" />
                     <stop offset="100%" stopColor="#14e97c" />
@@ -145,7 +138,7 @@ function LoadingPageDesktop() {
                 </g>
             </svg>
         </div>
-	);
+    );
 }
 
 export default LoadingPageDesktop;

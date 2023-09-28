@@ -1,266 +1,139 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import "./ProjectsDesktop.css"
+import "./ProjectsDesktop.css";
 import Splitting from "splitting";
-import "splitting/dist/splitting.css";
-import "splitting/dist/splitting-cells.css";
 
-//image
 import PresentationAmazon from "../../../assets/image/Amazon/PresentationGIF.gif";
 import PresentationSneakmart from "../../../assets/image/Sneakmart/PresentationGIF.gif";
 import PresentationHDMI from "../../../assets/image/HDMI/PresentationGIF.gif";
-import CursorView from "../../../assets/image/view-cursor.jpg"
+import CursorView from "../../../assets/image/view-cursor.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
+const transition = { duration: .6, ease: [.6, .01, -.05, .9] };
 
-export default function ProjectsDesktop (){
-    const panels = useRef([]);
-    const panelsContainer = useRef();
-    const createPanelsRefs = (panel, index) => {
-        panels.current[index] = panel;
-    };
+function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: `.${projectClass}`,
+      start: `${start} center`,
+      end: `+=${end}%`,
+      scrub: 1,
+      toggleActions: "restart none none reverse"
+    },
+  });
 
-    useEffect(() => {
+  let tlText = gsap.timeline({
+    scrollTrigger: {
+      trigger: `.${projectClass}`,
+      start: `${textStart} center`,
+      end: `+=200`,
+      scrub: 1,
+      toggleActions: "restart none none reverse"
+    },
+  });
 
-      Splitting({
-        /* target: String selector, Element, Array of Elements, or NodeList */
-        target: "[data-splitting]",
-        /* by: String of the plugin name */
-        by: "chars",
-        /* key: Optional String to prefix the CSS variables */
-        key: null
-      });
-      const totalPanels = panels.current.length;
+  tl.to(`.${projectClass}>.projects__photo__box`, { y: "100%" }, 0);
+  tl.to(`.${projectClass}>.projects__photo img`, { transform: "scale(1)" }, 0);
+  tlText.to(`.${projectClass} .char`, { y: "-100px", opacity: 1, stagger: 0.03 }, 0);
+  tlText.to(`.${projectClass} .projects__number`, { backgroundPosition: "-100%" }, 0);
+}
 
-     let verticalScroll =  gsap.to(panels.current, {
+export default function ProjectsDesktop() {
+  const panels = useRef([]);
+  const panelsContainer = useRef();
+
+  useEffect(() => {
+    Splitting({ target: "[data-splitting]", by: "chars" });
+
+    const totalPanels = panels.current.length;
+
+    let verticalScroll = gsap.to(panels.current, {
       xPercent: -100 * (totalPanels - 1),
       ease: "none",
       scrollTrigger: {
-          trigger: panelsContainer.current,
-          pin: true,
-          scrub: 1,
-          // base vertical scrolling on how wide the container is so it feels more natural.
-          end: () => "+=" + panelsContainer.current.offsetWidth
+        trigger: panelsContainer.current,
+        pin: true,
+        scrub: 1,
+        end: () => "+=" + panelsContainer.current.offsetWidth
       }
-      });
+    });
 
-      let tl1 = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects1",
-          start: "top 40%",
-          end: "+=40%",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
+    setupAnimationForProject("projects1", "top 40%", "40%", "top 25%", "200");
+    setupAnimationForProject("projects2", "250%", "80%", "300%", "200");
+    setupAnimationForProject("projects3", "510%", "80%", "550%", "200");
+    setupAnimationForProject("projects4", "800%", "80%", "850%", "200");
+
+    return () => verticalScroll.scrollTrigger.kill();
+  }, []);
+    // You can extend this array for more projects
+    const projects = [
+        {
+            key: 'sneakmart',
+            number: '001',
+            title: 'Sneakmart',
+            imgSrc: PresentationSneakmart,
+            link: '/Sneakmart'
         },
-      });
-
-      let tl1Text = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects1",
-          start: "top 25%",
-          end: "+=200",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
+        {
+            key: 'amazon',
+            number: '002',
+            title: 'Amazon',
+            imgSrc: PresentationAmazon,
+            link: '/Amazon'
         },
-      });
-      
-      tl1.to(".projects1>.projects__photo__box",{y: "100%"},0)
-      tl1.to(".projects1>.projects__photo img",{transform: "scale(1)"},0)
+        {
+            key: 'HDMI',
+            number: '003',
+            title: 'HDMI Ping',
+            imgSrc: PresentationHDMI,
+            link: '/HDMI'
+        }
+    ];
 
-      tl1Text.to(".projects1 .char",{y:"-100px", opacity:1, stagger:0.05,},0)
-      tl1Text.to(".projects1 .projects__number",{backgroundPosition: "-100%"},0)
-
-
-
-      let tl2= gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects2",
-          start: "250% center",
-          end: "+=80%",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-      
-      let tl2Text = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects2",
-          start: "300% center",
-          end: "+=200",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-
-      tl2.to(".projects2>.projects__photo__box",{y: "100%"},0)
-      tl2.to(".projects2>.projects__photo img",{transform: "scale(1)"},0);
-      tl2Text.to(".projects2 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-      tl2Text.to(".projects2 .projects__number",{backgroundPosition: "-100%"},0)
-
-
-      let tl3= gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects3",
-          start: "510% center",
-          end: "+=80%",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-
-      let tl3Text = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects3",
-          start: "550% center",
-          end: "+=200",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-      
-      tl3.to(".projects3>.projects__photo__box",{y: "100%"},0)
-      tl3.to(".projects3>.projects__photo img",{transform: "scale(1)"},0);
-      tl3Text.to(".projects3 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-      tl3Text.to(".projects3 .projects__number",{backgroundPosition: "-100%"},0)
-
-      let tl4= gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects4",
-          start: "800% center",
-          end: "+=80%",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-
-      let tl4Text = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".projects4",
-          start: "850% center",
-          end: "+=200",
-          scrub: 1,
-          toggleActions: "restart none none reverse"
-        },
-      });
-      
-      tl4.to(".projects4>.projects__photo__box",{y: "100%"},0)
-      tl4.to(".projects4>.projects__photo img",{transform: "scale(1)"},0);
-      tl4Text.to(".projects4 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-      tl4Text.to(".projects4 .projects__number",{backgroundPosition: "-100%"},0)
-
-      return () => verticalScroll.scrollTrigger.kill();
-    }, []);
-
-    
-
-    return( 
-      <div className="container" ref={panelsContainer} id="projects">
-        <section className="panel projects1" ref={(e) => createPanelsRefs(e, 0)} >
-          <div className="projects__container">
-            <motion.div 
-              key="projects__number__sneakmart"
-              transition={{ duration: .2, delay: 0.4 }}
-              exit={{ y: -50, opacity: 0 }}
-              className="projects__number">
-                <span>.</span>001
-            </motion.div>
-            <motion.h2 
-              key="projects__title__sneakmart"
-              transition={{ duration: .4, delay: 0.4 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="projects__title" 
-              data-splitting>
-                <span>Sneakmart</span>
-            </motion.h2>
-          </div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
-            <Link className="projects__link" to="/Sneakmart" refresh="true">
-              <motion.img 
-                key="projects__photo__sneakmart"
-                whileHover={{ scale : 1.2 }} 
-                transition={transition} 
-                src={PresentationSneakmart}
-              />
-            </Link>
-          </div>
-          <div className="projects__photo__box"></div>
-          <motion.div  
-            key="projects__box__sneakmart"
-            transition={{duration: 1.2, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
-            exit={{ y: "-90vh"}}
-            className="projects__photo__boxExit">
-          </motion.div>
-        </section>
-        <section className="panel projects2" ref={(e) => createPanelsRefs(e, 1)} >
-          <div className="projects__container">
-            <motion.div 
-              key="projects__number__amazon"
-              transition={{ duration: .4, delay: 0.3 }}
-              exit={{ y: -50, opacity: 0 }}
-              className="projects__number">
-                <span>.</span>002
-            </motion.div>
-            <motion.h2 
-              key="projects__title__amazon"
-              transition={{ duration: .2, delay: 0.4 }}
-              exit={{ y: 50, opacity: 0 }}
-              className="projects__title" 
-              data-splitting>
-                <span>amazon</span>
-            </motion.h2>
-          </div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
-            <Link className="projects__link" to="/Amazon" refresh="true">
-              <motion.img 
-                key="projects__photo__amazon"
-                whileHover={{ scale : 1.2 }} 
-                transition={transition} 
-                src={PresentationAmazon}
-              />
-            </Link>
-          </div>
-          <div className="projects__photo__box"></div>
-          <motion.div  
-            key="projects__box__amazon"
-            transition={{duration: .8, ease: [0.740, 0.120, 0.845, 0.210]}}
-            exit={{ y: "-90vh"}}
-            className="projects__photo__boxExit">
-          </motion.div>
-        </section>
-        <section className="panel projects3" ref={(e) => createPanelsRefs(e, 2)}>
-          <div className="projects__container">
-            <motion.div 
-              key="projects__number__HDMI"
-              transition={{ duration: .2, delay: 0.4 }}
-              exit={{ y: -50, opacity: 0 }}
-              className="projects__number">
-                <span>.</span>003
-            </motion.div>
-            <motion.h2 
-              exit={{opacity: 0}} 
-              transition={transition} 
-              className="projects__title" 
-              data-splitting>
-                <span>HDMI Ping</span>
-            </motion.h2>
-          </div>
-          <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
-            <Link className="projects__link" to="/HDMI" refresh="true">
-            <motion.img 
-                key="projects__photo__HDMI"
-                  whileHover={{ scale : 1.2 }} 
-                  transition={transition} 
-                  src={PresentationHDMI}
-                />
-            </Link>
-          </div>
-          <div className="projects__photo__box"></div>
-        </section>
-      </div>
-    )
+    return (
+        <div className="container" ref={panelsContainer} id="projects">
+            {projects.map((project, index) => (
+                <section className={`panel projects${index + 1}`} ref={(e) => panels.current[index] = e} key={project.key}>
+                    <div className="projects__container">
+                        <motion.div 
+                            key={`projects__number__${project.key}`}
+                            transition={{ duration: .2, delay: 0.4 }}
+                            exit={{ y: -50, opacity: 0 }}
+                            className="projects__number">
+                                <span>.</span>{project.number}
+                        </motion.div>
+                        <motion.h2 
+                            key={`projects__title__${project.key}`}
+                            transition={{ duration: .4, delay: 0.4 }}
+                            exit={{ y: 50, opacity: 0 }}
+                            className="projects__title" 
+                            data-splitting>
+                                <span>{project.title}</span>
+                        </motion.h2>
+                    </div>
+                    <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
+                        <Link className="projects__link" to={project.link} refresh="true">
+                            <motion.img 
+                                key={`projects__photo__${project.key}`}
+                                whileHover={{ scale : 1.2 }} 
+                                transition={transition} 
+                                src={project.imgSrc}
+                            />
+                        </Link>
+                    </div>
+                    <div className="projects__photo__box"></div>
+                    <motion.div  
+                        key={`projects__box__${project.key}`}
+                        transition={{duration: 1.2, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
+                        exit={{ y: "-90vh"}}
+                        className="projects__photo__boxExit">
+                    </motion.div>
+                </section>
+            ))}
+        </div>
+    );
 }

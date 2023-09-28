@@ -23,7 +23,6 @@ function HDMI(){
     const MobileSideEffect = useRef();
 
     useEffect(() => {
-        window.scrollTo(0, 0);
         Splitting({
             /* target: String selector, Element, Array of Elements, or NodeList */
             target: "[data-splitting]",
