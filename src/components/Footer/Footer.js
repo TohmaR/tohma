@@ -2,7 +2,7 @@ import "./Footer.css";
 function Footer(){
     return(
         <footer className="footer">
-            <div className="footer__design">Designed and developed by myself</div>
+            <div className="footer__design">Designed and developed with ❤ by myself</div>
             <div className="footer__date">
                 <svg version="1.1" 
                     id="Calque_1" 
