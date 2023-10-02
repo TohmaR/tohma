@@ -42,7 +42,7 @@
     font-size: 4vw;
   }
   
-  .projects__photo{
+  .projects__video{
     position: absolute;
     width: 55vw;
     height: 60vh;
@@ -53,14 +53,14 @@
     overflow: hidden;
   }
   
-  .projects__photo img{
+  .projects__video video{
     width: 100%;
     height: 100%;
-    transform: scale(2);
+    z-index: 100;
   }
   
   
-  .projects__photo:hover{
+  .projects__video:hover{
     filter: grayscale(0)
   }
   

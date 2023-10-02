@@ -3,7 +3,6 @@ import {
   Switch, 
   Route, 
   useLocation,
-  useHistory
 } from "react-router-dom"; 
 import { AnimatePresence } from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
@@ -26,61 +25,53 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const location = useLocation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-  const { pathname } = window.location;
+
   useEffect(() => {
-    if(pathname === "/"){
-      setTimeout(() => {
-        document.body.style.overflowY = "scroll";
-      }, "6000")
-    }
-    else{
-      document.body.style.overflowY = "scroll";
-    }
-    //Prevent hover effect on scroll 
-    var body = document.body,timer;
-    window.addEventListener('scroll', function() {
-      clearTimeout(timer);
-      if(!body.classList.contains('disable-hover')) {
-        body.classList.add('disable-hover')
+    document.body.style.overflowY = location.pathname === "/" ? "hidden" : "scroll";
+    
+    const handleScroll = () => {
+      const body = document.body;
+      clearTimeout(window.scrollTimeout);
+      
+      if (!body.classList.contains('disable-hover')) {
+        body.classList.add('disable-hover');
       }
-      timer = setTimeout(function(){
-        body.classList.remove('disable-hover')
-      },500);
-    }, false);
-  }, []);
+
+      window.scrollTimeout = setTimeout(() => {
+        body.classList.remove('disable-hover');
+      }, 500);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
+  const showCursor = isDesktop && ['/Amazon', '/Sneakmart', '/HDMI'].includes(location.pathname);
 
   return (
-   
     <div className="App min-safe-h-screen">
       <AnimatePresence initial={false} mode="wait">
+        <Hamburger />
         <ScrollToTop />
         <Social />
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
-            <Hamburger />
             <HomePage />
             <Footer />
-          </Route> 
+          </Route>
           <Route path="/Amazon">
             <Amazon />
-            <Hamburger />
-            {isDesktop && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgrounColor={"#e3e3e3"} />}
-          </Route> 
+          </Route>
           <Route path="/Sneakmart">
             <Sneakmart />
-            <Hamburger />
-            {isDesktop && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgrounColor={"#e3e3e3"} />}
-          </Route> 
+          </Route>
           <Route path="/HDMI">
             <HDMI />
-            <Hamburger />
-            {isDesktop && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgrounColor={"#e3e3e3"} />}
-          </Route> 
+          </Route>
         </Switch>
+        {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"#e3e3e3"} />}
       </AnimatePresence>
     </div>
-    
-
   );
 }
 

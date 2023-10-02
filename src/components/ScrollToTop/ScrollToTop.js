@@ -9,14 +9,19 @@ export default function ScrollToTop() {
   }, [pathname]);
 
   useEffect(() => {
-    const onBeforeUnload = (event) => {
-      window.scrollTo(0, 0);
-    };
-    window.addEventListener("beforeunload", onBeforeUnload);
+    // Si la propriété scrollRestoration est disponible
+    if ('scrollRestoration' in window.history) {
+        // Désactiver la restauration du scroll
+        window.history.scrollRestoration = 'manual';
 
-    return () => {
-      window.removeEventListener("beforeunload", onBeforeUnload);
-    };
+        // S'assurer que la page est bien en haut
+        window.scrollTo(0, 0);
+    } else {
+        // Pour les navigateurs qui ne supportent pas scrollRestoration
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+    }
   }, []);
 
   return null;

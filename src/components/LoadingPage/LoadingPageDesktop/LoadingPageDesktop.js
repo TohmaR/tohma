@@ -11,13 +11,14 @@ MorphSVGPlugin.convertToPath("circle, rect, ellipse, line, polygon, polyline");
 
 function LoadingPageDesktop() {
     const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-    useLayoutEffect(() => {
-        window.history.scrollRestoration = 'manual';
-        document.body.style.overflowY = "hidden";
-    });
-
+    
     const animateMorph = (selector, sequence, initialDelay = 0.2) => {
-        const timeline = gsap.timeline({ delay: initialDelay });
+        const timeline = gsap.timeline({ 
+            delay: initialDelay, 
+            onComplete: () => {
+                document.body.style.overflowY = "scroll";
+            }
+        });
         sequence.forEach(([action, ...args]) => {
             timeline[action](selector, ...args);
         });

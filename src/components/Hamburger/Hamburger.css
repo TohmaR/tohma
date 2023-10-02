@@ -115,18 +115,6 @@
     width: 100%;
     left: 0;
   }
-  /* .hamburger__nav--text::before {
-    background: linear-gradient(#e9ea0c, #14e97c);
-    height: 3px;
-    bottom: 0;
-    transform-origin: 100% 50%;
-    transform: scaleX(0);
-    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-  }
-  .hamburger__nav--text:hover::before {
-    transform-origin: 0% 50%;
-    transform: scaleX(1);
-  } */
   .hamburger__nav--text::after {
     content: attr(data-replace);
     height: 100%;
@@ -216,7 +204,7 @@ path { transition: fill .2s ease; }
         height: 25px;
     }
 
-    .hamburger__toggleBtn:hover > span {
+    .hamburger:hover > .hamburger__toggleBtn>span {
         background-color:black;
     }
     

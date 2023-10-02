@@ -6,9 +6,7 @@ import { Link } from "react-router-dom";
 import "./ProjectsDesktop.css";
 import Splitting from "splitting";
 
-import PresentationAmazon from "../../../assets/image/Amazon/PresentationGIF.gif";
-import PresentationSneakmart from "../../../assets/image/Sneakmart/PresentationGIF.gif";
-import PresentationHDMI from "../../../assets/image/HDMI/PresentationGIF.gif";
+import AmazonVideo from "../../../assets/image/Amazon/amazonVideo.mp4";
 import CursorView from "../../../assets/image/view-cursor.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -75,27 +73,29 @@ export default function ProjectsDesktop() {
             key: 'sneakmart',
             number: '001',
             title: 'Sneakmart',
-            imgSrc: PresentationSneakmart,
+            video: AmazonVideo,
             link: '/Sneakmart'
         },
         {
             key: 'amazon',
             number: '002',
             title: 'Amazon',
-            imgSrc: PresentationAmazon,
+            video: AmazonVideo,
             link: '/Amazon'
         },
         {
             key: 'HDMI',
             number: '003',
             title: 'HDMI Ping',
-            imgSrc: PresentationHDMI,
+            video: AmazonVideo,
             link: '/HDMI'
         }
     ];
 
     return (
-        <div className="container" ref={panelsContainer} id="projects">
+        <>
+          <div id="projects"></div>
+          <div className="container" ref={panelsContainer} id="projects">
             {projects.map((project, index) => (
                 <section className={`panel projects${index + 1}`} ref={(e) => panels.current[index] = e} key={project.key}>
                     <div className="projects__container">
@@ -115,14 +115,22 @@ export default function ProjectsDesktop() {
                                 <span>{project.title}</span>
                         </motion.h2>
                     </div>
-                    <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__photo">
+                    <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__video">
                         <Link className="projects__link" to={project.link} refresh="true">
-                            <motion.img 
-                                key={`projects__photo__${project.key}`}
-                                whileHover={{ scale : 1.2 }} 
-                                transition={transition} 
-                                src={project.imgSrc}
-                            />
+                          <motion.video
+                            width="100%" 
+                            height="100%"
+                            autoPlay
+                            playsInline
+                            loop
+                            muted
+                            poster="path/to/your/posterimage.jpg" 
+                            preload="none"
+                            loading="lazy"
+                          >
+                            <source src={project.video} type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </motion.video>
                         </Link>
                     </div>
                     <div className="projects__photo__box"></div>
@@ -134,6 +142,7 @@ export default function ProjectsDesktop() {
                     </motion.div>
                 </section>
             ))}
-        </div>
+          </div>
+        </>
     );
 }
