@@ -28,7 +28,7 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
     scrollTrigger: {
       trigger: `.${projectClass}`,
       start: `${textStart} center`,
-      end: `+=200`,
+      end: `+=${textEnd}`,
       scrub: 1,
       toggleActions: "restart none none reverse"
     },

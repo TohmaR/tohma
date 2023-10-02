@@ -9,7 +9,6 @@ gsap.registerPlugin(DrawSVGPlugin);
 
 function Home() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.inOut", delay: 6 } });
@@ -18,7 +17,7 @@ function Home() {
       .fromTo(".home__description div:nth-child(2)", { opacity: 0, x: 100 }, { opacity: 1, x: 0, }, 0)
       .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
       .fromTo(".home__background", { opacity: 0 }, { opacity: 1, delay: 6}, 0)
-      .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.5 }, 0)
+      .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.4}, 0)
       .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.5, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
 
     const scrollTriggerOptions = {
@@ -40,8 +39,7 @@ function Home() {
 
 	return(
 		<div className="home" id="home" data-scroll-section>
-			{isDesktop && <div className="home__background" ></div>}
-			{isTabletOrMobile && <div className="home__background--mobile"></div>}
+			{isDesktop ? <div className="home__background" ></div> : <div className="home__background--mobile"></div>}
 			<div className="home__gradient"></div>
 			<div className="home__description--container">
 				<img loading="lazy" className="home__arrow" src={Arrow} alt="arrow"/>
