@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import "./Home.css";
-import Arrow from "../../assets/image/arrow__left.png";
+import Arrow from "../../assets/image/arrow__left.webp";
 import { useMediaQuery } from 'react-responsive';
 import DrawSVGPlugin from "../../gsap/DrawSVGPlugin.min.js";
 
