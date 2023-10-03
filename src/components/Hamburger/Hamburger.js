@@ -7,16 +7,16 @@ import "./Hamburger.css";
 
 function HamburgerLink({ text, target, onClick }) {
     return (
-      <div onClick={() => onClick(target)}>
+      <li onClick={() => onClick(target)}>
         <div className="hamburger__text--container">
-          <li 
+          <div 
             className="hamburger__nav--text"
             data-replace={text}
           >
             <span>{text}</span>
-          </li>
+          </div>
         </div>
-      </div>
+      </li>
     );
 }
 
