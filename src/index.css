@@ -1,26 +1,21 @@
 @font-face {
-    font-family: "Goku";
-    src: local("Goku"),
-     url("./assets/fonts/Goku.ttf") format("truetype");
-  }
+   font-family: "Goku";
+   src: local("Goku"),
+   url("./assets/fonts/Goku.ttf") format("truetype");
+   font-display: swap;
+}
 
-  @font-face {
-    font-family: "MonumentExtended-Ultrabold";
-    src: local("MonumentExtended-Ultrabold"),
-     url("./assets/fonts/MonumentExtended-Ultrabold.otf") format("opentype");
-  }
-  @font-face {
-    font-family: "MonumentExtended-Regular";
-    src: local("MonumentExtended-Regular"),
-     url("./assets/fonts/MonumentExtended-Regular.otf") format("opentype");
-  }
-  @font-face {
-    font-family: "Sk-Modernist-Bold";
-    src: local("Sk-Modernist-Bold"),
-     url("./assets/fonts/Sk-Modernist/Sk-Modernist-Bold.otf") format("opentype");
-  }
-  @font-face {
-    font-family: "Sk-Modernist-Regular";
-    src: local("Sk-Modernist-Regular"),
-     url("./assets/fonts/Sk-Modernist/Sk-Modernist-Regular.otf") format("opentype");
-  }
+@font-face {
+   font-family: "MonumentExtended-Regular";
+   src: local("MonumentExtended-Regular"),
+   url("./assets/fonts/MonumentExtended-Regular.otf") format("opentype");
+   font-display: swap;
+}
+
+@font-face {
+   font-family: "Sk-Modernist-Bold";
+   src: local("Sk-Modernist-Bold"),
+   url("./assets/fonts/Sk-Modernist-Bold.otf") format("opentype");
+   font-display: swap;
+}
+ 
