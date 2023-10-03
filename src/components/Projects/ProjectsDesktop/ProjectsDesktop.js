@@ -116,7 +116,7 @@ export default function ProjectsDesktop() {
                         </motion.h2>
                     </div>
                     <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__video">
-                        <Link className="projects__link" to={project.link} refresh="true">
+                        <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
                           <motion.video
                             width="100%" 
                             height="100%"
