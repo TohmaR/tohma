@@ -43,7 +43,7 @@ function Home() {
 			<div className="home__gradient"></div>
 			<div className="home__description--container">
 				<div className="home__arrow--container">
-					<img loading="lazy" className="home__arrow" src={Arrow} alt="arrow"/>
+					<img className="home__arrow" src={Arrow} alt="arrow"/>
 				</div>
 				<svg className="home__circle" version="1.1"  
 					x="0px" y="0px"
