@@ -65,6 +65,7 @@ function Social() {
             <a
               href={icon.link}
               target="_blank"
+              aria-label={icon.id}
             >
               {icon.svg}
             </a>
