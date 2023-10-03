@@ -35,7 +35,7 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
   });
 
   tl.to(`.${projectClass}>.projects__photo__box`, { y: "100%" }, 0);
-  tl.to(`.${projectClass}>.projects__photo img`, { transform: "scale(1)" }, 0);
+  tl.to(`.${projectClass}>.projects__video video`, { transform: "scale(1)" }, 0);
   tlText.to(`.${projectClass} .char`, { y: "-100px", opacity: 1, stagger: 0.03 }, 0);
   tlText.to(`.${projectClass} .projects__number`, { backgroundPosition: "-100%" }, 0);
 }
@@ -63,7 +63,7 @@ export default function ProjectsDesktop() {
     setupAnimationForProject("projects1", "top 40%", "40%", "top 25%", "200");
     setupAnimationForProject("projects2", "250%", "80%", "300%", "200");
     setupAnimationForProject("projects3", "510%", "80%", "550%", "200");
-    setupAnimationForProject("projects4", "800%", "80%", "850%", "200");
+    // setupAnimationForProject("projects4", "800%", "80%", "850%", "200");
 
     return () => verticalScroll.scrollTrigger.kill();
   }, []);
