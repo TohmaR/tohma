@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -8,11 +8,26 @@ import "./ContactDesktop.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function ContactDesktop() {
+    const [isIntersecting, setIsIntersecting] = useState(false);
+    const ref = useRef();
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: `AIzaSyC8hEujlqPx5QCzzgDZ8XhWZ-xzLhGJwjM`,
+        preventLoading: !isIntersecting,
     });
 
     useEffect(() => {
+
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsIntersecting(entry.isIntersecting),
+            { 
+                threshold: 0.1, 
+            }
+        );
+
+        if (ref.current) {
+            observer.observe(ref.current);
+        }
+
         const mapBoxAnimation = gsap.to(".map__box", {
             x: "100%",
             duration: 1.6,
@@ -54,6 +69,7 @@ function ContactDesktop() {
             .to("i:nth-child(12)", { duration: 0.2, opacity: 1 }, '-=0.2');
 
         return () => {
+            observer.disconnect();
             mapBoxAnimation.scrollTrigger.kill();
             tlLetter.scrollTrigger.kill();
         };
