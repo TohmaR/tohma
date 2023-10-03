@@ -70,14 +70,20 @@
   overflow-x: hidden;
 }
 
-.home__arrow{
+.home__arrow--container{
   position: absolute;
   top: -3vh;
   left: 8vw;
   width:25vw;
   height:15vh;
-  transform: rotateY(55deg);
+  transform: rotateZ(20deg);
+}
+
+.home__arrow{
+  width: 100%;
+  height: 100%;
   opacity: 0.8;
+  aspect-ratio: 0.77;
 }
 
 .home__circle{
@@ -171,17 +177,14 @@
 
   }
 
-  .home__arrow{
+  .home__arrow--container{
     position: absolute;
     top: -20vh;
     left: 33vw;
-    width:10.416666666666666vw;
-    height:27.926960257787325vh;
+    width:200px;
+    height: 100%;
     transform: rotateZ(20deg);
-    opacity: 0.8;
-  }
-  
-  
+  } 
  
   .scrollIndicator{
     bottom: -75px;

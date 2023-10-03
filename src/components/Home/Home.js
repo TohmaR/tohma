@@ -42,7 +42,9 @@ function Home() {
 			{isDesktop ? <div className="home__background" ></div> : <div className="home__background--mobile"></div>}
 			<div className="home__gradient"></div>
 			<div className="home__description--container">
-				<img className="home__arrow" src={Arrow} alt="arrow"/>
+				<div className="home__arrow--container">
+					<img className="home__arrow" src={Arrow} alt="arrow"/>
+				</div>
 				<svg className="home__circle" version="1.1"  
 					x="0px" y="0px"
 					viewBox="0 0 1190.55 841.89" 
