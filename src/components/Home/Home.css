@@ -70,16 +70,9 @@
   overflow-x: hidden;
 }
 
-.home__arrow--container{
-  position: absolute;
-  top: -3vh;
-  width:25vw;
-  height:15vh;
-}
-
 .home__arrow{
+  aspect-ratio: 0.77;
   width: 100%;
-  height: 100%;
   opacity: 0.8;
 }
 
