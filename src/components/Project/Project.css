@@ -50,7 +50,7 @@
     flex-direction: column;
 }
 
-.project__photo--enter{
+.project__video--enter{
     display: flex;
     position: relative;
     align-items: center;
@@ -58,11 +58,10 @@
     overflow: hidden;
 }
 
-.project__photo--enter img{
-    width: 100vw;
+.project__video--enter video{
+    width: 80vw;
     height: 80vh;
     padding: 0 30px;
-    transform: scale(2);
 }
 
 .project__photo__box{

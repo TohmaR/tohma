@@ -7,7 +7,7 @@ import "splitting/dist/splitting-cells.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion"
 import Photo1 from "../../assets/image/Amazon/end.webp";
-import PresentationGIF from "../../assets/image/Amazon/PresentationGIF.gif";
+import Video from "../../assets/image/Amazon/amazonVideo.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
 import Responsive from "../../assets/image/Amazon/responsive.jpg";
@@ -97,8 +97,21 @@ function Amazon(){
                 </svg>
             </div>
             <div className="project__container">
-                <div className="project__photo--enter">
-                    <img src={PresentationGIF}/>
+                <div className="project__video--enter">
+                    <video
+                        width="100%" 
+                        height="100%"
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        poster="path/to/your/posterimage.jpg" 
+                        preload="none"
+                        loading="lazy"
+                        >
+                        <source src={Video} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
                 <div className="project__photo__box"></div>
                 <motion.div  

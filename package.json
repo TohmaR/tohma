@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "@react-google-maps/api": "^2.18.1",
     "@react-three/drei": "^9.80.9",
     "@react-three/fiber": "^8.13.7",

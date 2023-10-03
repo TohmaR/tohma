@@ -4,6 +4,7 @@ import {
   Route, 
   useLocation,
 } from "react-router-dom"; 
+import loadable from '@loadable/component';
 import { AnimatePresence } from "framer-motion";
 import { useMediaQuery } from 'react-responsive';
 import HomePage from "./Pages/Home";
@@ -11,14 +12,15 @@ import './App.css';
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-import Amazon from "./components/Project/Amazon";
-import Sneakmart from "./components/Project/Sneakmart";
-import HDMI from "./components/Project/HDMI";
 import Social from "./components/Social/Social";
 import Hamburger from "./components/Hamburger/Hamburger";
 import { Cursor } from "react-creative-cursor";
 import 'react-creative-cursor/dist/styles.css';
 import Footer from "./components/Footer/Footer";
+
+export const Amazon = loadable(() => import("./components/Project/Amazon"));
+export const Sneakmart = loadable(() => import("./components/Project/Sneakmart"));
+export const HDMI = loadable(() => import("./components/Project/HDMI"));
 
 gsap.registerPlugin(ScrollTrigger);
 
