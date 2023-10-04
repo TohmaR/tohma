@@ -70,20 +70,13 @@
   overflow-x: hidden;
 }
 
-.home__arrow--container{
-  position: absolute;
-  top: -3vh;
-  left: 8vw;
-  width:25vw;
-  height:15vh;
-  transform: rotateZ(20deg);
-}
-
 .home__arrow{
-  width: 100%;
-  height: 100%;
-  opacity: 0.8;
-  aspect-ratio: 0.77;
+  position: absolute;
+  width: 10vw;
+  height: auto;
+  right : -11vw;
+  top: -20vh;
+  transform: rotateZ(20deg);
 }
 
 .home__circle{
@@ -177,15 +170,6 @@
 
   }
 
-  .home__arrow--container{
-    position: absolute;
-    top: -20vh;
-    left: 33vw;
-    width:200px;
-    height: 100%;
-    transform: rotateZ(20deg);
-  } 
- 
   .scrollIndicator{
     bottom: -75px;
     height: 200px;
