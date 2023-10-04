@@ -80,7 +80,7 @@
   
   .projects__title {
     position: absolute;
-    font-size: 11vw;
+    font-size: 10vw;
     line-height: 0.8;
     counter-increment: section;
     text-align: center;
