@@ -53,9 +53,9 @@ function App() {
   return (
     <div className="App min-safe-h-screen">
       <AnimatePresence initial={false} mode="wait">
-        <Hamburger />
-        <ScrollToTop />
-        <Social />
+        <Hamburger key="hamburger" />
+        <ScrollToTop key="scrollToTop" />
+        <Social key="social"/>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />

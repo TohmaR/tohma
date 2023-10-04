@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -36,22 +36,22 @@ function ContactDesktop() {
         }).delay(1.2);
      
         tlLetter
-            .to('i:nth-child(2)', { duration: 0.2, opacity: 1 })
-            .to('i:nth-child(11)', { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to('i:nth-child(6)', { duration: 0.2, opacity: 1 })
-            .to('i:nth-child(13)', { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(16)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(1)", { duration: 0.2, opacity: 1 })
-            .to("i:nth-child(8)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(3)", { duration: 0.2, opacity: 1 })
-            .to("i:nth-child(9)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(10)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(5)", { duration: 0.2, opacity: 1 })
-            .to("i:nth-child(14)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(4)", { duration: 0.2, opacity: 1 })
-            .to("i:nth-child(15)", { duration: 0.2, opacity: 1 }, '-=0.2')
-            .to("i:nth-child(7)", { duration: 0.2, opacity: 1 })
-            .to("i:nth-child(12)", { duration: 0.2, opacity: 1 }, '-=0.2');
+            .to('.letter-2', { duration: 0.2, opacity: 1 })
+            .to('.letter-11', { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to('.letter-6', { duration: 0.2, opacity: 1 })
+            .to('.letter-13', { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-16", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-1", { duration: 0.2, opacity: 1 })
+            .to(".letter-8", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-3", { duration: 0.2, opacity: 1 })
+            .to(".letter-9", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-10", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-5", { duration: 0.2, opacity: 1 })
+            .to(".letter-14", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-4", { duration: 0.2, opacity: 1 })
+            .to(".letter-15", { duration: 0.2, opacity: 1 }, '-=0.2')
+            .to(".letter-7", { duration: 0.2, opacity: 1 })
+            .to(".letter-12", { duration: 0.2, opacity: 1 }, '-=0.2');
 
         return () => {
             mapBoxAnimation.scrollTrigger.kill();
@@ -87,10 +87,10 @@ function ContactDesktop() {
                 
                 <div className="letters clearfix">
                     <div className="letters__top">
-                        {lettersTop.map((letter, index) => <i key={index}>{letter}</i>)}
+                        {lettersTop.map((letter, index) => <i key={index} className={`letter-${index + 1}`}>{letter}</i>)}
                     </div>
                     <div className="letters__bottom">
-                        {lettersBottom.map((letter, index) => <i key={index}>{letter}</i>)}
+                        {lettersBottom.map((letter, index) => <i key={index} className={`letter-${index +9}`}>{letter}</i>)}
                     </div>
                 </div>
             </div>

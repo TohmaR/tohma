@@ -115,7 +115,7 @@ function HDMI(){
                 </div>
                 <div className="project__photo__box"></div>
                 <motion.div  
-                    key="projects__box__sneakmart"
+                    key="projects__box__hdmi"
                     transition={{duration: 0.8, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
                     exit={{ y: "-100vh"}}
                     className="project__photo__boxExit">
