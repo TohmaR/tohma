@@ -41,7 +41,7 @@ function Sneakmart(){
         tlIndicator.delay(.5); 
         tlPhoto.to(".project__video--enter video",{ duration: 1.4, transform: "scale(1)"});
         tlPhotobox.to(".project__photo__box",{ duration: 1.4, y: "100%", ease:"power3.inOut"});
-        tlText.fromTo(".project__title .char",{y:"150px", opacity:0},{duration: .8,y:"0px", opacity:1, stagger:0.02, ease:"power3.inOut"},0)
+        tlText.fromTo(".project__title .char",{y:"150px", autoAlpha:0},{duration: .8,y:"0px", autoAlpha:1, stagger:0.02, ease:"power3.inOut"},0)
         tlText.to(".project__container:nth-child(3)",{autoAlpha: 1, ease:"power3.inOut"},0)
         tlIndicator.fromTo(".project__scrollIndicator",{ opacity: 0, y: 100}, { duration: 1, opacity: 1, y: 0},0)
 
