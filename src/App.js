@@ -53,22 +53,28 @@ function App() {
   return (
     <div className="App min-safe-h-screen">
       <AnimatePresence initial={false} mode="wait">
-        <Hamburger key="hamburger" />
         <ScrollToTop key="scrollToTop" />
-        <Social key="social"/>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />
+            <Hamburger />
+            <Social/>
             <Footer />
           </Route>
           <Route path="/Amazon">
             <Amazon />
+            <Hamburger key="hamburger" />
+            <Social/>
           </Route>
           <Route path="/Sneakmart">
             <Sneakmart />
+            <Hamburger key="hamburger" />
+            <Social/>
           </Route>
           <Route path="/HDMI">
             <HDMI />
+            <Hamburger key="hamburger" />
+            <Social/>
           </Route>
         </Switch>
         {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"#e3e3e3"} />}

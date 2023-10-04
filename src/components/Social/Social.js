@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 import "./Social.css";
 import 'react-creative-cursor/dist/styles.css';
 
@@ -11,7 +12,7 @@ function Social() {
 
     const { pathname } = window.location;
     if (pathname === "/") {
-      tlSocial.delay(6);
+      tlSocial.delay(6.1);
     }
   }, []);
 
@@ -53,7 +54,12 @@ function Social() {
   ];
 
   return (
-    <div className="social">
+    <motion.div 
+      className="social"
+      key="social"
+      exit={{ opacity: 0, y: 100 }}
+      transition={{ duration: 0.5, delay: 0.4 }}
+    >
       <ul>
         {socialIcons.map((icon) => (
           <li 
@@ -72,7 +78,7 @@ function Social() {
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }
 

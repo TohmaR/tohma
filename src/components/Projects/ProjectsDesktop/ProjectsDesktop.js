@@ -5,13 +5,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import "./ProjectsDesktop.css";
 import Splitting from "splitting";
-
-import AmazonVideo from "../../../assets/image/Amazon/amazonVideo.mp4";
+import ProjectsList from "../ProjectsList"
 import CursorView from "../../../assets/image/view-cursor.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
-
-const transition = { duration: .6, ease: [.6, .01, -.05, .9] };
 
 function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
   let tl = gsap.timeline({
@@ -67,36 +64,12 @@ export default function ProjectsDesktop() {
 
     return () => verticalScroll.scrollTrigger.kill();
   }, []);
-    // You can extend this array for more projects
-    const projects = [
-        {
-            key: 'sneakmart',
-            number: '001',
-            title: 'Sneakmart',
-            video: AmazonVideo,
-            link: '/Sneakmart'
-        },
-        {
-            key: 'amazon',
-            number: '002',
-            title: 'Amazon',
-            video: AmazonVideo,
-            link: '/Amazon'
-        },
-        {
-            key: 'HDMI',
-            number: '003',
-            title: 'HDMI Ping',
-            video: AmazonVideo,
-            link: '/HDMI'
-        }
-    ];
 
     return (
         <>
           <div id="projects"></div>
-          <div className="container" ref={panelsContainer} id="projects">
-            {projects.map((project, index) => (
+          <div className="container" ref={panelsContainer}>
+            {ProjectsList.map((project, index) => (
                 <section className={`panel projects${index + 1}`} ref={(e) => panels.current[index] = e} key={project.key}>
                     <div className="projects__container">
                         <motion.div 

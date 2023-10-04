@@ -2,6 +2,7 @@ import React, { useLayoutEffect,useEffect, useState, useRef, useCallback } from 
 import { gsap } from 'gsap';
 import { scroller } from "react-scroll";
 import {useHistory} from "react-router-dom";
+import { motion } from "framer-motion";
 import PDF from "../../assets/pdf/CV.pdf";
 import "./Hamburger.css";
 
@@ -95,7 +96,7 @@ function Hamburger(){
   useEffect(() => {
     let tlToggleMenu = gsap.timeline();
     if (history.location.pathname === "/") {
-      tlToggleMenu.delay(5.9);
+      tlToggleMenu.delay(6.1);
     }
     tlToggleMenu.to(".hamburger", { opacity: 1, top: 0 }, 0);
   }, []);
@@ -159,13 +160,21 @@ function Hamburger(){
 
   return(
       <div>
-          <div data-cursor-stick="#stick-hamburger" data-cursor-size="70px" data-cursor-color="#87ea40" className="hamburger">
+          <motion.div 
+            data-cursor-stick="#stick-hamburger" 
+            data-cursor-size="70px" 
+            data-cursor-color="#87ea40" 
+            className="hamburger"
+            key="hamburger"
+            exit={{ opacity: 0, y: -150 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+          >
               <div id="stick-hamburger" className={toggleMenu ? "hamburger__toggleBtn open" : "hamburger__toggleBtn"} onClick={() => setToggleMenu(!toggleMenu)}>
                   <span></span>
                   <span></span>
                   <span></span>
               </div>
-          </div>
+          </motion.div>
           <div className="hamburger__menu">
             <div className="hamburger__nav">
               <ul>
