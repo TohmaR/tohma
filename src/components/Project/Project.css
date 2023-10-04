@@ -271,7 +271,7 @@
         margin-left: 0;
     }
 
-    .project__photo--enter{
+    .project__video--enter{
         display: flex;
         position: relative;
         align-items: center;
@@ -279,7 +279,7 @@
         overflow: hidden;
     }
     
-    .project__photo--enter img{
+    .project__video--enter video{
         width: 80vw;
         height: 100%;
         padding: 0;
