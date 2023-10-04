@@ -72,11 +72,10 @@
 
 .home__arrow{
   position: absolute;
-  width: 10vw;
+  width: 15vw;
   height: auto;
-  right : -11vw;
-  top: -20vh;
-  transform: rotateZ(20deg);
+  left : 10vw;
+  top: 0;
 }
 
 .home__circle{
@@ -160,6 +159,16 @@
   
   .home__description div span{
    font-size: 1vw;
+  }
+
+  .home__arrow{
+    position: absolute;
+    width: 8vw;
+    height: auto;
+    left: auto;
+    right : -11vw;
+    top: -20vh;
+    transform: rotateZ(20deg);
   }
 
   .home__circle{
