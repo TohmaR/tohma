@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from "react"
+import React, {useLayoutEffect, useRef} from "react"
 import gsap from "gsap";
 import { Link } from "react-router-dom";
 import Splitting from "splitting";
@@ -22,7 +22,7 @@ function Sneakmart(){
     const MobileCenterEffect = useRef();
     const MobileSideEffect = useRef();
 
-    useEffect(() => {
+    useLayoutEffect(() => {
         Splitting({
             /* target: String selector, Element, Array of Elements, or NodeList */
             target: "[data-splitting]",
@@ -41,9 +41,9 @@ function Sneakmart(){
         tlIndicator.delay(.5); 
         tlPhoto.to(".project__video--enter video",{ duration: 1.4, transform: "scale(1)"});
         tlPhotobox.to(".project__photo__box",{ duration: 1.4, y: "100%", ease:"power3.inOut"});
-        tlText.fromTo(".project__title .char",{y:"150px", autoAlpha:0},{duration: .8,y:"0px", autoAlpha:1, stagger:0.02, ease:"power3.inOut"},0)
+        tlText.fromTo(".project__title .char",{y:"150px", opacity:0},{duration: .8,y:"0px", opacity:1, stagger:0.02, ease:"power3.inOut"},0)
         tlText.to(".project__container:nth-child(3)",{autoAlpha: 1, ease:"power3.inOut"},0)
-        tlIndicator.fromTo(".project__scrollIndicator",{ opacity: 0, y: 100}, { duration: 1, opacity: 1, y: 0},0)
+        tlIndicator.fromTo(".project__scrollIndicator",{ opacity: 0, y: 100}, { duration: 0.8, opacity: 1, y: 0},0)
 
         let tlMobileEffect= gsap.timeline({
             scrollTrigger: {
