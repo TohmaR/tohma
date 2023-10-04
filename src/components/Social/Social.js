@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import "./Social.css";
 import 'react-creative-cursor/dist/styles.css';
 
 function Social() {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tlSocial = gsap.timeline();
 
     tlSocial.fromTo(".social", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5 });
