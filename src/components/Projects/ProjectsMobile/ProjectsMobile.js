@@ -46,9 +46,9 @@ export default function ProjectsDesktop (){
       key: null
     });
   
-    setupAnimationForProject("projects1", "top 55%", "300", "top 35%", "100");
-    setupAnimationForProject("projects2", "top 55%", "300", "top 35%", "100");
-    setupAnimationForProject("projects3", "top 55%", "300", "top 35%", "100");
+    setupAnimationForProject("projects1", "top 55%", "300", "top 40%", "100");
+    setupAnimationForProject("projects2", "top 55%", "300", "top 40%", "100");
+    setupAnimationForProject("projects3", "top 55%", "300", "top 40%", "100");
   }, []);
 
     return( 
