@@ -47,7 +47,7 @@ function Hamburger(){
   const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 2000});
 
   const toggleMenuDelay = 1000;
-  const scrollOverflowDelay = 8500;
+  const scrollOverflowDelay = 7900;
 
   const navigationLinks = [
     { text: 'Home', target: 'home' },
