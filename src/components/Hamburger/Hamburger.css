@@ -147,6 +147,7 @@
     height: 20vh;
     z-index: 98;
     fill: url(#Gradient);
+    cursor: pointer;
 }
 
 .hamburger__logo svg{

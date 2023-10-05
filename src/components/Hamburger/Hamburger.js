@@ -42,6 +42,7 @@ function Hamburger(){
   const logoLettersRef = useRef([]);
   const hamburgerSocialRef = useRef();
   const [toggleMenu, setToggleMenu] = useState(null);
+  const [clickable, setClickable] = useState(false);
 
   const history = useHistory();
   const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 2000});
@@ -102,8 +103,9 @@ function Hamburger(){
   }, []);
   
   useLayoutEffect(() => {
-    menuTimeline.current = gsap.timeline({ paused: true });
+    menuTimeline.current = gsap.timeline({ paused: true, onComplete: () => {setClickable(!clickable);} });
     let ctx = gsap.context(() => {
+      
       menuTimeline.current.to(".hamburger__menu", { duration: 0.8, top: 0 });
       menuTimeline.current.to(".hamburger__nav--text", {
         y: 0,
@@ -140,6 +142,7 @@ function Hamburger(){
     }
   
     const handleScroll = () => {
+      setClickable(!clickable)
       if (history.location.pathname !== '/') {
         history.push('/');
         setTimeout(() => {
@@ -196,7 +199,7 @@ function Hamburger(){
                 </ul>
             </div>
           </div>
-          <div className="hamburger__logo">
+          <div className="hamburger__logo" target="home" onClick={scrollToPage} style={{pointerEvents: clickable ? '' : 'none'}} >
               <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -100 400 600" style={{enableBackground: `new 0 0 1000 400`}}>
                   <linearGradient id="Gradient" x1="0%" x2="0%" y1="0%" y2="80%" gradientUnits="userSpaceOnUse">
                       <stop offset="5%" stopColor="#e9ea0c" />

@@ -18,7 +18,7 @@ function Home() {
       .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
       .fromTo(".home__background", { opacity: 0 }, { opacity: 1, delay: 6}, 0)
       .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.4}, 0)
-      .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.5, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
+      .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.4, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
 
     const scrollTriggerOptions = {
       trigger: ".home",
