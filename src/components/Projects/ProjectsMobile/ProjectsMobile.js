@@ -59,6 +59,7 @@ export default function ProjectsDesktop (){
     return( 
       <div className="container" id="projects">
         {ProjectsList.map((project, index) => (
+          <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
             <section className={`panel projects${index + 1}`} key={project.key}>
                 <div className="projects__container">
                     <motion.div 
@@ -78,22 +79,20 @@ export default function ProjectsDesktop (){
                     </motion.h2>
                 </div>
                 <div className="projects__video">
-                    <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
-                      <motion.video
-                        width="100%" 
-                        height="100%"
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        poster="path/to/your/posterimage.jpg" 
-                        preload="none"
-                        loading="lazy"
-                      >
-                        <source src={project.videoMobile} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </motion.video>
-                    </Link>
+                  <motion.video
+                    width="100%" 
+                    height="100%"
+                    autoPlay
+                    playsInline
+                    loop
+                    muted
+                    poster="path/to/your/posterimage.jpg" 
+                    preload="none"
+                    loading="lazy"
+                  >
+                    <source src={project.videoMobile} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </motion.video>
                 </div>
                 <div className="projects__photo__box"></div>
                 <motion.div  
@@ -103,6 +102,7 @@ export default function ProjectsDesktop (){
                     className="projects__photo__boxExit">
                 </motion.div>
             </section>
+          </Link>
         ))}
       </div>
 
