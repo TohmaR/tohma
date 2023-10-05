@@ -11,8 +11,6 @@ import ProjectsList from "../ProjectsList"
 
 gsap.registerPlugin(ScrollTrigger);
 
-const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
-
 function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -43,11 +41,8 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
 export default function ProjectsDesktop (){
   useEffect(() => {
     Splitting({
-      /* target: String selector, Element, Array of Elements, or NodeList */
       target: "[data-splitting]",
-      /* by: String of the plugin name */
       by: "chars",
-      /* key: Optional String to prefix the CSS variables */
       key: null
     });
   
