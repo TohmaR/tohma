@@ -19,10 +19,39 @@
     padding: 50px;
     overflow: hidden;
   }
+
+  .projects__container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left:8vw;
+  }
+
+  .projects__title {
+    position: relative;
+    font-size: 10vw;
+    z-index: 2;
+    font-family: "MonumentExtended-Regular";
+    font-weight: 600;
+    -webkit-filter: drop-shadow(2px 1px #333);
+    bottom: -100px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .projects__title span{
+    background-image: linear-gradient(to bottom, #e9ea0c, #14e97c);
+    background-clip: text;
+    color: transparent;
+  }
+  
+  .projects__title .char{
+    opacity: 0;
+  }
   
   .projects__number{
-    position: absolute;
-    left: 6vw;
+    position: relative;
     font-size: 20vw;
     font-weight: 900;
     font-family: "goku";
@@ -39,8 +68,6 @@
     background-image: linear-gradient(to bottom, #e9ea0c 55%, #14e97c);
     background-clip: text;
     color: transparent;
-    font-size: 20vw;
-    
   }
   
   .projects__photo{
@@ -57,7 +84,6 @@
     height: 100%;
     transform: scale(2);
   }
-  
   
   .projects__photo:hover{
     filter: grayscale(0)
@@ -77,33 +103,5 @@
     background-color: black;
     bottom: -80vh;
   }
-  
-  .projects__title {
-    position: absolute;
-    font-size: 10vw;
-    line-height: 0.8;
-    counter-increment: section;
-    text-align: center;
-    display: grid;
-    gap: 2rem;
-    z-index: 2;
-    font-family: "MonumentExtended-Regular";
-    bottom: 22vh;
-    left: 6vw;
-    font-weight: 600;
-    -webkit-filter: drop-shadow(2px 1px #333);
-  }
-  
-  .projects__title span{
-    background-image: linear-gradient(to bottom, #e9ea0c, #14e97c);
-    background-clip: text;
-    color: transparent;
-    padding: 5px 0;
-  }
-  
-  .projects__title .char{
-    opacity: 0;
-  }
-  
 }
   

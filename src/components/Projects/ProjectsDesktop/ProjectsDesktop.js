@@ -101,7 +101,7 @@ export default function ProjectsDesktop() {
                             preload="none"
                             loading="lazy"
                           >
-                            <source src={project.video} type="video/mp4" />
+                            <source src={project.videoDesktop} type="video/mp4" />
                             Your browser does not support the video tag.
                           </motion.video>
                         </Link>

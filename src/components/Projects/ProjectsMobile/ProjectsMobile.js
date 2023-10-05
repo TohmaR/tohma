@@ -13,6 +13,33 @@ gsap.registerPlugin(ScrollTrigger);
 
 const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
 
+function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: `.${projectClass}`,
+      start: `${start}`,
+      end: `+=${end}`,
+      scrub: 1,
+      toggleActions: "restart none none reverse"
+    },
+  });
+
+  let tlText = gsap.timeline({
+    scrollTrigger: {
+      trigger: `.${projectClass}`,
+      start: `${textStart}`,
+      end: `+=${textEnd}`,
+      scrub: 1,
+      toggleActions: "restart none none reverse"
+    },
+  });
+
+  tl.to(`.${projectClass}>.projects__photo__box`, { y: "100%" }, 0);
+  tl.to(`.${projectClass}>.projects__video video`, { transform: "scale(1)" }, 0);
+  tlText.to(`.${projectClass} .char`, { y: "-100px", opacity: 1, stagger: 0.03 }, 0);
+  tlText.to(`.${projectClass} .projects__number`, { backgroundPosition: "-100%" }, 0);
+}
+
 export default function ProjectsDesktop (){
   useEffect(() => {
     Splitting({
@@ -24,111 +51,9 @@ export default function ProjectsDesktop (){
       key: null
     });
   
-
-    let tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects1",
-        start: "top 45%",
-        end: "+=300",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-
-    let tl1Text = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects1",
-        start: "top 25%",
-        end: "+=100",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-    
-    tl1.to(".projects1>.projects__photo__box",{y: "100%"},0)
-    tl1.to(".projects1>.projects__photo img",{transform: "scale(1)"},0)
-
-    tl1Text.to(".projects1 .char",{y:"-100px", opacity:1, stagger:0.05,},0)
-    tl1Text.to(".projects1 .projects__number",{backgroundPosition: "-100%"},0)
-
-
-
-    let tl2= gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects2",
-        start: "top 45%",
-        end: "+=300",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-    
-    let tl2Text = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects2",
-        start: "top 25%",
-        end: "+=100",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-
-    tl2.to(".projects2>.projects__photo__box",{y: "100%"},0)
-    tl2.to(".projects2>.projects__photo img",{transform: "scale(1)"},0);
-    tl2Text.to(".projects2 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-    tl2Text.to(".projects2 .projects__number",{backgroundPosition: "-100%"},0)
-
-
-    let tl3= gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects3",
-        start: "top 45%",
-        end: "+=300",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-
-    let tl3Text = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects3",
-        start: "top 25%",
-        end: "+=100",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-    
-    tl3.to(".projects3>.projects__photo__box",{y: "100%"},0)
-    tl3.to(".projects3>.projects__photo img",{transform: "scale(1)"},0);
-    tl3Text.to(".projects3 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-    tl3Text.to(".projects3 .projects__number",{backgroundPosition: "-100%"},0)
-
-    let tl4= gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects4",
-        start: "top 45%",
-        end: "+=300",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-
-    let tl4Text = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".projects4",
-        start: "top 25%",
-        end: "+=100",
-        scrub: 1,
-        toggleActions: "restart none none reverse"
-      },
-    });
-    
-    tl4.to(".projects4>.projects__photo__box",{y: "100%"},0)
-    tl4.to(".projects4>.projects__photo img",{transform: "scale(1)"},0);
-    tl4Text.to(".projects4 .char",{y:"-100px", opacity:1, stagger:0.03,},0)
-    tl4Text.to(".projects4 .projects__number",{backgroundPosition: "-100%"},0)
-
+    setupAnimationForProject("projects1", "top 45%", "300", "top 35%", "100");
+    setupAnimationForProject("projects2", "top 45%", "300", "top 35%", "100");
+    setupAnimationForProject("projects3", "top 45%", "300", "top 35%", "100");
   }, []);
 
     return( 
@@ -165,7 +90,7 @@ export default function ProjectsDesktop (){
                         preload="none"
                         loading="lazy"
                       >
-                        <source src={project.video} type="video/mp4" />
+                        <source src={project.videoMobile} type="video/mp4" />
                         Your browser does not support the video tag.
                       </motion.video>
                     </Link>

@@ -1,28 +1,32 @@
 //Mobile videos
 
 //Desktop videos
-import AmazonVideo from "../../assets/image/Amazon/amazonVideo.mp4";
+import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideo.mp4";
+import AmazonVideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
 
 const ProjectsList = [
 {
     key: 'sneakmart',
     number: '001',
     title: 'Sneakmart',
-    video: AmazonVideo,
+    videoDesktop: AmazonVideoDesktop,
+    videoMobile: AmazonVideoMobile,
     link: '/Sneakmart'
 },
 {
     key: 'amazon',
     number: '002',
     title: 'Amazon',
-    video: AmazonVideo,
+    videoDesktop: AmazonVideoDesktop,
+    videoMobile: AmazonVideoMobile,
     link: '/Amazon'
 },
 {
     key: 'HDMI',
     number: '003',
     title: 'HDMI Ping',
-    video: AmazonVideo,
+    videoDesktop: AmazonVideoDesktop,
+    videoMobile: AmazonVideoMobile,
     link: '/HDMI'
 }];
 
