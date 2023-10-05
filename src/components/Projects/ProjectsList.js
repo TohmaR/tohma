@@ -1,8 +1,10 @@
 //Mobile videos
+import AmazonVideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
+import SneakmartVideoMobile from "../../assets/image/Sneakmart/sneakmartVideoMobile.mp4";
 
 //Desktop videos
 import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideo.mp4";
-import AmazonVideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
+
 
 const ProjectsList = [
 {
@@ -10,7 +12,7 @@ const ProjectsList = [
     number: '001',
     title: 'Sneakmart',
     videoDesktop: AmazonVideoDesktop,
-    videoMobile: AmazonVideoMobile,
+    videoMobile: SneakmartVideoMobile,
     link: '/Sneakmart'
 },
 {
