@@ -77,7 +77,7 @@ function App() {
             <Social/>
           </Route>
         </Switch>
-        {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"#e3e3e3"} />}
+        {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"green"} />}
       </AnimatePresence>
     </div>
   );

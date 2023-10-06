@@ -4,7 +4,9 @@ import SneakmartVideoMobile from "../../assets/image/Sneakmart/sneakmartVideoMob
 import HDMIVideoMobile from "../../assets/image/HDMI/HDMIVideoMobile.mp4";
 
 //Desktop videos
-import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideo.mp4";
+import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
+import HDMIVideoDesktop from "../../assets/image/HDMI/HDMIVideoDesktop.mp4";
+import SneakmartVideoDesktop from "../../assets/image/Sneakmart/sneakmartVideoDesktop.mp4";
 
 
 const ProjectsList = [
@@ -12,7 +14,7 @@ const ProjectsList = [
     key: 'sneakmart',
     number: '001',
     title: 'Sneakmart',
-    videoDesktop: AmazonVideoDesktop,
+    videoDesktop: SneakmartVideoDesktop,
     videoMobile: SneakmartVideoMobile,
     link: '/Sneakmart'
 },
@@ -28,7 +30,7 @@ const ProjectsList = [
     key: 'HDMI',
     number: '003',
     title: 'HDMI Ping',
-    videoDesktop: AmazonVideoDesktop,
+    videoDesktop: HDMIVideoDesktop,
     videoMobile: HDMIVideoMobile,
     link: '/HDMI'
 }];

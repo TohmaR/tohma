@@ -2,7 +2,7 @@
     .contact{
         position: relative;
         width: 100vw;
-        height: 70svh;
+        height: auto;
         overflow: hidden;
         margin-bottom: 50px;
     }

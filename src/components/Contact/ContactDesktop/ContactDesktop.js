@@ -18,7 +18,7 @@ function ContactDesktop() {
             duration: 1.6,
             scrollTrigger: {
                 trigger: ".map__box",
-                start: "60% bottom",
+                start: "top 60%",
                 toggleActions: "restart none none reverse",
                 scrub: 1,
                 end: "+=600",
@@ -28,7 +28,7 @@ function ContactDesktop() {
         let tlLetter = gsap.timeline({
             scrollTrigger: {
                 trigger: ".map__box",
-                start: "60% bottom",
+                start: "top 60%",
                 toggleActions: "restart none none reverse",
                 scrub: 1,
                 end: "+=400",
@@ -84,7 +84,6 @@ function ContactDesktop() {
                     </GoogleMap>
                 }
                 <div className="map__box"></div>
-                
                 <div className="letters clearfix">
                     <div className="letters__top">
                         {lettersTop.map((letter, index) => <i key={index} className={`letter-${index + 1}`}>{letter}</i>)}
@@ -94,8 +93,7 @@ function ContactDesktop() {
                     </div>
                 </div>
             </div>
-            <div className="contact__text">If you want to contact me, you are in the right place. You can also contact me on my social networks</div> 
-            <img loading="lazy" className="contact__arrow" src={ArrowLeft} alt="ArrowLeft"/>
+            <div className="contact__text">If you want to contact me, you are in the right place. You can also contact me on my social networks <img loading="lazy" className="contact__arrow" src={ArrowLeft} alt="ArrowLeft"/></div> 
         </div>
     );
 }

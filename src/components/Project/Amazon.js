@@ -7,7 +7,7 @@ import "splitting/dist/splitting-cells.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion, AnimatePresence } from "framer-motion"
 import Photo1 from "../../assets/image/Amazon/end.webp";
-import Video from "../../assets/image/Amazon/amazonVideo.mp4";
+import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
 import Responsive from "../../assets/image/Amazon/responsive.jpg";
@@ -109,7 +109,7 @@ function Amazon(){
                         preload="none"
                         loading="lazy"
                         >
-                        <source src={Video} type="video/mp4" />
+                        <source src={VideoDesktop} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

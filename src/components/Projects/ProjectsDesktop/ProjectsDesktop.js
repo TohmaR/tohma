@@ -14,7 +14,7 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
   let tl = gsap.timeline({
     scrollTrigger: {
       trigger: `.${projectClass}`,
-      start: `${start} center`,
+      start: `${start}`,
       end: `+=${end}%`,
       scrub: 1,
       toggleActions: "restart none none reverse"
@@ -58,8 +58,8 @@ export default function ProjectsDesktop() {
     });
 
     setupAnimationForProject("projects1", "top 40%", "40%", "top 25%", "200");
-    setupAnimationForProject("projects2", "250%", "80%", "300%", "200");
-    setupAnimationForProject("projects3", "510%", "80%", "550%", "200");
+    setupAnimationForProject("projects2", "290% center", "80%", "330%", "200");
+    setupAnimationForProject("projects3", "600% center", "80%", "650%", "200");
     // setupAnimationForProject("projects4", "800%", "80%", "850%", "200");
 
     return () => verticalScroll.scrollTrigger.kill();

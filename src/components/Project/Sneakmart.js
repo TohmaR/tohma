@@ -7,7 +7,7 @@ import "splitting/dist/splitting-cells.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/Sneakmart/end.jpg";
-import Video from "../../assets/image/Amazon/amazonVideo.mp4";
+import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
 import MobileCenterEffectImg from "../../assets/image/Sneakmart/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Sneakmart/mobile-side-effect.png";
 import Responsive from "../../assets/image/Sneakmart/responsive.jpg";
@@ -109,7 +109,7 @@ function Sneakmart(){
                         preload="none"
                         loading="lazy"
                         >
-                        <source src={Video} type="video/mp4" />
+                        <source src={VideoDesktop} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
