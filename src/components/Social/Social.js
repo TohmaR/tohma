@@ -12,7 +12,7 @@ function Social() {
 
     const { pathname } = window.location;
     if (pathname === "/") {
-      tlSocial.delay(6.1);
+      tlSocial.delay(6.3);
     }
   }, []);
 

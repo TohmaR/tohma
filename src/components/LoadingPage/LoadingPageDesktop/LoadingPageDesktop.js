@@ -77,7 +77,7 @@ function LoadingPageDesktop() {
             ["to", { delay : -0.6, duration : 0.5, y : -70}], 
         ], 1);
 
-        const tlBackground = gsap.timeline({ delay: 6 });
+        const tlBackground = gsap.timeline({ delay: 6.3 });
         tlBackground.to('.loadingPage__background', 0.7, { opacity: 0 });
         tlBackground.to('.loadingPage', { zIndex: 1 });
 

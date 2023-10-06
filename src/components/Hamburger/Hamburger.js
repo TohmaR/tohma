@@ -97,7 +97,7 @@ function Hamburger(){
   useEffect(() => {
     let tlToggleMenu = gsap.timeline();
     if (history.location.pathname === "/") {
-      tlToggleMenu.delay(6.1);
+      tlToggleMenu.delay(6.3);
     }
     tlToggleMenu.to(".hamburger", { opacity: 1, top: 0 }, 0);
   }, []);
