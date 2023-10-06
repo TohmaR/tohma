@@ -16,7 +16,7 @@ function Home() {
     tl.fromTo(".home__description div:nth-child(1)", { opacity: 0, x: -100 }, { opacity: 1, x: 0 }, 0)
       .fromTo(".home__description div:nth-child(2)", { opacity: 0, x: 100 }, { opacity: 1, x: 0, }, 0)
       .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
-      .fromTo(isDesktop ? ".home__background" : ".home__background--mobile", { opacity: 0 }, { duration: 0.6, opacity: 1, delay: 6.3 }, 0)
+      .fromTo(isDesktop ? ".home__background" : ".home__background--mobile", { opacity: 0 }, { duration: 0.4, opacity: 1, delay: 6.3 }, 0)
       .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.3}, 0)
       .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.3, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
 
