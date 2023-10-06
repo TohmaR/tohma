@@ -24,7 +24,7 @@
 .home__background--mobile {
   position: relative;
   display: flex;
-  background-image: url("../../assets/image/homeBackground--mobile.jpg");
+  background-image: url("../../assets/image/homeBackground-mobile.webp");
   width: 100vw;
   height: 100svh;
   background-position: bottom;
