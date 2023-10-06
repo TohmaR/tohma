@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { motion } from "framer-motion";
@@ -9,6 +9,47 @@ import ProjectsList from "../ProjectsList"
 import CursorView from "../../../assets/image/view-cursor.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
+
+export function LazyLoadVideo({ src }) {
+  const videoRef = useRef(null);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          setIsInView(true);
+          // Arrête d'observer une fois que la vidéo est chargée
+          observer.unobserve(videoRef.current);
+        }
+      },
+      {
+        rootMargin: '100px', // Charge la vidéo un peu avant qu'elle n'arrive dans le champ de vision
+      }
+    );
+
+    observer.observe(videoRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      width="100%" 
+      height="100%"
+      autoPlay
+      playsInline
+      loop
+      muted
+      poster="path/to/your/posterimage.jpg" 
+      preload="none"
+      loading="lazy"
+    >
+      {isInView && <source src={src} type="video/mp4" />}
+      Your browser does not support the video tag.
+    </video>
+  );
+}
 
 function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
   let tl = gsap.timeline({
@@ -90,20 +131,7 @@ export default function ProjectsDesktop() {
                     </div>
                     <div data-cursor-color="#000" data-cursor-background-image={CursorView} data-cursor-size="8.3vw" className="projects__video">
                         <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
-                          <motion.video
-                            width="100%" 
-                            height="100%"
-                            autoPlay
-                            playsInline
-                            loop
-                            muted
-                            poster="path/to/your/posterimage.jpg" 
-                            preload="none"
-                            loading="lazy"
-                          >
-                            <source src={project.videoDesktop} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </motion.video>
+                          <LazyLoadVideo src={project.videoDesktop} />
                         </Link>
                     </div>
                     <div className="projects__photo__box"></div>
