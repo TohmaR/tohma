@@ -105,7 +105,7 @@ function LoadingPageDesktop() {
     return (
         <div className="loadingPage" data-scroll-section>
             <div className="loadingPage__background"></div>
-            <a className="loadingPage__link" href="/" style={{pointerEvents: clickable ? '' : 'none'}} >
+            <a className="loadingPage__link" aria-label="loadingPage__link" href="/" style={{pointerEvents: clickable ? '' : 'none'}} >
                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -100 400 600" style={{ enableBackground: `new 0 0 1000 400` }}>
                     <linearGradient id="Gradient" x1="0%" x2="0%" y1="0%" y2="80%" gradientUnits="userSpaceOnUse">
                         <stop offset="5%" stopColor="#e9ea0c" />
