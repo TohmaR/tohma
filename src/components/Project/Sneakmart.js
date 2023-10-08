@@ -148,7 +148,7 @@ function Sneakmart(){
                             context & debrief
                         </div>
                         <div className="project__context--text">
-                            Dans le cadre de mon alternance de fin d'étude, j'ai eu l'opportunité de travaillé pour sneakmart, une jeune start up francaise sur l'univers de la sneakers 
+                            During my end-of-studies internship, I had the privilege of collaborating with Sneakmart, a mobile application specialized in the field of sneakers and streetwear. My responsibilities were diverse and spanned three key areas: the main Sneakmart website, its web3 entity called 'Sneakmart+', and our moderation interface. In the first two areas, I mainly contributed to the integration of new user interface elements and the roll-out of novel features. As for the moderation interface, I undertook a complete overhaul of the user experience (UI/UX) and added new functionalities, such as the automated sending of moderation notifications through the app when articles or user posts were deleted. This initial experience provided me with a deep understanding of the project development process in a professional setting.
                         </div>
                     </motion.div>
                     <motion.div 

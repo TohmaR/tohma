@@ -145,7 +145,7 @@ function Amazon(){
                             context & debrief
                         </div>
                         <div className="project__context--text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                        During my self-training in React.js, I developed this site as a clone of the Amazon platform. This project provided me with the opportunity to explore and master various complex React concepts, given its level of sophistication for a first-time endeavor. The site's shopping cart feature utilizes React's Context API for state management. Subsequently, while learning Node.js, I built a backend that enables user account creation, thereby allowing users to register and log in. Although many features still need to be implemented, this project was crucial for gaining a fundamental understanding of React.js
                         </div>
                     </motion.div>
                     <motion.div 
