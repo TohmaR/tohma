@@ -1,14 +1,11 @@
 .social{
-    display: none;
-    visibility: hidden;
+    display: flex;
     position: fixed;
     left: 1.0416666666666667vw;
     bottom:1.0741138560687433vh;
     z-index: 10000;
-    display: flex;
     padding: 0;
 }
-
 
 .social div{
     margin: 0 15px;
@@ -23,14 +20,9 @@
 .social rect{
     fill:#e3e3e3;
 }
+
 .social a:hover svg{
     fill: black;
 }
 
 path { transition: fill .2s ease; }
-
-@media screen and (min-width: 1025px){
-    .social{
-        visibility: visible;
-    }
-}

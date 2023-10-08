@@ -1,13 +1,14 @@
 .translationToggle{
     position: fixed;
-    display: flex;
+    display: none;
+    visibility: hidden;
     background-color: transparent;
     right: 1.6vw;
+    font-size: 1vw;
     bottom:1.8vh;
     color: white!important;
     z-index: 1000;
     font-family: "Sk-Modernist-Bold";
-    font-size: 1vw;
 }
 
 .translationToggle div{

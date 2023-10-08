@@ -1,10 +1,12 @@
 import React, { useLayoutEffect } from "react";
 import gsap from "gsap";
 import { motion } from "framer-motion";
+import { useMediaQuery } from 'react-responsive'
 import "./Social.css";
 import 'react-creative-cursor/dist/styles.css';
 
 function Social() {
+  const isDesktop = useMediaQuery({ query: '(min-width: 1025px)' });
   useLayoutEffect(() => {
     const tlSocial = gsap.timeline();
 
@@ -54,6 +56,7 @@ function Social() {
   ];
 
   return (
+    isDesktop &&
     <motion.div 
       className="social"
       key="social"
@@ -66,6 +69,7 @@ function Social() {
           target="_blank"
           rel="noreferrer"
           aria-label={icon.id}
+          key={icon.id}
         >
           <div
             key={icon.id}
