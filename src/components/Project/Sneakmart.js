@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/Sneakmart/end.jpg";
 import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
@@ -21,6 +21,7 @@ function Sneakmart(){
     const MobileEffect = useRef();
     const MobileCenterEffect = useRef();
     const MobileSideEffect = useRef();
+    const { t } = useTranslation();
 
     useLayoutEffect(() => {
         Splitting({
@@ -145,10 +146,10 @@ function Sneakmart(){
                         exit={{ y: "-50px", opacity: 0}}
                     >
                         <div className="project__context--title">
-                            context & debrief
+                            {t('context')} & Debrief
                         </div>
                         <div className="project__context--text">
-                            During my end-of-studies internship, I had the privilege of collaborating with Sneakmart, a mobile application specialized in the field of sneakers and streetwear. My responsibilities were diverse and spanned three key areas: the main Sneakmart website, its web3 entity called 'Sneakmart+', and our moderation interface. In the first two areas, I mainly contributed to the integration of new user interface elements and the roll-out of novel features. As for the moderation interface, I undertook a complete overhaul of the user experience (UI/UX) and added new functionalities, such as the automated sending of moderation notifications through the app when articles or user posts were deleted. This initial experience provided me with a deep understanding of the project development process in a professional setting.
+                            {t('SneakmartDefrief')}
                         </div>
                     </motion.div>
                     <motion.div 
@@ -176,7 +177,7 @@ function Sneakmart(){
                             Responsive/
                         </div>
                         <div className="project__context--text">
-                        Every page is adapted to mobile and tablet resolutions.
+                            {t('responsive')}
                         </div>
                     </motion.div>
                     <motion.div 
@@ -199,7 +200,7 @@ function Sneakmart(){
                                     ©2022
                                 </div>
                                 <div className="project__next--text">
-                                    next project
+                                    {t('nextProject')}
                                 </div>
                             </motion.div>
                             <div className="project__next--container2">

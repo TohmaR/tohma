@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
+import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/HDMI/end.jpg";
 import VideoDesktop from "../../assets/image/HDMI/HDMIVideoDesktop.mp4";
@@ -14,12 +15,11 @@ import NextProject from "../../assets/image/Sneakmart/end.jpg";
 
 import "./Project.css";
 
-const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
-
 function HDMI(){
     const MobileEffect = useRef();
     const MobileCenterEffect = useRef();
     const MobileSideEffect = useRef();
+    const { t } = useTranslation();
 
     useEffect(() => {
         Splitting({
@@ -131,10 +131,10 @@ function HDMI(){
                 <div className="project__wrapper">
                     <motion.div className="project__context">
                         <div className="project__context--title">
-                            context & debrief
+                            {t('context')} & Debrief
                         </div>
                         <div className="project__context--text">
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+                        {t('HDMIDebrief')}
                         </div>
                     </motion.div>
                     <motion.div className="project__parallax--container">
@@ -149,7 +149,7 @@ function HDMI(){
                             Responsive/
                         </div>
                         <div className="project__context--text">
-                        Every page is adapted to mobile and tablet resolutions.
+                            {t('responsive')}
                         </div>
                     </motion.div>
                     <motion.div 
@@ -172,7 +172,7 @@ function HDMI(){
                                     ©2022
                                 </div>
                                 <div className="project__next--text">
-                                    next project
+                                {t('nextProject')}
                                 </div>
                             </motion.div>
                             <div className="project__next--container2">

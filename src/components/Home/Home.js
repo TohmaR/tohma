@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
-import "./Home.css";
+import { useTranslation } from 'react-i18next';
 import Arrow from "../../assets/image/arrow__left.webp";
 import { useMediaQuery } from 'react-responsive';
 import DrawSVGPlugin from "../../gsap/DrawSVGPlugin.min.js";
+
+import "./Home.css";
 
 gsap.registerPlugin(DrawSVGPlugin);
 
 function Home() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
+  const { t } = useTranslation();
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.inOut", delay: 6 } });
@@ -90,8 +93,8 @@ function Home() {
 					</g>
 				</svg>
 				<div className="home__description">
-					<div><span>I'm a Junior Front end developer</span> from France living in Paris. I love design in general and bringing my creations to life</div>
-					<div>If you want to know more about me, my work or if you're a Suggar mommy who wants to offer me a lot of money, feel free to contact me</div>
+					<div><span>{t('Descriptionspan1')}</span>{t('Description1')}</div>
+					<div>{t('Description2')}</div>
 				</div>
 			</div>
 			<div className="scrollIndicator"></div>

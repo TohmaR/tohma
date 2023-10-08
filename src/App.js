@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { 
   Switch, 
   Route, 
@@ -17,6 +17,7 @@ import Hamburger from "./components/Hamburger/Hamburger";
 import { Cursor } from "react-creative-cursor";
 import 'react-creative-cursor/dist/styles.css';
 import Footer from "./components/Footer/Footer";
+import TranslationToggle from "./components/TranslationToggle/TranslationToggle";
 
 export const Amazon = loadable(() => import("./components/Project/Amazon"));
 export const Sneakmart = loadable(() => import("./components/Project/Sneakmart"));
@@ -59,22 +60,26 @@ function App() {
             <HomePage />
             <Hamburger />
             <Social/>
+            <TranslationToggle />
             <Footer />
           </Route>
           <Route path="/Amazon">
             <Amazon />
             <Hamburger key="hamburger" />
             <Social/>
+            <TranslationToggle />
           </Route>
           <Route path="/Sneakmart">
             <Sneakmart />
             <Hamburger key="hamburger" />
             <Social/>
+            <TranslationToggle />
           </Route>
           <Route path="/HDMI">
             <HDMI />
             <Hamburger key="hamburger" />
             <Social/>
+            <TranslationToggle />
           </Route>
         </Switch>
         {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"green"} />}

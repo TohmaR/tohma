@@ -64,6 +64,7 @@ function Social() {
         <a
           href={icon.link}
           target="_blank"
+          rel="noreferrer"
           aria-label={icon.id}
         >
           <div

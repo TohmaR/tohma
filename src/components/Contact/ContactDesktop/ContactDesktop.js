@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
 import { gsap } from "gsap";
+import { useTranslation } from 'react-i18next';
 import ScrollTrigger from "gsap/ScrollTrigger";
 import ArrowLeft from "../../../assets/image/arrow__left.webp";
 import "./ContactDesktop.css";
@@ -8,6 +9,7 @@ import "./ContactDesktop.css";
 gsap.registerPlugin(ScrollTrigger);
 
 function ContactDesktop() {
+    const { t } = useTranslation();
     const { isLoaded } = useLoadScript({
         googleMapsApiKey: `AIzaSyC8hEujlqPx5QCzzgDZ8XhWZ-xzLhGJwjM`,
     });
@@ -93,7 +95,7 @@ function ContactDesktop() {
                     </div>
                 </div>
             </div>
-            <div className="contact__text">If you want to contact me, you are in the right place. You can also contact me on my social networks <img loading="lazy" className="contact__arrow" src={ArrowLeft} alt="ArrowLeft"/></div> 
+            <div className="contact__text">{t('ContactText')}<img loading="lazy" className="contact__arrow" src={ArrowLeft} alt="ArrowLeft"/></div> 
         </div>
     );
 }

@@ -4,6 +4,9 @@ import { scroller } from "react-scroll";
 import {useHistory} from "react-router-dom";
 import { motion } from "framer-motion";
 import PDF from "../../assets/pdf/CV.pdf";
+import { useTranslation } from 'react-i18next';
+import TranslationToggle from '../TranslationToggle/TranslationToggle';
+
 import "./Hamburger.css";
 
 function HamburgerLink({ text, target, onClick }) {
@@ -43,6 +46,7 @@ function Hamburger(){
   const hamburgerSocialRef = useRef();
   const [toggleMenu, setToggleMenu] = useState(null);
   const [clickable, setClickable] = useState(false);
+  const { t } = useTranslation();
 
   const history = useHistory();
   const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 2000});
@@ -51,8 +55,8 @@ function Hamburger(){
   const scrollOverflowDelay = 7900;
 
   const navigationLinks = [
-    { text: 'Home', target: 'home' },
-    { text: 'Projects', target: 'projects' },
+    { text: t('menu1'), target: 'home' },
+    { text: t('menu2'), target: 'projects' },
     { text: 'Contact', target: 'contact' },
     { text: 'CV', target: 'cv' }, 
   ];

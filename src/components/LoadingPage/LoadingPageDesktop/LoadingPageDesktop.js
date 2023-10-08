@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { MorphSVGPlugin } from "../../../gsap/MorphSVGPlugin.min.js";
-import { useHistory } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 
 import "./LoadingPageDesktop.css"

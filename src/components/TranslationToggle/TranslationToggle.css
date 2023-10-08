@@ -1,0 +1,21 @@
+.translationToggle{
+    position: fixed;
+    display: flex;
+    background-color: transparent;
+    right: 1.6vw;
+    bottom:1.8vh;
+    color: white!important;
+    z-index: 1000;
+    font-family: "Sk-Modernist-Bold";
+    font-size: 1vw;
+}
+
+.translationToggle div{
+   cursor: pointer;
+}
+
+.translationToggle__separator{
+    background: linear-gradient(#e9ea0c, #14e97c);
+    margin: 0 5px;
+    width: 2px;
+}

@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { motion, AnimatePresence } from "framer-motion"
+import { useTranslation } from 'react-i18next';
+import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/Amazon/end.webp";
 import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
@@ -15,12 +15,11 @@ import NextProject from "../../assets/image/HDMI/end.jpg";
 
 import "./Project.css";
 
-const transition = {duration: .6, ease: [.6, .01, -.05, .9]}
-
 function Amazon(){
     const MobileEffect = useRef();
     const MobileCenterEffect = useRef();
     const MobileSideEffect = useRef();
+    const { t } = useTranslation();
 
     useEffect(() => {
         Splitting({
@@ -142,10 +141,10 @@ function Amazon(){
                         exit={{ y: "-50px", opacity: 0}}
                     >
                         <div className="project__context--title">
-                            context & debrief
+                            {t('context')} & Debrief
                         </div>
                         <div className="project__context--text">
-                        During my self-training in React.js, I developed this site as a clone of the Amazon platform. This project provided me with the opportunity to explore and master various complex React concepts, given its level of sophistication for a first-time endeavor. The site's shopping cart feature utilizes React's Context API for state management. Subsequently, while learning Node.js, I built a backend that enables user account creation, thereby allowing users to register and log in. Although many features still need to be implemented, this project was crucial for gaining a fundamental understanding of React.js
+                            {t('SneakmartDefrief')}
                         </div>
                     </motion.div>
                     <motion.div 
@@ -174,7 +173,7 @@ function Amazon(){
                             Responsive/
                         </div>
                         <div className="project__context--text">
-                        Every page is adapted to mobile and tablet resolutions.
+                            {t('responsive')}
                         </div>
                     </motion.div>
                     <motion.div 
@@ -197,7 +196,7 @@ function Amazon(){
                                     ©2022
                                 </div>
                                 <div className="project__next--text">
-                                    next project
+                                    {t('nextProject')}
                                 </div>
                             </motion.div>
                             <div className="project__next--container2">
