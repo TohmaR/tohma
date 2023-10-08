@@ -4,13 +4,12 @@ import { Link } from "react-router-dom";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { motion, AnimatePresence } from "framer-motion"
-import Photo1 from "../../assets/image/Sneakmart/end.jpg";
-import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
+import { motion } from "framer-motion"
+import Photo1 from "../../assets/image/HDMI/end.jpg";
+import VideoDesktop from "../../assets/image/HDMI/HDMIVideoDesktop.mp4";
 import MobileCenterEffectImg from "../../assets/image/Sneakmart/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Sneakmart/mobile-side-effect.png";
-import Responsive from "../../assets/image/Sneakmart/responsive.jpg";
+import Responsive from "../../assets/image/HDMI/responsive.jpg";
 import NextProject from "../../assets/image/Sneakmart/end.jpg";
 
 import "./Project.css";
@@ -192,7 +191,7 @@ function HDMI(){
                                     transition={{ duration: .4, delay: 0.4 }}
                                     exit={{ y: 100, opacity: 0 }}
                                 >
-                                    HDMI
+                                    Sneakmart
                                 </motion.div>
                             </div>
                         </div>

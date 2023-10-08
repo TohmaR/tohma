@@ -60,24 +60,25 @@ function Social() {
       exit={{ opacity: 0, y: 100 }}
       transition={{ duration: 0.5, delay: 0.4 }}
     >
-      <ul>
-        {socialIcons.map((icon) => (
-          <li 
+      {socialIcons.map((icon) => (
+        <a
+          href={icon.link}
+          target="_blank"
+          aria-label={icon.id}
+        >
+          <div
             key={icon.id}
             data-cursor-stick={`#stick-social`}
             data-cursor-size="55px"
             data-cursor-color="#87ea40"
           >
-            <a
-              href={icon.link}
-              target="_blank"
-              aria-label={icon.id}
-            >
-              {icon.svg}
-            </a>
-          </li>
-        ))}
-      </ul>
+            
+            {icon.svg}
+            
+          </div>
+        </a>
+      ))}
+  
     </motion.div>
   );
 }

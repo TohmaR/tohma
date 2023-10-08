@@ -5,15 +5,13 @@
     left: 1.0416666666666667vw;
     bottom:1.0741138560687433vh;
     z-index: 10000;
-}
-.social ul{
     display: flex;
     padding: 0;
-    list-style: none;
 }
 
-.social li{
-    padding: 0 15px;
+
+.social div{
+    margin: 0 15px;
 }
 
 .social svg{
@@ -25,7 +23,7 @@
 .social rect{
     fill:#e3e3e3;
 }
-.social li:hover svg{
+.social a:hover svg{
     fill: black;
 }
 
@@ -33,7 +31,6 @@ path { transition: fill .2s ease; }
 
 @media screen and (min-width: 1025px){
     .social{
-        display: block;
         visibility: visible;
     }
 }
