@@ -65,19 +65,19 @@ function App() {
           </Route>
           <Route path="/Amazon">
             <Amazon />
-            <Hamburger key="hamburger" />
+            <Hamburger />
             <Social/>
             <TranslationToggle />
           </Route>
           <Route path="/Sneakmart">
             <Sneakmart />
-            <Hamburger key="hamburger" />
+            <Hamburger />
             <Social/>
             <TranslationToggle />
           </Route>
           <Route path="/HDMI">
             <HDMI />
-            <Hamburger key="hamburger" />
+            <Hamburger />
             <Social/>
             <TranslationToggle />
           </Route>

@@ -26,7 +26,9 @@ function LoadingPageDesktop() {
     };
 
     useEffect(() => {
-        animateMorph('.morph1__initial', [
+        const timelines = [];
+
+        timelines.push(animateMorph('.morph1__initial', [
             ["to", 0.7, { opacity: 1 }],
             ["to", { delay: 0.8, morphSVG: '.morph1__2' }],
             ["to", { delay : 0.5, morphSVG : '.morph1__4'}],
@@ -34,9 +36,9 @@ function LoadingPageDesktop() {
             ["to", { delay : 0.5, morphSVG : '.morph1__9'}],
             ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'}],
             ["to", { delay : -0.6, duration : 0.5, y : -70}],
-        ], 0.2);
+        ], 0.2))
 
-        animateMorph('.morph2__initial', [
+        timelines.push(animateMorph('.morph2__initial', [
             ["to", 0.7, { opacity: 1 }],
             ["to", { delay: 0.6, morphSVG: '.morph2__°' }],
             ["to", { delay : 0.5, morphSVG : '.morph2__5'}],
@@ -44,9 +46,9 @@ function LoadingPageDesktop() {
             ["to", { delay : 0.5, morphSVG : '.morph2__9'}],
             ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'}],
             ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.4);
+        ], 0.4))
 
-        animateMorph('.morph3__initial', [
+        timelines.push(animateMorph('.morph3__initial', [
             ["to", 0.7, { opacity: 1 }],
             ["to", {delay: 0.4 , morphSVG : '.morph3__separator'}],
             ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
@@ -54,9 +56,9 @@ function LoadingPageDesktop() {
             ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
             ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'}],
             ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.6);
+        ], 0.6))
 
-        animateMorph('.morph4__initial', [
+        timelines.push(animateMorph('.morph4__initial', [
             ["to", 0.7, { opacity: 1 }],
             ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
             ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
@@ -64,9 +66,9 @@ function LoadingPageDesktop() {
             ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
             ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'}],
             ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.8);
+        ], 0.8))
 
-        animateMorph('.morph5__initial', [
+        timelines.push(animateMorph('.morph5__initial', [
             ["to", 0.7, { opacity: 1 }],
             ["to", {morphSVG : '.morph5__3'}],
             ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
@@ -74,30 +76,36 @@ function LoadingPageDesktop() {
             ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
             ["to", { duration: 0.6, delay : 0.5, morphSVG : '.morph5__A'}],
             ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 1);
+        ], 1))
 
         const tlBackground = gsap.timeline({ delay: 6 });
         tlBackground.to('.loadingPage__background', 0.7, { opacity: 0 });
         tlBackground.to('.loadingPage', { zIndex: 1 });
 
-        if (isDesktop) {
-            let tlLogoHeader = gsap.timeline({
-                scrollTrigger: {
-                    trigger: ".loadingPage",
-                    start: 0,
-                    end: "+=800",
-                    scrub: true,
-                    toggleActions: "restart none none reverse"
-                },
-                onComplete: () => {
-                    setClickable(!clickable);
-                }
-            });
+       
+        let tlLogoHeader = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".loadingPage",
+                start: 0,
+                end: "+=800",
+                scrub: true,
+                toggleActions: "restart none none reverse"
+            },
+            onComplete: () => {
+                setClickable(!clickable);
+            }
+        });
 
-            tlLogoHeader.to(".loadingPage svg", { duration: 2, height: "21.482277121374867vh", width: "10.416666666666666vw", marginTop: 30 });
-            tlLogoHeader.to(".loadingPage", { height: "32.223415682062296vh", width: "15.625vw" });
-            tlLogoHeader.to(".loadingPage__background", { display: "none" });
-        }
+        tlLogoHeader.to(".loadingPage svg", { duration: 2, height: "21.482277121374867vh", width: "10.416666666666666vw", marginTop: 30 });
+        tlLogoHeader.to(".loadingPage", { height: "32.223415682062296vh", width: "15.625vw" });
+        tlLogoHeader.to(".loadingPage__background", { display: "none" });
+      
+
+        return () => {
+            timelines.forEach((tl) => tl.kill());
+            tlBackground.kill();
+            tlLogoHeader.kill();
+        };
 
     }, []);
 
