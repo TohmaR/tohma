@@ -1,6 +1,6 @@
 import React, {useLayoutEffect} from 'react';
 import { useTranslation } from 'react-i18next';
-
+import { motion } from "framer-motion";
 import { useMediaQuery } from 'react-responsive'
 import gsap from "gsap";
 
@@ -28,11 +28,15 @@ function TranslationToggle() {
 
   return (
     isDesktop &&
-    <div className="translationToggle">
+    <motion.div 
+        className="translationToggle"
+        exit={{ opacity: 0, y: 100 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+    >
       <div onClick={() => changeLanguage('en')}>En</div>
       <div className="translationToggle__separator"></div>
       <div onClick={() => changeLanguage('fr')}>Fr</div>
-    </div>
+    </motion.div>
   );
 }
 

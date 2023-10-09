@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import Splitting from "splitting";
 import "splitting/dist/splitting.css";
 import "splitting/dist/splitting-cells.css";
+import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/HDMI/end.jpg";
 import VideoDesktop from "../../assets/image/HDMI/HDMIVideoDesktop.mp4";
+import VideoMobile from "../../assets/image/HDMI/HDMIVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/Sneakmart/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Sneakmart/mobile-side-effect.png";
 import Responsive from "../../assets/image/HDMI/responsive.jpg";
@@ -16,6 +18,7 @@ import NextProject from "../../assets/image/Sneakmart/end.jpg";
 import "./Project.css";
 
 function HDMI(){
+    const isDesktop = useMediaQuery({ query: '(min-width: 1025px)' });
     const MobileEffect = useRef();
     const MobileCenterEffect = useRef();
     const MobileSideEffect = useRef();
@@ -108,7 +111,7 @@ function HDMI(){
                         preload="none"
                         loading="lazy"
                         >
-                        <source src={VideoDesktop} type="video/mp4" />
+                        <source src={isDesktop ? VideoDesktop : VideoMobile} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>

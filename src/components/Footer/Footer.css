@@ -2,13 +2,12 @@ footer.footer{
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     width: 100vw;
     color: white;
     font-family: "Sk-Modernist-Bold";
     font-size: 3.5vw;
     fill: url(#GradientFooter);
-    padding-left: 20px;
 }
 
 .footer__design{
