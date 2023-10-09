@@ -75,20 +75,19 @@ export default function ProjectsDesktop (){
                     </motion.h2>
                 </div>
                 <div className="projects__video">
-                  <motion.video
+                  <video
                     width="100%" 
                     height="100%"
                     autoPlay
                     playsInline
                     loop
                     muted
-                    poster="path/to/your/posterimage.jpg" 
                     preload="none"
                     loading="lazy"
                   >
                     <source src={project.videoMobile} type="video/mp4" />
                     Your browser does not support the video tag.
-                  </motion.video>
+                  </video>
                 </div>
                 <div className="projects__video__box"></div>
                 <motion.div  

@@ -41,7 +41,6 @@ export function LazyLoadVideo({ src }) {
       playsInline
       loop
       muted
-      poster="path/to/your/posterimage.jpg" 
       preload="none"
       loading="lazy"
     >
