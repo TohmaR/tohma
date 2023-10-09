@@ -111,7 +111,7 @@ export default function ProjectsDesktop() {
           <div id="projects"></div>
           <div className="container" ref={panelsContainer}>
             {ProjectsList.map((project, index) => (
-                <section className={`panel projects${index + 1}`} ref={(e) => panels.current[index] = e} key={project.index}>
+                <section className={`panel projects${index + 1}`} ref={(e) => panels.current[index] = e} key={project.key}>
                     <div className="projects__container">
                         <motion.div 
                             key={`projects__number__${project.key}`}
