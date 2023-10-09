@@ -70,33 +70,29 @@
     color: transparent;
   }
   
-  .projects__photo{
+  .projects__video{
     position: absolute;
-    width: 90vw;
-    filter: grayscale(1);
+    width: 85vw;
     transition: all 0.5s;
     transition-timing-function: ease-in-out;
     overflow: hidden;
   }
   
-  .projects__photo img{
+  .projects__video video{
     width: 100%;
     height: 100%;
     transform: scale(2);
   }
   
-  .projects__photo:hover{
-    filter: grayscale(0)
-  }
   
-  .projects__photo__box{
+  .projects__video__box{
     position: absolute;
     width: 100vw;
     height: 100vh;
     background-color: black;
   }
   
-  .projects__photo__boxExit{
+  .projects__video__boxExit{
     position: absolute;
     width: 100vw;
     height: 80vh;

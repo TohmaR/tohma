@@ -32,14 +32,13 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
     },
   });
 
-  tl.to(`.${projectClass}>.projects__photo__box`, { y: "100%" }, 0);
+  tl.to(`.${projectClass}>.projects__video__box`, { y: "100%" }, 0);
   tl.to(`.${projectClass}>.projects__video video`, { transform: "scale(1)" }, 0);
   tlText.to(`.${projectClass} .char`, { y: "-100px", opacity: 1, stagger: 0.03 }, 0);
   tlText.to(`.${projectClass} .projects__number`, { backgroundPosition: "-100%" }, 0);
 }
 
 export default function ProjectsDesktop (){
-  const videoRef = useRef(null);
   useEffect(() => {
     Splitting({
       target: "[data-splitting]",
@@ -51,9 +50,6 @@ export default function ProjectsDesktop (){
     setupAnimationForProject("projects2", "top 55%", "300", "top 40%", "100");
     setupAnimationForProject("projects3", "top 55%", "300", "top 40%", "100");
     
-    if (videoRef.current) {
-      videoRef.current.play();
-    }
   }, []);
 
     return( 
@@ -80,7 +76,6 @@ export default function ProjectsDesktop (){
                 </div>
                 <div className="projects__video">
                   <motion.video
-                    ref={videoRef}
                     width="100%" 
                     height="100%"
                     autoPlay
@@ -95,12 +90,12 @@ export default function ProjectsDesktop (){
                     Your browser does not support the video tag.
                   </motion.video>
                 </div>
-                <div className="projects__photo__box"></div>
+                <div className="projects__video__box"></div>
                 <motion.div  
                     key={`projects__box__${project.key}`}
                     transition={{duration: 1.2, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
                     exit={{ y: "-90vh"}}
-                    className="projects__photo__boxExit">
+                    className="projects__video__boxExit">
                 </motion.div>
             </section>
           </Link>
