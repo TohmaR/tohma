@@ -39,6 +39,7 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
 }
 
 export default function ProjectsDesktop (){
+  const videoRef = useRef(null);
   useEffect(() => {
     Splitting({
       target: "[data-splitting]",
@@ -49,6 +50,10 @@ export default function ProjectsDesktop (){
     setupAnimationForProject("projects1", "top 55%", "300", "top 40%", "100");
     setupAnimationForProject("projects2", "top 55%", "300", "top 40%", "100");
     setupAnimationForProject("projects3", "top 55%", "300", "top 40%", "100");
+    
+    if (videoRef.current) {
+      videoRef.current.play();
+    }
   }, []);
 
     return( 
@@ -75,6 +80,7 @@ export default function ProjectsDesktop (){
                 </div>
                 <div className="projects__video">
                   <motion.video
+                    ref={videoRef}
                     width="100%" 
                     height="100%"
                     autoPlay
