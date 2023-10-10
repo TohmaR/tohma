@@ -89,6 +89,10 @@
     padding: 0;
     height: 60%;
 }
+
+.hamburger__nav ul li{
+    overflow-y: hidden;
+}
   
 .hamburger__nav--text{
     font-family: "MonumentExtended-Regular";
@@ -164,7 +168,7 @@
 .hamburger__social{
     position: absolute;
     opacity: 0;
-    bottom: 35px;
+    bottom: 0;
     z-index: 10000;
     transform: translateY(200px);
 }
@@ -188,6 +192,28 @@
 }
 
 path { transition: fill .2s ease; }
+
+.hamburger__translationToggle{
+    display: flex;
+    right: 1.6vw;
+    font-size: 6vw;
+    bottom:1.8vh;
+    color: white!important;
+    z-index: 1000;
+    font-family: "Sk-Modernist-Bold";
+    transform: translateY(100px);
+}
+
+.hamburger__translationToggle div{
+   cursor: pointer;
+}
+
+.hamburger__translationToggle__separator{
+    background: linear-gradient(#e9ea0c, #14e97c);
+    margin: 0 5px;
+    width: 2px;
+}
+
 
 @media screen and (min-width : 1025px){
     .hamburger{

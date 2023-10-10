@@ -2,10 +2,12 @@ import React, { useLayoutEffect,useEffect, useState, useRef, useCallback } from 
 import { gsap } from 'gsap';
 import { scroller } from "react-scroll";
 import {useHistory} from "react-router-dom";
+import { useMediaQuery } from 'react-responsive'
 import { motion } from "framer-motion";
 import PDF from "../../assets/pdf/CV.pdf";
 import { useTranslation } from 'react-i18next';
 import "./Hamburger.css";
+
 
 function HamburgerLink({ text, target, onClick }) {
     return (
@@ -39,17 +41,25 @@ function HamburgerSocialIcon({ link, icon }) {
 }
 
 function Hamburger(){
+  const { i18n } = useTranslation();
   const menuTimeline = useRef();
   const logoLettersRef = useRef([]);
+  const hamburgerTradRef = useRef();
   const hamburgerSocialRef = useRef();
   const [toggleMenu, setToggleMenu] = useState(null);
   const { t } = useTranslation();
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1024px)' });
 
   const history = useHistory();
   const scrollTarget = (target) => scroller.scrollTo(target, {smooth: true, duration: 2000});
 
   const toggleMenuDelay = 1000;
   const scrollOverflowDelay = 7900;
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    localStorage.setItem('language', language);
+  };
 
   const navigationLinks = [
     { text: t('menu1'), target: 'home' },
@@ -114,7 +124,9 @@ function Hamburger(){
         delay: -0.2,
         stagger: 0.1
       });
-      menuTimeline.current.to(hamburgerSocialRef.current, { duration: 0.4, delay: -0.3, opacity : 1, y: 0})
+      
+      menuTimeline.current.to(hamburgerTradRef.current, { duration: 0.4, delay: -0.3, opacity : 1, y: 0})
+      menuTimeline.current.to(hamburgerSocialRef.current, { duration: 0.4, delay: -0.1, opacity : 1, y: 0})
 
       for (let i = 0; i < logoLettersRef.current.length; i++) {
         const letter = logoLettersRef.current[i];
@@ -189,6 +201,20 @@ function Hamburger(){
                     onClick={scrollToPage}
                   />
                 ))}
+                { isTabletOrMobile && 
+                  <li> 
+                    <motion.div 
+                      ref={hamburgerTradRef}
+                      className="hamburger__translationToggle"
+                      exit={{ opacity: 0, y: 100 }}
+                      transition={{ duration: 0.5, delay: 0.4 }}
+                    >
+                      <div onClick={() => changeLanguage('en')}>En</div>
+                      <div className="hamburger__translationToggle__separator"></div>
+                      <div onClick={() => changeLanguage('fr')}>Fr</div>
+                    </motion.div>
+                  </li>
+                }
               </ul>
               <div className="hamburger__logo" target="home" onClick={scrollToPage} style={{pointerEvents: toggleMenu ? '' : 'none'}} >
                 <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 -100 400 600" style={{enableBackground: `new 0 0 1000 400`}}>
