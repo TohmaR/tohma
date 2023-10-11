@@ -7,21 +7,13 @@ import "splitting/dist/splitting-cells.css";
 import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
-//Import Desktop
 import Photo1 from "../../assets/image/Amazon/end.webp";
 import VideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
 import VideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
-import CenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
-import SideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
+import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
+import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
 import Responsive from "../../assets/image/Amazon/responsive.jpg";
 import NextProject from "../../assets/image/HDMI/end.jpg";
-
-//Import Mobile
-import MobilePhoto1 from "../../assets/image/Amazon/mobile/end.webp";
-import MobileCenterEffectImg from "../../assets/image/Amazon/mobile/mobile-center-effect.webp";
-import MobileSideEffectImg from "../../assets/image/Amazon/mobile/mobile-side-effect.webp";
-import MobileResponsive from "../../assets/image/Amazon/mobile/responsive.webp";
-import MobileNextProject from "../../assets/image/HDMI/end.jpg";
 
 import "./Project.css";
 
@@ -181,7 +173,7 @@ function Amazon(){
                         transition={{duration: 0.4, ease: [0.740, 0.120, 0.845, 0.210]}}
                         exit={{ y: "-50px", opacity: 0}}
                     >
-                        <img loading="lazy" className="project__parallax--img" src={ isDesktop ? Photo1 : MobilePhoto1} alt="parallax-img"/>
+                        <img loading="lazy" className="project__parallax--img" src={Photo1} alt="parallax-img"/>
                     </motion.div>
                     <motion.div 
                         className="project__photo__container MobileEffect" 
@@ -190,8 +182,8 @@ function Amazon(){
                         exit={{ y: "-50px", opacity: 0}}
                     >
 
-                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={isDesktop ? CenterEffectImg : MobileCenterEffectImg} alt="MobileCenterEffect"/>
-                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={isDesktop ? SideEffectImg : MobileSideEffectImg} alt="MobileSideEffect"/>
+                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={MobileCenterEffectImg} alt="MobileCenterEffect"/>
+                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={MobileSideEffectImg} alt="MobileSideEffect"/>
                     </motion.div>
                     <motion.div 
                         className="project__context"
@@ -211,7 +203,7 @@ function Amazon(){
                         transition={{ duration: .4 }}
                         exit={{ y: -50, opacity: 0}}
                     >
-                        <img loading="lazy" className="project__parallax--img" src={isDesktop ? Responsive : MobileResponsive} />
+                        <img loading="lazy" className="project__parallax--img" src={Responsive} />
                     </motion.div>
                     <Link to="/HDMI">
                         <div className="project__next">
