@@ -67,7 +67,7 @@ export default function ProjectsDesktop (){
                 <div className="projects__container">
                     <motion.div 
                         key={`projects__number__${project.key}`}
-                        transition={{ duration: .2, delay: 0.4 }}
+                        transition={{ duration: .4, delay: 0.4 }}
                         exit={{ y: -50, opacity: 0 }}
                         className="projects__number">
                             <span>.</span>{project.number}
