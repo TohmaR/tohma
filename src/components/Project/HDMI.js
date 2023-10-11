@@ -124,11 +124,17 @@ function HDMI(){
                 </motion.div>
                 <motion.div 
                     className="project__title"
+                    transition={{ duration: 0.4 }}
+                    exit={{ y: 50, opacity: 0}}
                     data-splitting
                 >
                     HDMI Ping
                 </motion.div>
-                <motion.div className="project__scrollIndicator"></motion.div>
+                <motion.div 
+                    className="project__scrollIndicator"
+                    transition={{ duration: 0.4 }}
+                    exit={{ opacity: 0}}>
+                </motion.div>
             </div>
             <div className="project__container">
                 <div className="project__wrapper">
