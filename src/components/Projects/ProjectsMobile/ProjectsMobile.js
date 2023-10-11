@@ -68,14 +68,14 @@ export default function ProjectsDesktop (){
                   <motion.div 
                       key={`projects__number__${project.key}`}
                       initial={{ y: 0, opacity : 1}}
-                      exit={{ x: -70, opacity: 0 }}
-                      transition={{ duration: .4, delay: 0.4 }}
+                      exit={{ y: -100, opacity: 0 }}
+                      transition={{ duration: .8, delay: 0.4, ease: [0.740, 0.120, 0.845, 0.210]}}
                       className="projects__number">
                           <span>.</span>{project.number}
                   </motion.div>
                   <motion.h2 
                       key={`projects__title__${project.key}`}
-                      transition={{ duration: .4, delay: 0.4 }}
+                      transition={{ duration: .8, delay: 0.4, ease: [0.740, 0.120, 0.845, 0.210] }}
                       exit={{ y: 50, opacity: 0 }}
                       className="projects__title" 
                       data-splitting>
