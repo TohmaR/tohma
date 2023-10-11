@@ -65,21 +65,22 @@ export default function ProjectsDesktop (){
           <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
             <section className={`panel projects${index + 1}`} key={project.key}>
                 <div className="projects__container">
-                    <motion.div 
-                        key={`projects__number__${project.key}`}
-                        transition={{ duration: .4, delay: 0.4 }}
-                        exit={{ y: -50, opacity: 0 }}
-                        className="projects__number">
-                            <span>.</span>{project.number}
-                    </motion.div>
-                    <motion.h2 
-                        key={`projects__title__${project.key}`}
-                        transition={{ duration: .4, delay: 0.4 }}
-                        exit={{ y: 50, opacity: 0 }}
-                        className="projects__title" 
-                        data-splitting>
-                            <span>{project.title}</span>
-                    </motion.h2>
+                  <motion.div 
+                      key={`projects__number__${project.key}`}
+                      initial={{ y: 0, opacity : 1}}
+                      exit={{ x: -70, opacity: 0 }}
+                      transition={{ duration: .4, delay: 0.4 }}
+                      className="projects__number">
+                          <span>.</span>{project.number}
+                  </motion.div>
+                  <motion.h2 
+                      key={`projects__title__${project.key}`}
+                      transition={{ duration: .4, delay: 0.4 }}
+                      exit={{ y: 50, opacity: 0 }}
+                      className="projects__title" 
+                      data-splitting>
+                          <span>{project.title}</span>
+                  </motion.h2>
                 </div>
                 <div className="projects__video">
                   <video
@@ -99,15 +100,14 @@ export default function ProjectsDesktop (){
                 </div>
                 <div className="projects__video__box"></div>
                 <motion.div  
-                    key={`projects__box__${project.key}`}
-                    transition={{duration: 1.2, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
-                    exit={{ y: "-90vh"}}
-                    className="projects__video__boxExit">
+                  key={`projects__box__${project.key}`}
+                  transition={{duration: 1.2, delay: -0.2, ease: [0.740, 0.120, 0.845, 0.210]}}
+                  exit={{ y: "-90vh"}}
+                  className="projects__video__boxExit">
                 </motion.div>
             </section>
           </Link>
         ))}
       </div>
-
     )
 }
