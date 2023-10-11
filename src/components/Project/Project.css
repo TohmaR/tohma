@@ -149,6 +149,7 @@
     width: 2px;
     height: 100px;
     background: linear-gradient(#e9ea0c, #14e97c);
+    opacity: 0;
 }
 
 .project__view{

@@ -123,10 +123,10 @@ function HDMI(){
                     className="project__photo__boxExit">
                 </motion.div>
                 <motion.div 
-                className="project__title"
-                data-splitting
+                    className="project__title"
+                    data-splitting
                 >
-                HDMI Ping
+                    HDMI Ping
                 </motion.div>
                 <motion.div className="project__scrollIndicator"></motion.div>
             </div>
