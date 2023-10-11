@@ -36,7 +36,7 @@ const resources = {
       "menu1": "Accueil",
       "menu2": "Projets",
       //Contact
-      "ContactText": "Si vous souhaitez me contacter, vous etes au bon endroit ! Vous pouvez également le faire via sur mes réseaux",
+      "ContactText": "Si vous souhaitez me contacter, vous êtes au bon endroit ! Vous pouvez également le faire via mes réseaux",
       //Projects
       "context": "Contexte",
       "responsive": "Toutes les pages sont adaptés aux résolutions mobiles et tablettes",
