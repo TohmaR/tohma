@@ -39,7 +39,14 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
 }
 
 export default function ProjectsDesktop (){
+  const videoRef = useRef(null);
   useEffect(() => {
+    if ( videoRef.current )
+    {
+      videoRef.current.muted = true;
+      videoRef.current.playsInline = true;
+      videoRef.current.play();
+    }
     Splitting({
       target: "[data-splitting]",
       by: "chars",
@@ -76,6 +83,7 @@ export default function ProjectsDesktop (){
                 </div>
                 <div className="projects__video">
                   <video
+                    ref={videoRef}
                     width="100%" 
                     height="100%"
                     autoPlay
