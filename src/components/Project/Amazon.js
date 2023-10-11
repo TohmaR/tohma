@@ -18,11 +18,9 @@ import NextProject from "../../assets/image/HDMI/end.jpg";
 
 //Import Mobile
 import MobilePhoto1 from "../../assets/image/Amazon/mobile/end.webp";
-import MobileVideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
-import MobileVideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
-import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
-import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
-import MobileResponsive from "../../assets/image/Amazon/responsive.jpg";
+import MobileCenterEffectImg from "../../assets/image/Amazon/mobile/mobile-center-effect.webp";
+import MobileSideEffectImg from "../../assets/image/Amazon/mobile/mobile-side-effect.webp";
+import MobileResponsive from "../../assets/image/Amazon/mobile/responsive.webp";
 import MobileNextProject from "../../assets/image/HDMI/end.jpg";
 
 import "./Project.css";
@@ -192,8 +190,8 @@ function Amazon(){
                         exit={{ y: "-50px", opacity: 0}}
                     >
 
-                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={CenterEffectImg} alt="MobileCenterEffect"/>
-                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={SideEffectImg} alt="MobileSideEffect"/>
+                        <img loading="lazy" className="project__photo MobileCenterEffect" ref={MobileCenterEffect} src={isDesktop ? CenterEffectImg : MobileCenterEffectImg} alt="MobileCenterEffect"/>
+                        <img loading="lazy" className="project__photo MobileSideEffect" ref={MobileSideEffect} src={isDesktop ? SideEffectImg : MobileSideEffectImg} alt="MobileSideEffect"/>
                     </motion.div>
                     <motion.div 
                         className="project__context"
@@ -213,7 +211,7 @@ function Amazon(){
                         transition={{ duration: .4 }}
                         exit={{ y: -50, opacity: 0}}
                     >
-                        <img loading="lazy" className="project__parallax--img" src={Responsive} />
+                        <img loading="lazy" className="project__parallax--img" src={isDesktop ? Responsive : MobileResponsive} />
                     </motion.div>
                     <Link to="/HDMI">
                         <div className="project__next">
