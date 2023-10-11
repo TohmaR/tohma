@@ -16,73 +16,74 @@ function LoadingPageMobile() {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const history = useHistory()
 
-    useLayoutEffect (() => {
-        window.history.scrollRestoration = 'manual';
-        document.body.style.overflowY = "hidden";
-    })
+    const animateMorph = (selector, sequence, initialDelay = 0.2) => {
+        const timeline = gsap.timeline({ 
+            delay: initialDelay, 
+            onComplete: () => {
+                document.body.style.overflowY = "scroll";
+            }
+        });
+        sequence.forEach(([action, ...args]) => {
+            timeline[action](selector, ...args);
+        });
+        return timeline;
+    };
+
     
     useEffect(() => {
-        setTimeout(() => {
-            document.body.style.overflowY = "scroll";
-        }, "6000")
-
-        var tlMorph1 = gsap.timeline();
-        var tlMorph2 = gsap.timeline();
-        var tlMorph3 = gsap.timeline();
-        var tlMorph4 = gsap.timeline();
-        var tlMorph5 = gsap.timeline();
         var tlLogoHeader = gsap.timeline();
-        tlLogoHeader.delay(5.45);
-        tlMorph1.delay(0.2);
-        tlMorph2.delay(0.4);
-        tlMorph3.delay(0.6);
-        tlMorph4.delay(0.8);
-        tlMorph5.delay(1);
-        
-        // T
-        tlMorph1.to('.morph1__initial', 0.7, {opacity : 1})
-                .to('.morph1__initial', {delay: 0.8 , morphSVG : '.morph1__2'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__4'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__8'})
-                .to('.morph1__initial', { delay : 0.5, morphSVG : '.morph1__9'})
-                .to('.morph1__initial', { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'})
-                .to('.morph1__initial', { delay : -0.6, duration : 0.5, y : -70});
-        
-        // O
-        tlMorph2.to('.morph2__initial', 0.7, {opacity : 1})
-                .to('.morph2__initial', {delay: 0.6 , morphSVG : '.morph2__°'})
-                .to('.morph2__initial', { delay : 0.5, morphSVG : '.morph2__5'})
-                .to('.morph2__initial', {delay: 0.5 , morphSVG : '.morph2__°'})
-                .to('.morph2__initial', { delay : 0.5, morphSVG : '.morph2__9'})
-                .to('.morph2__initial', { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'})
-                .to('.morph2__initial', { delay : -0.6, duration : 0.5, y : -70});
+                tlLogoHeader.delay(5.45);
+        const timelines = [];
 
-        // M 
-        tlMorph3.to('.morph3__initial', 0.7, {opacity : 1})
-                .to('.morph3__initial', {delay: 0.4 , morphSVG : '.morph3__separator'})
-                .to('.morph3__initial', { delay : 0.5,morphSVG : '.morph3__initial'})
-                .to('.morph3__initial', {delay: 0.5 , morphSVG : '.morph3__separator'})
-                .to('.morph3__initial', { delay : 0.5,morphSVG : '.morph3__initial'})
-                .to('.morph3__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'})
-                .to('.morph3__initial', { delay : -0.6, duration : 0.5, y : -70});
+        timelines.push(animateMorph('.morph1__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", { delay: 0.8, morphSVG: '.morph1__2' }],
+            ["to", { delay : 0.5, morphSVG : '.morph1__4'}],
+            ["to", { delay : 0.5, morphSVG : '.morph1__8'}],
+            ["to", { delay : 0.5, morphSVG : '.morph1__9'}],
+            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}],
+        ], 0.2))
 
-        // H
-        tlMorph4.to('.morph4__initial', 0.7, {opacity : 1})
-                .to('.morph4__initial', {delay: 0.2 , morphSVG : '.morph4__°'})
-                .to('.morph4__initial', { delay : 0.5,morphSVG : '.morph4__initial'})
-                .to('.morph4__initial', {delay: 0.5 , morphSVG : '.morph4__°'})
-                .to('.morph4__initial', { delay : 0.5,morphSVG : '.morph4__initial'})
-                .to('.morph4__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'})
-                .to('.morph4__initial', { delay : -0.6, duration : 0.5, y : -70});
+        timelines.push(animateMorph('.morph2__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", { delay: 0.6, morphSVG: '.morph2__°' }],
+            ["to", { delay : 0.5, morphSVG : '.morph2__5'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph2__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph2__9'}],
+            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.4))
 
-        // A
-        tlMorph5.to('.morph5__initial', 0.7, {opacity : 1})
-                .to('.morph5__initial', {morphSVG : '.morph5__3'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__initial'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__5'})
-                .to('.morph5__initial', { delay : 0.5,morphSVG : '.morph5__initial'})
-                .to('.morph5__initial', { duration: 0.6, delay : 0.5,morphSVG : '.morph5__A'})
-                .to('.morph5__initial', { delay : -0.6, duration : 0.5, y : -70});
+        timelines.push(animateMorph('.morph3__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {delay: 0.4 , morphSVG : '.morph3__separator'}],
+            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph3__separator'}],
+            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
+            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.6))
+
+        timelines.push(animateMorph('.morph4__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
+            ["to", {delay: 0.5 , morphSVG : '.morph4__°'}],
+            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
+            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 0.8))
+
+        timelines.push(animateMorph('.morph5__initial', [
+            ["to", 0.7, { opacity: 1 }],
+            ["to", {morphSVG : '.morph5__3'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__5'}],
+            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
+            ["to", { duration: 0.6, delay : 0.5, morphSVG : '.morph5__A'}],
+            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+        ], 1))
 
        
 
