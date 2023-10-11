@@ -1,0 +1,172 @@
+.contact{
+    overflow-x: hidden;
+    position: relative;
+    width: 100vw;
+    height: auto;
+    margin-bottom: 50px;
+}
+.contact__map{
+    overflow: hidden;
+    align-items: center;
+}
+.map{
+    position: relative;
+    width: 85%;
+    height: 40vh;
+    z-index: 0;
+    overflow: hidden;
+}
+.map__box{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 42vh;
+    z-index: 1;
+    background-color: black;
+}
+
+
+.letters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    width: 40vh;
+    height: 40vh;
+    top: 0;
+    right: 0px;
+    z-index: 1;
+    user-select: none;
+}
+
+.letters1, .letters2, .letters3, .letters4{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.letters i {
+    position: relative;
+    display: block;
+    font-family: "MonumentExtended-Regular";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 11vw;
+    color: #b6b6b6 ;
+    text-align: center;
+    opacity: 0;
+    user-select: none;
+}
+
+.letters1 i:nth-child(1),.letters1 i:nth-child(2), .letters1 i:nth-child(3), .letters1 i:nth-child(4){
+    background: linear-gradient(180deg, #e9ea0c 5%, #c2ea20 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.letters2 i:nth-child(1),.letters2 i:nth-child(2), .letters2 i:nth-child(3), .letters2 i:nth-child(4){
+    background: linear-gradient(180deg, #beea23 5%, #9ae935 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.letters3 i:nth-child(1),.letters3 i:nth-child(2), .letters3 i:nth-child(3), .letters3 i:nth-child(4){
+    background: linear-gradient(180deg, #94e938 5%, #79ea48 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.letters4 i:nth-child(1),.letters4 i:nth-child(2), .letters4 i:nth-child(3), .letters4 i:nth-child(4){
+    background: linear-gradient(180deg, #79ea48 5%, #3ce966 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact__text{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 90vw;
+    margin: 50px 20px;
+    color: white;
+    font-family: "Sk-Modernist-Bold";
+}
+
+.contact__arrow{
+  display: none;
+  visibility: hidden;
+}
+
+.contact__social{
+    position: relative;
+}
+.contact__social ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    list-style: none;
+}
+
+.contact__social li{
+    padding: 0 15px;
+}
+
+.contact__social svg{
+    fill:#e3e3e3;
+}
+.contact__social li:hover svg{
+    fill: black;
+}
+
+path { transition: fill .2s ease; }
+
+@media screen and (min-width : 1025px){
+    .contact{
+        margin-top: 20vh;
+        padding-bottom: 20vh;
+        margin-bottom: 0;
+    }
+    .contact__map{
+        align-items: center;
+    }
+    .map{
+        width: 85%;
+        height: 60vh;
+        
+    }
+    .map__box{
+        top: 0;
+        width: 100%;
+        height: 62vh;
+    }
+
+    .contact__arrow{
+        display: block;
+        visibility: visible;
+        position: absolute;
+        width:7vw;
+        height: auto;
+        top: 10px;
+        left: 8vw;
+    }
+    .contact__text{
+        font-size: 1.1vw;
+        margin-bottom: 0;
+    }
+    
+    
+    .letters {
+        width: 60vh;
+        height: 60vh;
+        margin-right: 8vw;
+    }
+
+    
+    .letters i {
+        font-size: 4vw;
+        line-height: 4vw;
+    }
+}
