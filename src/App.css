@@ -6,6 +6,7 @@ html, body{
 }
 
 body{
+  position: fixed;
   background-color: black;
   overflow: hidden;
 }

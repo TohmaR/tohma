@@ -21,6 +21,7 @@ function LoadingPageMobile() {
             delay: initialDelay, 
             onComplete: () => {
                 document.body.style.overflowY = "scroll";
+                document.body.style.position = "static";
             }
         });
         sequence.forEach(([action, ...args]) => {
