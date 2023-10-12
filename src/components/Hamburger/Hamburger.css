@@ -65,7 +65,7 @@
     top: -100vh;
     right:0;
     min-width: 100vw;
-    min-height: 100svh;
+    min-height: 100dvh;
     background-color: black;
     z-index: 90;
 }
@@ -76,7 +76,7 @@
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    height: 100svh;
+    height: 100dvh;
     padding-top: 6vh;
 }
     
