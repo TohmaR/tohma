@@ -145,9 +145,9 @@ function Hamburger(){
       const disableScroll = (e) => e.preventDefault();
 
       if (toggleMenu && isTabletOrMobile) {
-        window.addEventListener('touchmove', disableScroll);
+        document.addEventListener('touchmove', disableScroll);
       } else {
-        window.removeEventListener('touchmove', disableScroll);
+        document.removeEventListener('touchmove', disableScroll);
       }
 
     });
