@@ -30,6 +30,10 @@ function LoadingPageMobile() {
         return timeline;
     };
 
+    useLayoutEffect(() => {
+        document.body.style.position = "fixed";
+    },[])
+
     
     useEffect(() => {
         var tlLogoHeader = gsap.timeline();
