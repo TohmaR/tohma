@@ -145,11 +145,11 @@ function Hamburger(){
       const disableScroll = (e) => e.preventDefault();
 
       if (toggleMenu && isTabletOrMobile) {
-        window.addEventListener('scroll', disableScroll);
+        window.addEventListener('touchmove', disableScroll);
       } else {
-        window.removeEventListener('scroll', disableScroll);
+        window.removeEventListener('touchmove', disableScroll);
       }
-      
+
     });
 
     return () => ctx.revert();
