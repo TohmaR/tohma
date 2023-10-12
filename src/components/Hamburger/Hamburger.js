@@ -126,7 +126,7 @@ function Hamburger(){
       });
       
       menuTimeline.current.to(hamburgerTradRef.current, { duration: 0.4, delay: -0.3, opacity : 1, y: 0})
-      menuTimeline.current.to(hamburgerSocialRef.current, { duration: 0.4, delay: -0.3, opacity : 1, y: 0})
+      menuTimeline.current.to(hamburgerSocialRef.current, { duration: 0.4, delay: -0.3, opacity : 1, y: 0, display: "block"})
 
       for (let i = 0; i < logoLettersRef.current.length; i++) {
         const letter = logoLettersRef.current[i];
