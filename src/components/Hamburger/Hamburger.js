@@ -140,6 +140,8 @@ function Hamburger(){
       if (toggleMenu != null) {
         document.body.style.overflowY = toggleMenu ? "hidden" : "scroll";
         toggleMenu ? menuTimeline.current.play() : menuTimeline.current.reverse(true);
+        toggleMenu && isTabletOrMobile ? document.body.style.position = "fixed" : document.body.style.position = "static";
+
       }
     });
 
