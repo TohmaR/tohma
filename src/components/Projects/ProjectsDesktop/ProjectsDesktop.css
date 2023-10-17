@@ -33,6 +33,7 @@
     color: transparent;
     transition: 0.5s ease-out;
     z-index: 1000;
+    margin-bottom: 30px;
   }
   
   .projects__number span{

@@ -130,12 +130,12 @@ function Sneakmart(){
                     data-splitting
 
                 >
-                Sneakmart
+                    Sneakmart
                 </motion.div>
                 <motion.div 
                     className="project__scrollIndicator"
                     transition={{ duration: 0.4 }}
-                    exit={{ opacity: 0}}
+                    exit={{ opacity: 0 }}
                 ></motion.div>
             </div>
             <div className="project__container">

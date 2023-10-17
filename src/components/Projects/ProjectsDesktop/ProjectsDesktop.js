@@ -100,7 +100,7 @@ export default function ProjectsDesktop() {
 
     setupAnimationForProject("projects1", "top 40%", "40%", "top 25%", "200");
     setupAnimationForProject("projects2", "290% center", "80%", "330%", "200");
-    setupAnimationForProject("projects3", "600% center", "80%", "650%", "200");
+    setupAnimationForProject("projects3", "550% center", "80%", "580%", "200");
     // setupAnimationForProject("projects4", "800%", "80%", "850%", "200");
 
     return () => verticalScroll.scrollTrigger.kill();
