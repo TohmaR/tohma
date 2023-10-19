@@ -35,14 +35,14 @@ function App() {
         window.history.scrollRestoration = 'manual';
         const timer = setTimeout(() => {
           window.scrollTo(0, 0);
-        }, 40); // 50ms delay. Adjust if necessary.
+        }, 70); // 50ms delay. Adjust if necessary.
     
         return () => clearTimeout(timer);
     } else {
         window.addEventListener('load', () => {
           const timer = setTimeout(() => {
             window.scrollTo(0, 0);
-          }, 40); // 50ms delay. Adjust if necessary.
+          }, 70); // 50ms delay. Adjust if necessary.
       
           return () => clearTimeout(timer);
         });
