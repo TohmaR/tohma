@@ -30,32 +30,23 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // useEffect(() => {
-  //   if ('scrollRestoration' in window.history) {
-  //       window.history.scrollRestoration = 'manual';
-  //         document.body.scrollTo(0, 0);
-  //   } else {
-  //       window.addEventListener('load', () => {
-  //         document.body.scrollTo(0, 0);
-  //       });
-  //   }
-  //   return () => {
-  //       window.removeEventListener('load', () => {
-  //         document.body.scrollTo(0, 0);
-  //       });
-  //   };
-  // }, []);
-
   useEffect(() => {
-    const handleBeforeUnload = () => {
-      window.scrollTo(0, 0);
-    };
-
-    window.addEventListener('beforeload', handleBeforeUnload);
-
-    return () => {
-      window.removeEventListener('beforeload', handleBeforeUnload);
-    };
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+        const timer = setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 50); // 50ms delay. Adjust if necessary.
+    
+        return () => clearTimeout(timer);
+    } else {
+        window.addEventListener('load', () => {
+          const timer = setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 50); // 50ms delay. Adjust if necessary.
+      
+          return () => clearTimeout(timer);
+        });
+    }
   }, []);
 
   useEffect(() => {
