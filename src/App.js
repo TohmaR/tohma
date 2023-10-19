@@ -28,21 +28,20 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const location = useLocation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
-  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'manual';
         const timer = setTimeout(() => {
           window.scrollTo(0, 0);
-        }, 70); // 50ms delay. Adjust if necessary.
+        }, 500); // 50ms delay. Adjust if necessary.
     
         return () => clearTimeout(timer);
     } else {
         window.addEventListener('load', () => {
           const timer = setTimeout(() => {
             window.scrollTo(0, 0);
-          }, 70); // 50ms delay. Adjust if necessary.
+          }, 500); // 50ms delay. Adjust if necessary.
       
           return () => clearTimeout(timer);
         });
