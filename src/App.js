@@ -31,23 +31,16 @@ function App() {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
-    // Si la propriété scrollRestoration est disponible
     if ('scrollRestoration' in window.history) {
-        // Désactiver la restauration du scroll
         window.history.scrollRestoration = 'manual';
-
-        // Utilisez setTimeout pour différer le scrollToTop
         setTimeout(() => {
             window.scrollTo(0, 0);
-        }, 100); // Retardez-le de 100ms, mais vous pouvez ajuster cette valeur si nécessaire
+        }, 50); 
     } else {
-        // Pour les navigateurs qui ne supportent pas scrollRestoration
         window.addEventListener('load', () => {
             window.scrollTo(0, 0);
         });
     }
-
-    // N'oubliez pas de nettoyer le listener si nécessaire
     return () => {
         window.removeEventListener('load', () => {
             window.scrollTo(0, 0);
