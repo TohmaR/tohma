@@ -36,14 +36,23 @@ function App() {
         // Désactiver la restauration du scroll
         window.history.scrollRestoration = 'manual';
 
-        // S'assurer que la page est bien en haut
-        window.scrollTo(0, 0);
+        // Utilisez setTimeout pour différer le scrollToTop
+        setTimeout(() => {
+            window.scrollTo(0, 0);
+        }, 100); // Retardez-le de 100ms, mais vous pouvez ajuster cette valeur si nécessaire
     } else {
         // Pour les navigateurs qui ne supportent pas scrollRestoration
         window.addEventListener('load', () => {
             window.scrollTo(0, 0);
         });
     }
+
+    // N'oubliez pas de nettoyer le listener si nécessaire
+    return () => {
+        window.removeEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+    };
   }, []);
 
   useEffect(() => {
