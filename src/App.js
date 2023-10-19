@@ -30,19 +30,31 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // useEffect(() => {
+  //   if ('scrollRestoration' in window.history) {
+  //       window.history.scrollRestoration = 'manual';
+  //         document.body.scrollTo(0, 0);
+  //   } else {
+  //       window.addEventListener('load', () => {
+  //         document.body.scrollTo(0, 0);
+  //       });
+  //   }
+  //   return () => {
+  //       window.removeEventListener('load', () => {
+  //         document.body.scrollTo(0, 0);
+  //       });
+  //   };
+  // }, []);
+
   useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'manual';
-          document.body.scrollTo(0, 0);
-    } else {
-        window.addEventListener('load', () => {
-          document.body.scrollTo(0, 0);
-        });
-    }
+    const handleBeforeUnload = () => {
+      window.scrollTo(0, 0);
+    };
+
+    window.addEventListener('beforeload', handleBeforeUnload);
+
     return () => {
-        window.removeEventListener('load', () => {
-          document.body.scrollTo(0, 0);
-        });
+      window.removeEventListener('beforeload', handleBeforeUnload);
     };
   }, []);
 
