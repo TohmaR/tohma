@@ -33,17 +33,15 @@ function App() {
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'manual';
-        setTimeout(() => {
-            window.scrollTo(0, 0);
-        }, 50); 
+          document.body.scrollTo(0, 0);
     } else {
         window.addEventListener('load', () => {
-            window.scrollTo(0, 0);
+          document.body.scrollTo(0, 0);
         });
     }
     return () => {
         window.removeEventListener('load', () => {
-            window.scrollTo(0, 0);
+          document.body.scrollTo(0, 0);
         });
     };
   }, []);
