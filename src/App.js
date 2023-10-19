@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import { 
   Switch, 
   Route, 
@@ -28,6 +28,23 @@ gsap.registerPlugin(ScrollTrigger);
 function App() {
   const location = useLocation();
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    // Si la propriété scrollRestoration est disponible
+    if ('scrollRestoration' in window.history) {
+        // Désactiver la restauration du scroll
+        window.history.scrollRestoration = 'manual';
+
+        // S'assurer que la page est bien en haut
+        window.scrollTo(0, 0);
+    } else {
+        // Pour les navigateurs qui ne supportent pas scrollRestoration
+        window.addEventListener('load', () => {
+            window.scrollTo(0, 0);
+        });
+    }
+  }, []);
 
   useEffect(() => {
     document.body.style.overflowY = location.pathname === "/" ? "hidden" : "scroll";
@@ -53,8 +70,11 @@ function App() {
 
   return (
     <div className="App min-safe-h-screen">
-      <AnimatePresence initial={false} mode="wait">
-        <ScrollToTop key="scrollToTop" />
+      <AnimatePresence initial={false} mode="wait" onExitComplete={() => {
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+        }, 50); 
+      }}>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />
