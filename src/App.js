@@ -1,4 +1,3 @@
-/* eslint-disable no-restricted-globals */
 import React, { useEffect, useLayoutEffect, useState } from "react";
 import { 
   Switch, 
@@ -31,17 +30,21 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
 
   useEffect(() => {
-    if ('scrollRestoration' in history) {
-      history.scrollRestoration = 'manual';
-      window.onload = function () {
-        window.scrollTo(0, 0);
-      };
-    } else {
-      window.addEventListener('load', () => {
-        window.onload = function () {
+    if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+        const timer = setTimeout(() => {
           window.scrollTo(0, 0);
-        };
-      });
+        }, 0); // 50ms delay. Adjust if necessary.
+    
+        return () => clearTimeout(timer);
+    } else {
+        window.addEventListener('load', () => {
+          const timer = setTimeout(() => {
+            window.scrollTo(0, 0);
+          }, 0); // 50ms delay. Adjust if necessary.
+      
+          return () => clearTimeout(timer);
+        });
     }
   }, []);
 
