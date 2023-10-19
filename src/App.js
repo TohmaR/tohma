@@ -31,20 +31,16 @@ function App() {
 
   useEffect(() => {
     if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'manual';
-        const timer = setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 100); // 50ms delay. Adjust if necessary.
-    
-        return () => clearTimeout(timer);
+      window.history.scrollRestoration = 'manual';
+      window.onload = function () {
+        window.scrollTo(0, 0);
+      };
     } else {
-        window.addEventListener('load', () => {
-          const timer = setTimeout(() => {
-            window.scrollTo(0, 0);
-          }, 100); // 50ms delay. Adjust if necessary.
-      
-          return () => clearTimeout(timer);
-        });
+      window.addEventListener('load', () => {
+        window.onload = function () {
+          window.scrollTo(0, 0);
+        };
+      });
     }
   }, []);
 
