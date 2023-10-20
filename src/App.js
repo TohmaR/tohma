@@ -30,25 +30,6 @@ function App() {
   const isDesktop = useMediaQuery({ query: '(min-width: 1225px)' });
 
   useEffect(() => {
-    if ('scrollRestoration' in window.history) {
-        window.history.scrollRestoration = 'manual';
-        const timer = setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 0); // 50ms delay. Adjust if necessary.
-    
-        return () => clearTimeout(timer);
-    } else {
-        window.addEventListener('load', () => {
-          const timer = setTimeout(() => {
-            window.scrollTo(0, 0);
-          }, 0); // 50ms delay. Adjust if necessary.
-      
-          return () => clearTimeout(timer);
-        });
-    }
-  }, []);
-
-  useEffect(() => {
     document.body.style.overflowY = location.pathname === "/" ? "hidden" : "scroll";
     
     const handleScroll = () => {
@@ -72,11 +53,8 @@ function App() {
 
   return (
     <div className="App min-safe-h-screen">
-      <AnimatePresence initial={false} mode="wait" onExitComplete={() => {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 50); 
-      }}>
+      <AnimatePresence initial={false} mode="wait">
+        <ScrollToTop key={ScrollToTop}/>
         <Switch location={location} key={location.pathname}>
           <Route exact path="/">
             <HomePage />

@@ -165,9 +165,6 @@ function Hamburger(){
   
     const handleScroll = () => {
       if (history.location.pathname !== '/') {
-        setTimeout(() => {
-          window.scrollTo(0, 0);
-        }, 1000); 
         history.push('/');
         setTimeout(() => {
           document.body.style.overflowY = "scroll";
