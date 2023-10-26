@@ -76,7 +76,6 @@
   height: auto;
   left : 8vw;
   top: 0;
-  transform: rotateY(90deg);
 }
 
 .home__circle{
@@ -104,12 +103,10 @@
 }
 
 .home__description div:nth-child(1){
-  transform: translateX(-100px);
   margin-right: 10px;
 }
 
-.home__description div:nth-child(2){
-  transform: translateX(100px);
+.home__description div:nth-child(1){
   margin-left: 10px;
 }
 
@@ -128,7 +125,6 @@
   width: 2px;
   height: 11.815252416756175vh;
   background: linear-gradient(#e9ea0c, #14e97c);
-  transform: translateY(100px);
 }
 
 @media screen and (min-width: 1025px) {

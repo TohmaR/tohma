@@ -16,11 +16,11 @@ function Home() {
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power2.inOut", delay: 6 } });
 
-    tl.to(".home__description div:nth-child(1)",{ opacity: 1, x: 0 }, 0)
-      .to(".home__description div:nth-child(2)",{ opacity: 1, x: 0, }, 0)
-      .to(".scrollIndicator",{ opacity: 1, y: 0 }, 0)
-      .to(isDesktop ? ".home__background" : ".home__background--mobile", { duration: 0.4, opacity: 1,delay: isDesktop ? 6 : 6.3 }, 0)
-      .to(".home__arrow", { rotateY: "0deg", delay: 6.5}, 0)
+    tl.fromTo(".home__description div:nth-child(1)", { opacity: 0, x: -100 }, { opacity: 1, x: 0 }, 0)
+      .fromTo(".home__description div:nth-child(2)", { opacity: 0, x: 100 }, { opacity: 1, x: 0, }, 0)
+      .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
+      .fromTo(isDesktop ? ".home__background" : ".home__background--mobile", { opacity: 0 }, { duration: 0.4, opacity: 1,delay: isDesktop ? 6 : 6.3 }, 0)
+      .fromTo(".home__arrow", { rotateY: "90deg" }, { rotateY: "0deg", delay: 6.5}, 0)
       .fromTo(".home__circle path", { drawSVG: 0 }, { drawSVG: "50%", delay: 6.5, ease: "rough({ template: none.out, strength: 2, points: 20, taper: none, randomize: true, clamp: true})", duration: 1 }, 0);
 
     const scrollTriggerOptions = {
