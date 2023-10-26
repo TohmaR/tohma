@@ -62,7 +62,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    top: -100vh;
+    top: -100dvh;
     right:0;
     min-width: 100vw;
     min-height: 100dvh;
