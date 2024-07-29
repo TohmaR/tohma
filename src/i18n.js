@@ -5,9 +5,8 @@ const resources = {
   en: {
     translation: {
       //home
-      "Descriptionspan1": "I'm a Junior Front end developer",
-      "Description1": "from France living in Paris. I love design in general and bringing my creations to life",
-      "Description2": "If you want to know more about me, my work or if you're a Suggar mommy who wants to offer me a lot of money, feel free to contact me",
+      "Descriptionspan1": "I'm a Front end developer ",
+      "Description1": "from France living in Paris. I love design in general and bringing my creations to life. If you want to know more about me, my work or if you're a Suggar mommy who wants to offer me a lot of money, feel free to contact me.",
       //Menu
       "menu1": "Home",
       "menu2": "Projects",
@@ -29,9 +28,8 @@ const resources = {
   fr: {
     translation: {
       //home
-      "Descriptionspan1": "Je suis un développeur Front-end junior ",
-      "Description1": "français vivant à Paris. J'adore le design en général et donner vie à mes créations",
-      "Description2": "Si vous souhaitez en savoir plus sur moi, sur mon travail ou si vous êtes une sugar mommy qui souhaite m'offrir beaucoup d'argent, n'hésitez pas à me contacter",
+      "Descriptionspan1": "Je suis un développeur Front-end ",
+      "Description1": "français vivant à Paris. J'adore le design en général et donner vie à mes créations. Si vous souhaitez en savoir plus sur moi, sur mon travail ou si vous êtes une sugar mommy qui souhaite m'offrir beaucoup d'argent, n'hésitez pas à me contacter",
       //Menu
       "menu1": "Accueil",
       "menu2": "Projets",

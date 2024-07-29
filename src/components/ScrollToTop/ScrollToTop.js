@@ -1,30 +1,35 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLayoutEffect } from "react";
+import { useLocation } from "react-router-dom"; 
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 export default function ScrollToTop() {
-  const { pathname } = useLocation();
+  const location = useLocation();
 
-  useEffect(() => {
-    setTimeout(() => {
-      window.scrollTo(0, 0);
-    }, 0);
-  }, [pathname]);
-
-  useEffect(() => {
-    // Si la propriété scrollRestoration est disponible
-    
-        // Désactiver la restauration du scroll
+  useLayoutEffect(() => {
+    // Fonction pour réinitialiser le scroll
+    const resetScroll = () => {
+      if ('scrollRestoration' in window.history) {
         window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    };
 
-        // S'assurer que la page est bien en haut
-        window.scrollTo(0, 0);
-  
-        // Pour les navigateurs qui ne supportent pas scrollRestoration
-        window.addEventListener('load', () => {
-            window.scrollTo(0, 0);
-        });
+    // Ajouter un écouteur pour l'événement 'load'
+    window.addEventListener('load', resetScroll);
+
+    // Utiliser un délai pour s'assurer que le DOM est complètement rendu
    
-  }, []);
+      resetScroll();
+ 
+    // Nettoyage des écouteurs et du délai
+    return () => {
+      window.removeEventListener('load', resetScroll);
+     
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'auto';
+      }
+    };
+  }, [location.pathname]);
 
   return null;
 }

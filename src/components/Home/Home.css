@@ -57,7 +57,7 @@
   height: 33vh;
   bottom: 0;
   font-family: "Sk-Modernist-Bold";
-  font-size: 2.9vw;
+  font-size: 3.5vw;
   color: #757575;
   overflow: hidden;
 }
@@ -70,51 +70,24 @@
   overflow-x: hidden;
 }
 
-.home__arrow{
-  position: absolute;
-  width: 15vw;
-  height: auto;
-  left : 8vw;
-  top: 0;
-}
-
-.home__circle{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-40%);
-  width: 170vw;
-  opacity: 0.8;
-}
-
-
-.home__circle path{
-  stroke-width: 6px;
-  fill: transparent;
-  stroke-dashoffset: 350.3px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 1000;
-}
-
-
 .home__description div{
-  width: 40vw;
+  width: 80vw;
 }
 
 .home__description div:nth-child(1){
   margin-right: 10px;
+  opacity: 0;
+  transform: translate3d(0px, 100px, 0px);
 }
-
-.home__description div:nth-child(1){
-  margin-left: 10px;
-}
-
 
 .home__description div span{
   font-size: 3vw;
   text-transform: uppercase;
   color: white;
+}
+
+canvas:nth-child(2){
+  display: none;
 }
 
 
@@ -153,7 +126,7 @@
   }
   
   .home__description div{
-    max-width: 15vw;
+    max-width: 21.5vw;
     margin-right: 80px;
   }
   

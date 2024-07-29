@@ -16,7 +16,7 @@ function LoadingPageMobile() {
 	const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const history = useHistory()
 
-    const animateMorph = (selector, sequence, initialDelay = 0.2) => {
+    const animateMorph = (selector, sequence, initialDelay = 0.1) => {
         const timeline = gsap.timeline({ 
             delay: initialDelay, 
             onComplete: () => {
@@ -37,64 +37,64 @@ function LoadingPageMobile() {
     
     useEffect(() => {
         var tlLogoHeader = gsap.timeline();
-                tlLogoHeader.delay(5.45);
-        const timelines = [];
+                tlLogoHeader.delay(4);
+            const timelines = [];
 
-        timelines.push(animateMorph('.morph1__initial', [
-            ["to", 0.7, { opacity: 1 }],
-            ["to", { delay: 0.8, morphSVG: '.morph1__2' }],
-            ["to", { delay : 0.5, morphSVG : '.morph1__4'}],
-            ["to", { delay : 0.5, morphSVG : '.morph1__8'}],
-            ["to", { delay : 0.5, morphSVG : '.morph1__9'}],
-            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph1__T'}],
-            ["to", { delay : -0.6, duration : 0.5, y : -70}],
-        ], 0.2))
-
-        timelines.push(animateMorph('.morph2__initial', [
-            ["to", 0.7, { opacity: 1 }],
-            ["to", { delay: 0.6, morphSVG: '.morph2__°' }],
-            ["to", { delay : 0.5, morphSVG : '.morph2__5'}],
-            ["to", {delay: 0.5 , morphSVG : '.morph2__°'}],
-            ["to", { delay : 0.5, morphSVG : '.morph2__9'}],
-            ["to", { duration: 0.6,delay : 0.5, morphSVG : '.morph2__O'}],
-            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.4))
-
-        timelines.push(animateMorph('.morph3__initial', [
-            ["to", 0.7, { opacity: 1 }],
-            ["to", {delay: 0.4 , morphSVG : '.morph3__separator'}],
-            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
-            ["to", {delay: 0.5 , morphSVG : '.morph3__separator'}],
-            ["to", { delay : 0.5,morphSVG : '.morph3__initial'}],
-            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph3__M'}],
-            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.6))
-
-        timelines.push(animateMorph('.morph4__initial', [
-            ["to", 0.7, { opacity: 1 }],
-            ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
-            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
-            ["to", {delay: 0.5 , morphSVG : '.morph4__°'}],
-            ["to", { delay : 0.5, morphSVG : '.morph4__initial'}],
-            ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'}],
-            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 0.8))
-
-        timelines.push(animateMorph('.morph5__initial', [
-            ["to", 0.7, { opacity: 1 }],
-            ["to", {morphSVG : '.morph5__3'}],
-            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
-            ["to", { delay : 0.5, morphSVG : '.morph5__5'}],
-            ["to", { delay : 0.5, morphSVG : '.morph5__initial'}],
-            ["to", { duration: 0.6, delay : 0.5, morphSVG : '.morph5__A'}],
-            ["to", { delay : -0.6, duration : 0.5, y : -70}], 
-        ], 1))
+            timelines.push(animateMorph('.morph1__initial', [
+                ["to", 0.3, { opacity: 1 }],
+                ["to", { delay: 0.8, morphSVG: '.morph1__2' }],
+                ["to", { delay : 0.2, morphSVG : '.morph1__4'}],
+                ["to", { delay : 0.2, morphSVG : '.morph1__8'}],
+                ["to", { delay : 0.2, morphSVG : '.morph1__9'}],
+                ["to", { duration: 0.6,delay : 0.2, morphSVG : '.morph1__T'}],
+                ["to", { delay : -0.6, duration : 0.5, y : -70}],
+            ], 0.2))
+    
+            timelines.push(animateMorph('.morph2__initial', [
+                ["to", 0.3, { opacity: 1 }],
+                ["to", { delay: 0.6, morphSVG: '.morph2__°' }],
+                ["to", { delay : 0.2, morphSVG : '.morph2__5'}],
+                ["to", {delay: 0.2 , morphSVG : '.morph2__°'}],
+                ["to", { delay : 0.2, morphSVG : '.morph2__9'}],
+                ["to", { duration: 0.6,delay : 0.3, morphSVG : '.morph2__O'}],
+                ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+            ], 0.4))
+    
+            timelines.push(animateMorph('.morph3__initial', [
+                ["to", 0.3, { opacity: 1 }],
+                ["to", {delay: 0.4 , morphSVG : '.morph3__separator'}],
+                ["to", { delay : 0.2,morphSVG : '.morph3__initial'}],
+                ["to", {delay: 0.2 , morphSVG : '.morph3__separator'}],
+                ["to", { delay : 0.2,morphSVG : '.morph3__initial'}],
+                ["to", { duration: 0.6, delay : 0.4,morphSVG : '.morph3__M'}],
+                ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+            ], 0.6))
+    
+            timelines.push(animateMorph('.morph4__initial', [
+                ["to", 0.3, { opacity: 1 }],
+                ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
+                ["to", { delay : 0.2, morphSVG : '.morph4__initial'}],
+                ["to", {delay: 0.2 , morphSVG : '.morph4__°'}],
+                ["to", { delay : 0.2, morphSVG : '.morph4__initial'}],
+                ["to", { duration: 0.6, delay : 0.5,morphSVG : '.morph4__H'}],
+                ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+            ], 0.8))
+    
+            timelines.push(animateMorph('.morph5__initial', [
+                ["to", 0.3, { opacity: 1 }],
+                ["to", {morphSVG : '.morph5__3'}],
+                ["to", { delay : 0.2, morphSVG : '.morph5__initial'}],
+                ["to", { delay : 0.2, morphSVG : '.morph5__5'}],
+                ["to", { delay : 0.2, morphSVG : '.morph5__initial'}],
+                ["to", { duration: 0.6, delay : 0.6, morphSVG : '.morph5__A'}],
+                ["to", { delay : -0.6, duration : 0.5, y : -70}], 
+            ], 1))
 
        
 
         tlLogoHeader.to('.loadingPageMobile__background', { delay: -.2, duration: 0.9, opacity: 0})
-                    .to(".loadingPageMobile",{ duration: 0.6, height : "20vh", width: "30vw", marginLeft: "20px", marginTop: "20px"})
-                    .to(".loadingPageMobile svg",{ duration: 0.6, delay: -.6, height : "20vh", width: "30vw"})
+                    .to(".loadingPageMobile",{ duration: 0.4, height : "20vh", width: "30vw", marginLeft: "20px", marginTop: "20px"})
+                    .to(".loadingPageMobile svg",{ duration: 0.4, delay: -.4, height : "20vh", width: "30vw"})
                     .to(".loadingPageMobile__background",{ display: "none"}, ">")   
         
 

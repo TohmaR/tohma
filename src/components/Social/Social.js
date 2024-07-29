@@ -10,11 +10,11 @@ function Social() {
   useLayoutEffect(() => {
     const tlSocial = gsap.timeline();
 
-    tlSocial.fromTo(".social", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5 });
+    tlSocial.fromTo(".social-item", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.65, stagger: 0.03});
 
     const { pathname } = window.location;
     if (pathname === "/") {
-      tlSocial.delay(6.3);
+      tlSocial.delay(4.3);
     }
   }, []);
 
@@ -70,6 +70,7 @@ function Social() {
           rel="noreferrer"
           aria-label={icon.id}
           key={icon.id}
+          className="social-item"
         >
           <div
             key={icon.id}

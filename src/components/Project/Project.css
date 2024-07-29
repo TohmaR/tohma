@@ -25,7 +25,7 @@
 }
 
 .project__logo path{
-    opacity: 1;
+    opacity: 0;
 }
 
 .project__container{
@@ -88,9 +88,10 @@
     position: absolute; 
     font-size: 11vw;
     font-weight: 900;
-    bottom: 10vh;
+    bottom: 0;
     left:5vw;
     font-family: "MonumentExtended-Regular";
+    overflow: hidden
 }
 
 .project__title span{
@@ -98,12 +99,11 @@
     background-clip: text;
     color: transparent;
     padding: 5px 0;
+    -webkit-filter: drop-shadow(3px 3px #333);
+    display: inline-block;
+    transform: translate3d(0px, 110%, 0px);
 }
   
-.project__title .char{
-    opacity: 0;
-    -webkit-filter: drop-shadow(3px 3px #333);
-}
 
 .project__photo__container{
     position: relative;
@@ -160,6 +160,11 @@
     font-weight: 600;
 }
 
+.project__view--wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
 .project__view--items{
     display: flex;
     align-items: center;
@@ -181,8 +186,6 @@
 .project__view .project__view--items:nth-child(2)>svg{
     margin-right: 2px;
 }
-
-
 
 .project__context{
     width: 90%;
@@ -218,6 +221,15 @@
     background-color: #1a1a1a;
 }
 
+.project__parallax--box{
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    background-color: black;
+    transform: translate3d(0px, 105%, 0px);
+    z-index: 5;
+}
+
 .project__parallax--img{
     position: absolute;
     bottom: 0;
@@ -241,19 +253,28 @@
 }
 
 .project__next--container{
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
     color: white;
-    padding: 20px 30px;
+    padding: 0 30px 20px 30px;
     font-family: "MonumentExtended-Regular";
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    z-index: 3;
 }
+
+.project__next--wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
 .project__next--container2{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .project__next--year{
@@ -278,16 +299,33 @@
     object-position: center 10%;
 }
 
+.project__next--box{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 2;
+    transform: translate3d(0px, -110%, 0px);
+}
+
 .project__next--title{
     position: absolute;
-    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
     font-family: "MonumentExtended-Regular";
-    font-size: 11vw;
-    top: -6vw;
+    font-size: 13vw;
+    font-weight: 900;
+    white-space: nowrap;
+    bottom: -100px;
+    overflow: hidden;
+    z-index: 3;
+}
+.project__next--title span{
     background-image: linear-gradient(to bottom, #e9ea0c 20%, #14e97c);
     background-clip: text;
     color: transparent;
     -webkit-filter: drop-shadow(3px 3px #333);
+    display: inline-block;
 }
 
 @media screen and (min-width: 1025px) {
@@ -330,8 +368,10 @@
     }
     
     .project__title{
-        font-size: 8vw;
+        font-size:9vw;
     }
+
+    
 
     .project__view{
         font-size: 1vw;
@@ -352,6 +392,7 @@
         align-items: center;
         justify-content: center;
     }
+
 
     .project__next--container{
         flex-direction: row;
@@ -383,7 +424,13 @@
         margin-bottom: 150px;
     }
 
+    .project__next--title{
+        font-size: 9vw;
+        bottom: -220px;
+    }
+
     .project__next--image{
         height: 60vh;
     }
+
 }

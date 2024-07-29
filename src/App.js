@@ -21,7 +21,8 @@ import TranslationToggle from "./components/TranslationToggle/TranslationToggle"
 
 export const Amazon = loadable(() => import("./components/Project/Amazon"));
 export const Sneakmart = loadable(() => import("./components/Project/Sneakmart"));
-export const HDMI = loadable(() => import("./components/Project/HDMI"));
+export const JeanProuve = loadable(() => import("./components/Project/JeanProuve"));
+export const SneakmartPlus = loadable(() => import("./components/Project/SneakmartPlus"));
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,7 +50,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  const showCursor = isDesktop && ['/Amazon', '/Sneakmart', '/HDMI'].includes(location.pathname);
+  const showCursor = isDesktop && ['/Amazon', '/Sneakmart', '/JeanProuve'].includes(location.pathname);
 
   return (
     <div className="App min-safe-h-screen">
@@ -61,7 +62,6 @@ function App() {
             <Hamburger />
             <Social/>
             <TranslationToggle />
-            <Footer />
           </Route>
           <Route path="/Amazon">
             <Amazon />
@@ -75,14 +75,20 @@ function App() {
             <Social/>
             <TranslationToggle />
           </Route>
-          <Route path="/HDMI">
-            <HDMI />
+          <Route path="/Sneakmart+">
+            <SneakmartPlus />
+            <Hamburger />
+            <Social/>
+            <TranslationToggle />
+          </Route>
+          <Route path="/JeanProuve">
+            <JeanProuve />
             <Hamburger />
             <Social/>
             <TranslationToggle />
           </Route>
         </Switch>
-        {showCursor && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgroundColor={"green"} />}
+        {showCursor &&  <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={13} cursorBackgrounColor={"#e3e3e3"} />}
       </AnimatePresence>
     </div>
   );

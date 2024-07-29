@@ -17,7 +17,7 @@ function HomePage() {
             <Title><span>Selected</span><br/><span>Works</span></Title>
             <Projects />
             <Contact />
-            {isDesktop && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={20} cursorBackgrounColor={"#e3e3e3"} />}
+            {isDesktop && <Cursor isGelly={true} gellyAnimationAmount={1} cursorSize={13} cursorBackgrounColor={"#e3e3e3"} />}
         </div>
         
 	);

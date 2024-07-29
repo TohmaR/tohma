@@ -120,7 +120,7 @@ path { transition: fill .2s ease; }
 @media screen and (min-width : 1025px){
     .contact{
         margin-top: 20vh;
-        padding-bottom: 20vh;
+        padding-bottom: 25vh;
         margin-bottom: 0;
     }
     .contact__map{

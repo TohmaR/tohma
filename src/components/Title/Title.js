@@ -43,7 +43,7 @@ export default function Title(props) {
                     trigger: '.title__container',
                     start: '10% bottom',
                     end: '10%',
-                    scrub: true,
+                    scrub: 1,
                 }
             });
         });

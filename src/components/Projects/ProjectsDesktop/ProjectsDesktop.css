@@ -1,7 +1,7 @@
 @media screen and (min-width : 1025px){
   
   .container {
-    width: 300%;
+    width: 400%;
     height: 100vh;
     display: flex;
     flex-wrap: nowrap;
@@ -17,23 +17,22 @@
     color: white;
     position: relative;
     box-sizing: border-box;
-    padding: 10vw;
+    padding: 8vw;
     overflow: hidden;
     user-select: none;
   }
   
   .projects__number{
     position: relative;
-    font-size: 8vw;
+    font-size: 5vw;
     font-weight: 900;
     font-family: "goku";
     background: linear-gradient(to right, #050505 50%, #151515 10%, #151515);
     background-size: 200%;
     background-clip: text;
     color: transparent;
-    transition: 0.5s ease-out;
     z-index: 1000;
-    margin-bottom: 30px;
+    overflow: hidden;
   }
   
   .projects__number span{
@@ -45,8 +44,8 @@
   
   .projects__video{
     position: absolute;
-    width: 55vw;
-    height: 60vh;
+    width: 68vw;
+    height: 70vh;
     aspect-ratio: 9/6 auto;
     filter: grayscale(1);
     transition: all 0.5s;
@@ -69,14 +68,14 @@
   .projects__photo__box{
     position: absolute;
     top:0;
-    width: 57vw;
+    width: 71vw;
     height: 100vh;
     background-color: black;
   }
   
   .projects__photo__boxExit{
     position: absolute;
-    width: 57vw;
+    width: 71vw;
     height: 80vh;
     background-color: black;
     bottom: -80vh;
@@ -87,32 +86,28 @@
     display: flex;
     flex-direction: column;
     left: 11vw;
-    bottom: 5vh;
+    bottom: 30vh;
+    overflow: hidden;
   }
   
   .projects__title {
     position: relative;
-    font-size: 5vw;
-    line-height: 5vw;
+    font-size: 4vw;
     counter-increment: section;
     text-align: center;
-    display: grid;
-    gap: 2rem;
     z-index: 2;
     font-family: "MonumentExtended-Regular";
     font-weight: 600;
     -webkit-filter: drop-shadow(3px 3px #333);
+    margin: 0;
+    overflow: hidden;
   }
   
   .projects__title span{
     background-image: linear-gradient(to bottom, #e9ea0c, #14e97c);
     background-clip: text;
     color: transparent;
-    padding: 5px 0;
-  }
-  
-  .projects__title .char{
-    opacity: 0;
+    display: inline-block;
   }
   
 }

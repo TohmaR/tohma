@@ -13,11 +13,11 @@ function TranslationToggle() {
   useLayoutEffect(() => {
     const tlTranslationToggle = gsap.timeline();
 
-    tlTranslationToggle.fromTo(".translationToggle", { opacity: 0, y: 200 }, { opacity: 1, y: 0, duration: 0.5, autoAlpha: 1, display: "flex" });
+    tlTranslationToggle.fromTo(".translationToggle", { y: 200 }, { y: 0, duration: 0.65, autoAlpha: 1, display: "flex" });
 
     const { pathname } = window.location;
     if (pathname === "/") {
-        tlTranslationToggle.delay(6.3);
+        tlTranslationToggle.delay(4.3);
     }
   }, []);
 
