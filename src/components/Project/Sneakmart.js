@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
-import Photo1 from "../../assets/image/Sneakmart/end.webp";
+import Photo1 from "../../assets/image/Sneakmart/end.jpg";
 import VideoDesktop from "../../assets/image/Sneakmart/sneakmartVideoDesktop.mp4";
 import VideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
