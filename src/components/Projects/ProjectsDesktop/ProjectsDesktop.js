@@ -123,7 +123,7 @@ export default function ProjectsDesktop() {
       }
     });
 
-    const animation1 = setupAnimationForProject("projects1", "top 25%", "+=300", null, false);
+    const animation1 = setupAnimationForProject("projects1", "top 40%", "+=300", null, false);
     const animation2 = setupAnimationForProject("projects2", "left 20%", "+=300", verticalScroll, true);
     const animation3 = setupAnimationForProject("projects3", "left 20%", "+=300", verticalScroll, true);
     const animation4 = setupAnimationForProject("projects4", "left 30%", "+=300", verticalScroll, true);

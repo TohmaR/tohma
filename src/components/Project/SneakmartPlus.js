@@ -10,7 +10,7 @@ import VideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/Sneakmart+/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Sneakmart+/mobile-side-effect.png";
 import Responsive from "../../assets/image/Sneakmart+/responsive.jpg";
-import NextProject from "../../assets/image/HDMI/end.jpg";
+import NextProject from "../../assets/image/Sneakmart/end.jpg";
 
 import "./Project.css";
 

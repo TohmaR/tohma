@@ -13,7 +13,7 @@ import VideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
 import Responsive from "../../assets/image/Amazon/responsive.jpg";
-import NextProject from "../../assets/image/HDMI/end.jpg";
+import NextProject from "../../assets/image/JeanProuve/end.jpg";
 
 import "./Project.css";
 

@@ -50,7 +50,7 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [location.pathname]);
 
-  const showCursor = isDesktop && ['/Amazon', '/Sneakmart', '/JeanProuve'].includes(location.pathname);
+  const showCursor = isDesktop && ['/Amazon', '/Sneakmart', '/Sneakmart+', '/JeanProuve'].includes(location.pathname);
 
   return (
     <div className="App min-safe-h-screen">
