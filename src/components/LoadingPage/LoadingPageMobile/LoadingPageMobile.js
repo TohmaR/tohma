@@ -92,9 +92,9 @@ function LoadingPageMobile() {
 
        
 
-        tlLogoHeader.to('.loadingPageMobile__background', { delay: -.2, duration: 0.9, opacity: 0})
+        tlLogoHeader.to('.loadingPageMobile__background', { delay: -.2, duration: 0.5, opacity: 0})
                     .to(".loadingPageMobile",{ duration: 0.4, height : "20vh", width: "30vw", marginLeft: "20px", marginTop: "20px"})
-                    .to(".loadingPageMobile svg",{ duration: 0.4, delay: -.4, height : "20vh", width: "30vw"})
+                    .to(".loadingPageMobile svg",{ duration: 0.4, delay: .4, height : "20vh", width: "30vw"})
                     .to(".loadingPageMobile__background",{ display: "none"}, ">")   
         
 

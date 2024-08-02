@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/Sneakmart/end.jpg";
 import VideoDesktop from "../../assets/image/Sneakmart/sneakmartVideoDesktop.mp4";
-import VideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
+import VideoMobile from "../../assets/image/Sneakmart/sneakmartVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/Amazon/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/Amazon/mobile-side-effect.png";
 import Responsive from "../../assets/image/Sneakmart/responsive.jpg";

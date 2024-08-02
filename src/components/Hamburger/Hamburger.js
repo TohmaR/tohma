@@ -110,6 +110,7 @@ function Hamburger(){
       tlToggleMenu.delay(4.3);
     }
     tlToggleMenu.to(".hamburger", { duration: 0.65, opacity: 1, top: 0 }, 0);
+    return () => tlToggleMenu.kill();
   }, []);
   
   useLayoutEffect(() => {

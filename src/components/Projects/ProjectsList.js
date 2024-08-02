@@ -1,11 +1,12 @@
 //Mobile videos
 import AmazonVideoMobile from "../../assets/image/Amazon/amazonVideoMobile.mp4";
 import SneakmartVideoMobile from "../../assets/image/Sneakmart/sneakmartVideoMobile.mp4";
-import HDMIVideoMobile from "../../assets/image/HDMI/HDMIVideoMobile.mp4";
+import SneakmarPlustVideoMobile from "../../assets/image/Sneakmart+/sneakmart+VideoMobile.mp4";
+import JeanProuvetVideoMobile from "../../assets/image/JeanProuve/jeanProuveVideoMobile.mp4";
 
 //Desktop videos
 import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
-import JeanProuveVideoDesktop from "../../assets/image/JeanProuve/JeanProuveVideoDesktop.mp4";
+import JeanProuveVideoDesktop from "../../assets/image/JeanProuve/jeanProuveVideoDesktop.mp4";
 import SneakmartPlusVideoDesktop from "../../assets/image/Sneakmart+/sneakmart+VideoDesktop.mp4";
 import SneakmartVideoDesktop from "../../assets/image/Sneakmart/sneakmartVideoDesktop.mp4";
 
@@ -16,7 +17,7 @@ const ProjectsList = [
     number: '001',
     title: 'Prouvé',
     videoDesktop: JeanProuveVideoDesktop,
-    videoMobile: SneakmartVideoMobile,
+    videoMobile: JeanProuvetVideoMobile,
     link: '/JeanProuve'
 },
 {
@@ -24,7 +25,7 @@ const ProjectsList = [
     number: '002',
     title: 'Sneakmart+',
     videoDesktop: SneakmartPlusVideoDesktop,
-    videoMobile: SneakmartVideoMobile,
+    videoMobile: SneakmarPlustVideoMobile,
     link: '/Sneakmart+'
 },
 {

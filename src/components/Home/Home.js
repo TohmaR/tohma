@@ -73,6 +73,7 @@ function Home() {
         // Nettoyage lors du démontage du composant
         return () => {
           window.removeEventListener('mousemove', onMouseMove);
+      
           if (app) {
             app.destroy(true, { children: true });
             appRef.current = null;
@@ -87,7 +88,7 @@ function Home() {
 
     tl.to(".home__description div:nth-child(1)", { opacity: 1, y: 0 }, 0)
       .fromTo(".scrollIndicator", { opacity: 0, y: 100 }, { opacity: 1, y: 0 }, 0)
-      .fromTo(isDesktop ? ".home__background" : ".home__background--mobile", { opacity: 0 }, { duration: 0.4, opacity: 1,delay: isDesktop ? 4.5 : 4.7 }, 0)
+      .fromTo(isDesktop ? ".home__background" : ".home__background--mobile", { opacity: 0 }, { duration: 0.4, opacity: 1,delay: 4.5 }, 0)
     const scrollTriggerOptions = {
       trigger: ".home",
       scrub: true,

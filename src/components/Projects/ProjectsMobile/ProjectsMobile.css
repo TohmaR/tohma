@@ -5,6 +5,7 @@
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    margin-bottom: 10vh;
   }
     
   .panel {
@@ -16,7 +17,6 @@
     color: white;
     position: relative;
     box-sizing: border-box;
-    padding: 50px;
     overflow: hidden;
   }
 
@@ -26,42 +26,44 @@
     flex-direction: column;
     justify-content: center;
     left:8vw;
+    bottom: 10px;
   }
 
   .projects__title {
     position: relative;
-    font-size: 10vw;
+    font-size: 8vw;
     z-index: 2;
     font-family: "MonumentExtended-Regular";
     font-weight: 600;
     -webkit-filter: drop-shadow(2px 1px #333);
-    bottom: -100px;
     padding: 0;
     margin: 0;
+    overflow: hidden;
   }
   
   .projects__title span{
     background-image: linear-gradient(to bottom, #e9ea0c, #14e97c);
     background-clip: text;
     color: transparent;
+    display: inline-block;
   }
   
   .projects__title .char{
-    opacity: 0;
+    opacity: 1;
   }
   
   .projects__number{
-    font-size: 20vw;
+    font-size: 10vw;
     font-weight: 900;
     font-family: "goku";
-    background: linear-gradient(to right, #1e1e1e 50%, #e9ea0c 2%, #14e97c);
+    background: linear-gradient(to right, #050505 50%, #151515 10%, #151515);
     background-size: 200%;
     background-clip: text;
     z-index: 2;
     color: transparent;
     transition: 0.5s ease-out;
-    -webkit-filter: drop-shadow(2px 1px #333);
     will-change: transform, opacity;
+    overflow: hidden;
   }
   
   .projects__number span{

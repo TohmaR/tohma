@@ -11,6 +11,24 @@ import ProjectsList from "../ProjectsList"
 
 gsap.registerPlugin(ScrollTrigger);
 
+const AnimatedTitle = ({ title }) => {
+  const splitTitle = title.split('');
+
+  return (
+    <h2 className="projects__title">
+      {splitTitle.map((char, index) => (
+        <motion.span
+          key={`char-${index}`}
+          exit={{ transform: "translate3d(0px, 110%, 0px" }}
+          transition={{ duration: 0.35, delay: ((splitTitle.length - index - 1) * 0.04) + 0.25 }}
+        >
+          {char}
+        </motion.span>
+      ))}
+    </h2>
+  );
+};
+
 function setupAnimationForProject(projectClass, start, end, textStart, textEnd) {
   let tl = gsap.timeline({
     scrollTrigger: {
@@ -34,7 +52,7 @@ function setupAnimationForProject(projectClass, start, end, textStart, textEnd) 
 
   tl.to(`.${projectClass}>.projects__video__box`, { y: "100%" }, 0);
   tl.to(`.${projectClass}>.projects__video video`, { transform: "scale(1)" }, 0);
-  tlText.to(`.${projectClass} .char`, { y: "-100px", opacity: 1, stagger: 0.03 }, 0);
+  tlText.fromTo(`.${projectClass} .projects__title span`, { transform: "translate3d(0px, 105%, 0px)", opacity: 1, stagger: 0.03 }, { transform: "translate3d(0px, 0%, 0px)", opacity: 1, stagger: 0.03 }, 0);
   tlText.to(`.${projectClass} .projects__number`, { backgroundPosition: "-100%" }, 0);
 }
 
@@ -53,10 +71,10 @@ export default function ProjectsDesktop (){
       key: null
     });
   
-    setupAnimationForProject("projects1", "top 55%", "300", "top 40%", "100");
-    setupAnimationForProject("projects2", "top 55%", "300", "top 40%", "100");
-    setupAnimationForProject("projects3", "top 55%", "300", "top 40%", "100");
-    
+    setupAnimationForProject("projects1", "top 55%", "500", "center 53%", "50");
+    setupAnimationForProject("projects2", "top 55%", "500", "center 53%", "50");
+    setupAnimationForProject("projects3", "top 55%", "500", "center 53%", "50");
+    setupAnimationForProject("projects4", "top 55%", "500", "center 53%", "50");
   }, []);
 
     return( 
@@ -73,14 +91,7 @@ export default function ProjectsDesktop (){
                       className="projects__number">
                           <span>.</span>{project.number}
                   </motion.div>
-                  <motion.h2 
-                      key={`projects__title__${project.key}`}
-                      transition={{ duration: .4, delay: 0.4 }}
-                      exit={{ y: 50, opacity: 0 }}
-                      className="projects__title" 
-                      data-splitting>
-                          <span>{project.title}</span>
-                  </motion.h2>
+                  <AnimatedTitle title={project.title} />
                 </div>
                 <div className="projects__video">
                   <video

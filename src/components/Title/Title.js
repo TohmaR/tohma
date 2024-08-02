@@ -18,11 +18,12 @@ export default function Title(props) {
 
         const words = titleRef.current.querySelectorAll('.word');
 
+        const anims = [];
         words.forEach(word => {
             const chars = word.querySelectorAll('.char');
             chars.forEach(char => gsap.set(char.parentNode, { perspective: 2000 }));
 
-            gsap.fromTo(chars, {
+            const anim = gsap.fromTo(chars, {
                 'will-change': 'opacity, transform',
                 opacity: 0,
                 y: (position, _, arr) => -40 * Math.abs(position - arr.length / 2),
@@ -46,8 +47,13 @@ export default function Title(props) {
                     scrub: 1,
                 }
             });
+            anims.push(anim);
         });
 
+        return () => {
+            anims.forEach(anim => anim.kill());
+           
+        };
     }, []);
 
     return (
