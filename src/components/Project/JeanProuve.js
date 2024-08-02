@@ -5,7 +5,7 @@ import { useMediaQuery } from 'react-responsive'
 import { useTranslation } from 'react-i18next';
 import { motion } from "framer-motion"
 import Photo1 from "../../assets/image/JeanProuve/end.jpg";
-import VideoDesktop from "../../assets/image/JeanProuve/jeanProuveVideoDesktop.mp4";
+import VideoDesktop from "../../assets/image/JeanProuve/jeanProuveVideoDesktop.mp4"
 import VideoMobile from "../../assets/image/JeanProuve/jeanProuveVideoMobile.mp4";
 import MobileCenterEffectImg from "../../assets/image/JeanProuve/mobile-center-effect.png";
 import MobileSideEffectImg from "../../assets/image/JeanProuve/mobile-side-effect.png";

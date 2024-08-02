@@ -369,6 +369,8 @@
     
     .project__title{
         font-size:9vw;
+        text-align: start;
+        left: 6vw;
     }
 
     
