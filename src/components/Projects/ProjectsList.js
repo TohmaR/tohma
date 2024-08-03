@@ -5,6 +5,7 @@ import SneakmarPlustVideoMobile from "../../assets/image/Sneakmart+/sneakmart+Vi
 import JeanProuvetVideoMobile from "../../assets/image/JeanProuve/jeanProuveVideoMobile.mp4";
 
 //Desktop videos
+import JeanProuveVideoDesktop from "../../assets/image/JeanProuve/prout.mp4";
 import AmazonVideoDesktop from "../../assets/image/Amazon/amazonVideoDesktop.mp4";
 import SneakmartPlusVideoDesktop from "../../assets/image/Sneakmart+/sneakmart+VideoDesktop.mp4";
 import SneakmartVideoDesktop from "../../assets/image/Sneakmart/sneakmartVideoDesktop.mp4";
@@ -15,7 +16,7 @@ const ProjectsList = [
     key: 'jeanprouvé',
     number: '001',
     title: 'Prouvé',
-    videoDesktop: SneakmartVideoDesktop,
+    videoDesktop: JeanProuveVideoDesktop,
     videoMobile: JeanProuvetVideoMobile,
     link: '/JeanProuve'
 },

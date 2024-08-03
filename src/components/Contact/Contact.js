@@ -63,17 +63,17 @@ function ContactDesktop() {
                 start: isDesktop ? "top 60%" : "50% bottom",
                 toggleActions: "restart none none reverse",
                 scrub: 1,
-                end: "+=600",
+                end: "+=450",
             },
         });
 
         let tlLetter = gsap.timeline({
             scrollTrigger: {
                 trigger: ".map__box",
-                start: isDesktop ? "top 60%" : "40% bottom",
+                start: isDesktop ? "top 60%" : "50% bottom",
                 toggleActions: "restart none none reverse",
                 scrub: 1,
-                end: "+=400",
+                end: "+=350",
             },
         }).delay(1.2);
      
