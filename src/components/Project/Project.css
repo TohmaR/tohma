@@ -88,8 +88,8 @@
     position: absolute; 
     font-size: 10vw;
     font-weight: 900;
-    bottom: -2vh;
-    text-align: center;
+    bottom: 2vh;
+    left: 3vw;
     font-family: "MonumentExtended-Regular";
     overflow: hidden
 }
