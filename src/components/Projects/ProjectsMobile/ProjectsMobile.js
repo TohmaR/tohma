@@ -71,10 +71,10 @@ export default function ProjectsDesktop (){
       key: null
     });
   
-    setupAnimationForProject("projects1", "top 55%", "500", "center 53%", "50");
-    setupAnimationForProject("projects2", "top 55%", "500", "center 53%", "50");
-    setupAnimationForProject("projects3", "top 55%", "500", "center 53%", "50");
-    setupAnimationForProject("projects4", "top 55%", "500", "center 53%", "50");
+    setupAnimationForProject("projects1", "top 55%", "500", "center 63%", "50");
+    setupAnimationForProject("projects2", "top 55%", "500", "center 63%", "50");
+    setupAnimationForProject("projects3", "top 55%", "500", "center 63%", "50");
+    setupAnimationForProject("projects4", "top 55%", "500", "center 63%", "50");
   }, []);
 
     return( 
@@ -82,17 +82,6 @@ export default function ProjectsDesktop (){
         {ProjectsList.map((project, index) => (
           <Link className="projects__link" to={project.link} refresh="true" aria-label="project link">
             <section className={`panel projects${index + 1}`} key={project.key}>
-                <div className="projects__container">
-                  <motion.div 
-                      key={`projects__number__${project.key}`}
-                      initial={{ transform: "translateY(0px)", opacity : 1}}
-                      exit={{ transform: "translateY(-50px)", opacity: 0 }}
-                      transition={{ duration: 0.4, delay: 0.4 }}
-                      className="projects__number">
-                          <span>.</span>{project.number}
-                  </motion.div>
-                  <AnimatedTitle title={project.title} />
-                </div>
                 <div className="projects__video">
                   <video
                     ref={videoRef}
@@ -108,6 +97,17 @@ export default function ProjectsDesktop (){
                     <source src={project.videoMobile} type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
+                </div>
+                <div className="projects__container">
+                  <motion.div 
+                      key={`projects__number__${project.key}`}
+                      initial={{ transform: "translateY(0px)", opacity : 1}}
+                      exit={{ transform: "translateY(-50px)", opacity: 0 }}
+                      transition={{ duration: 0.4, delay: 0.4 }}
+                      className="projects__number">
+                          <span>.</span>{project.number}
+                  </motion.div>
+                  <AnimatedTitle title={project.title} />
                 </div>
                 <div className="projects__video__box"></div>
                 <motion.div  

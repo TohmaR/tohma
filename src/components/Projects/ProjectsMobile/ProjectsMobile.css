@@ -9,11 +9,11 @@
   }
     
   .panel {
-    width: 100%;
-    height: 100vh;
+    position: relative;
+    width: 100vw;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
     color: white;
     position: relative;
     box-sizing: border-box;
@@ -21,12 +21,10 @@
   }
 
   .projects__container{
-    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    left:8vw;
-    bottom: 10px;
+    padding : 3vh 0 5vh 5vw;
   }
 
   .projects__title {
@@ -56,7 +54,7 @@
     font-size: 10vw;
     font-weight: 900;
     font-family: "goku";
-    background: linear-gradient(to right, #050505 50%, #151515 10%, #151515);
+    background: linear-gradient(to right, #050505 50%, rgb(93, 93, 93) 10%, rgb(93, 93, 93));
     background-size: 200%;
     background-clip: text;
     z-index: 2;
@@ -73,9 +71,9 @@
   }
   
   .projects__video{
-    position: absolute;
-    width: 85vw;
-    max-height: 90vh;
+    width: 90vw;
+    max-height: 80svh;
+    margin: auto;
     transition: all 0.5s;
     transition-timing-function: ease-in-out;
     overflow: hidden;

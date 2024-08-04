@@ -150,8 +150,6 @@ function Amazon(){
             <div className="project__container">
                 <div className="project__video--enter">
                     <video
-                        width="100%" 
-                        height="100%"
                         autoPlay
                         playsInline
                         loop

@@ -61,7 +61,7 @@
 
 .project__video--enter video{
     width: 80vw;
-    height: 80vh;
+    height: 80svh;
 }
 
 .project__photo__box{
